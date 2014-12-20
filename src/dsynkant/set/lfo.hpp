@@ -40,10 +40,10 @@
 #define RND_Str "Random"
 
 typedef enum {
-  TRI,
-  SAW,
-  SQU,
-  RND
+    TRI,
+    SAW,
+    SQU,
+    RND
 } LFOWaveform;
 
 #define SyncOff_Str "off"
@@ -51,45 +51,45 @@ typedef enum {
 #define SyncKey_Str "key"
 
 typedef enum {
-  SyncOff,
-  SyncOn,
-  SyncKey
+    SyncOff,
+    SyncOn,
+    SyncKey
 } Sync;
 
 class LFO {
 private:
-  LFOWaveform _waveform;
-  unsigned char _rate; //betweem 0 and 100
-  unsigned char _delayTime; //between 0 and 100
-  Sync _sync;
+    LFOWaveform _waveform;
+    unsigned char _rate; //betweem 0 and 100
+    unsigned char _delayTime; //between 0 and 100
+    Sync _sync;
   
 public:
-  LFO(unsigned char _rate = 50, Sync sync = SyncOff);
-  ~LFO();
+    LFO(unsigned char _rate = 50, Sync sync = SyncOff);
+    ~LFO();
   
-  //affect methods
-  void setWaveform(LFOWaveform wf);
-  void setRate(unsigned char r);
-  void setDelayTime(unsigned char dt);
-  void setSync(Sync s);
+    //affect methods
+    void setWaveform(LFOWaveform wf);
+    void setRate(unsigned char r);
+    void setDelayTime(unsigned char dt);
+    void setSync(Sync s);
 
-  //access methods
-  LFOWaveform getWaveform();
-  unsigned char getRate();
-  unsigned char getDelayTime();
-  Sync getSync();
+    //access methods
+    LFOWaveform getWaveform();
+    unsigned char getRate();
+    unsigned char getDelayTime();
+    Sync getSync();
 
-  //dump method
-  void dump(Address& a, unsigned length, unsigned char* data);
+    //dump method
+    void dump(Address& a, unsigned length, unsigned char* data);
 
-  //print method
-  char* LFOWaveformStr(LFOWaveform wf);
-  char* LFOWaveformStr();
-  char* LFOWaveformShortStr(LFOWaveform wf);
-  char* LFOWaveformShortStr();
-  char* SyncStr(Sync s);
-  char* SyncStr();
-  void print(int m);
+    //print method
+    char* LFOWaveformStr(LFOWaveform wf);
+    char* LFOWaveformStr();
+    char* LFOWaveformShortStr(LFOWaveform wf);
+    char* LFOWaveformShortStr();
+    char* SyncStr(Sync s);
+    char* SyncStr();
+    void print(int m);
 };
 
 #endif

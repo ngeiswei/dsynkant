@@ -28,7 +28,7 @@
 
 //constructor destructor
 Engine::Engine(DSynkant* ref) {
-  _dsynkant = ref;
+    _dsynkant = ref;
 }
 
 Engine::~Engine() {
@@ -36,5 +36,5 @@ Engine::~Engine() {
 
 //print method
 void Engine::print(int m) {
-  //TODO
+    //TODO
 }

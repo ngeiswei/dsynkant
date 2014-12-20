@@ -28,31 +28,31 @@
 
 //constructor destructor
 Set::Set() {
-  _setName = NULL;
+    _setName = NULL;
 }
 Set::Set(char* bn) {
-  _setName = bn;
+    _setName = bn;
 }
 
 Set::~Set() {
 }
 
 void Set::addBank(Bank* b) {
-  _banks.push_back(b);
+    _banks.push_back(b);
 }
 Bank* Set::getBank(unsigned index) {
-  if(index < _banks.size()) return _banks[index];
-  else return NULL;
+    if(index < _banks.size()) return _banks[index];
+    else return NULL;
 }
 
 //dump method
 void Set::dump(unsigned length, unsigned char* data) {
-  //TODO
+    //TODO
 }
 
 //print method
 void Set::print(int m) {
-  ps(m);
-  printf("Set = %s\n", _setName);
-  for(unsigned i = 0; i < _banks.size(); i++) _banks[i]->print(m+2);
+    ps(m);
+    printf("Set = %s\n", _setName);
+    for(unsigned i = 0; i < _banks.size(); i++) _banks[i]->print(m+2);
 }

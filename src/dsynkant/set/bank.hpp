@@ -32,18 +32,18 @@ class Patch;
 
 class Bank {
 private:
-  char* _bankName;
-  std::vector<Patch*> _patches;
+    char* _bankName;
+    std::vector<Patch*> _patches;
 
 public:
-  Bank();
-  Bank(char* bn);
-  ~Bank();
+    Bank();
+    Bank(char* bn);
+    ~Bank();
 
-  void addPatch(Patch* p);
-  Patch* getPatch(unsigned index);
+    void addPatch(Patch* p);
+    Patch* getPatch(unsigned index);
 
-  void print(int m);
+    void print(int m);
 };
 
 #endif

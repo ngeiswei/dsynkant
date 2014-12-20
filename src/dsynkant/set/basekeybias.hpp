@@ -32,8 +32,8 @@
 #define INT_STR_LENGTH 256
 
 typedef enum {
-  KBTVF,
-  KBTVA
+    KBTVF,
+    KBTVA
 } KeyBiasType;
 
 /*****************/
@@ -41,33 +41,33 @@ typedef enum {
 /*****************/
 class BaseKeyBias {
 private:
-  bool _biasRangeUp; //if true then bias range is greater than the range
-  unsigned char _biasRangeKey; //key number of the bias range
-  char _biasLevel; //between -12 and 0 (if TVA) or -7 and +7 (TVF)
+    bool _biasRangeUp; //if true then bias range is greater than the range
+    unsigned char _biasRangeKey; //key number of the bias range
+    char _biasLevel; //between -12 and 0 (if TVA) or -7 and +7 (TVF)
 
-  KeyBiasType _type; //this is just to know if it used by TVF or TVA
+    KeyBiasType _type; //this is just to know if it used by TVF or TVA
 
 public:
-  //constructor destructor
-  BaseKeyBias(KeyBiasType t);
-  ~BaseKeyBias();
+    //constructor destructor
+    BaseKeyBias(KeyBiasType t);
+    ~BaseKeyBias();
 
-  //affect methods
-  void setBiasRangeUp(bool bru);
-  void setBiasRangeKey(unsigned char brk);
-  void setBiasLevel(char bl);
+    //affect methods
+    void setBiasRangeUp(bool bru);
+    void setBiasRangeKey(unsigned char brk);
+    void setBiasLevel(char bl);
 
-  //access methods
-  bool getBiasRangeUp();
-  unsigned char getBiasRangeKey();
-  char getBiasLevel();
+    //access methods
+    bool getBiasRangeUp();
+    unsigned char getBiasRangeKey();
+    char getBiasLevel();
 
-  //dump method
-  void dump(Address& a, unsigned length, unsigned char* data);
+    //dump method
+    void dump(Address& a, unsigned length, unsigned char* data);
 
-  //print method
-  char* pitchStr(int p);
-  void print(int m); //print the key bias on the std output tabulated of m
+    //print method
+    char* pitchStr(int p);
+    void print(int m); //print the key bias on the std output tabulated of m
 };
 
 #endif

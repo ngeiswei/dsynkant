@@ -41,37 +41,37 @@ class BaseModulation;
 /**************************/
 class TVA : public BaseKeyBias, public BaseEnvelope, public BaseModulation {
 private:
-  unsigned char _level; //between 0 and 100
-  char _velocityRange; //between -50 and +50
-  unsigned char _velocityFollow; //between 0 and 4, shorten the time1
-  unsigned char _keyFollow; //between 0 and 4, shorten the whole envelope
-  //Aftertouch
-  char _aftertouchRange; //between -7 and +7
+    unsigned char _level; //between 0 and 100
+    char _velocityRange; //between -50 and +50
+    unsigned char _velocityFollow; //between 0 and 4, shorten the time1
+    unsigned char _keyFollow; //between 0 and 4, shorten the whole envelope
+    //Aftertouch
+    char _aftertouchRange; //between -7 and +7
 
 public:
-  //constructor destructor
-  TVA();
-  ~TVA();
+    //constructor destructor
+    TVA();
+    ~TVA();
 
-  //affect methods
-  void setLevel(unsigned char l);
-  void setVelocityRange(char vr);
-  void setVelocityFollow(unsigned char vf);
-  void setKeyFollow(unsigned char kf);
-  void setAftertouchRange(char ar);
+    //affect methods
+    void setLevel(unsigned char l);
+    void setVelocityRange(char vr);
+    void setVelocityFollow(unsigned char vf);
+    void setKeyFollow(unsigned char kf);
+    void setAftertouchRange(char ar);
 
-  //access methods
-  unsigned char getLevel();
-  char getVelocityRange();
-  unsigned char getVelocityFollow();
-  unsigned char getKeyFollow();
-  char getAftertouchRange();
+    //access methods
+    unsigned char getLevel();
+    char getVelocityRange();
+    unsigned char getVelocityFollow();
+    unsigned char getKeyFollow();
+    char getAftertouchRange();
 
-  //dump method
-  void dump(Address& a, unsigned length, unsigned char* data);
+    //dump method
+    void dump(Address& a, unsigned length, unsigned char* data);
 
-  //print method
-  void print(int m); //print the TVA on the std output tabulated of m
+    //print method
+    void print(int m); //print the TVA on the std output tabulated of m
 };
 
 #endif

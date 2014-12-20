@@ -34,32 +34,32 @@
 /*******************/
 class BaseModulation {
 private:
-  bool _positivePhase; //control the phase
-                       //+ : positive phase, - : negative phase
-  unsigned char _LFOSelect; //control the number of the LFO
-                           //1, 2, 3 respectively LFO-1, LFO-2, LFO-3
-  unsigned char _LFODepth; //between 0 and 100
+    bool _positivePhase; //control the phase
+    //+ : positive phase, - : negative phase
+    unsigned char _LFOSelect; //control the number of the LFO
+    //1, 2, 3 respectively LFO-1, LFO-2, LFO-3
+    unsigned char _LFODepth; //between 0 and 100
 
 public:
-  //constructor destructor
-  BaseModulation();
-  ~BaseModulation();
+    //constructor destructor
+    BaseModulation();
+    ~BaseModulation();
 
-  //affect methods
-  void setLFOPhase(bool p);
-  void setLFOSelect(unsigned char ls);
-  void setLFODepth(unsigned char ld);
+    //affect methods
+    void setLFOPhase(bool p);
+    void setLFOSelect(unsigned char ls);
+    void setLFODepth(unsigned char ld);
 
-  //access methods
-  bool getLFOPhase();
-  unsigned char getLFOSelect();
-  unsigned char getLFODepth();
+    //access methods
+    bool getLFOPhase();
+    unsigned char getLFOSelect();
+    unsigned char getLFODepth();
 
-  //dump method
-  void dump(Address& a, unsigned length, unsigned char* data);
+    //dump method
+    void dump(Address& a, unsigned length, unsigned char* data);
 
-  //print method
-  void print(int m); //print the modulation on the std output tabulated of m
+    //print method
+    void print(int m); //print the modulation on the std output tabulated of m
 };
 
 #endif

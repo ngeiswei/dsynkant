@@ -42,15 +42,15 @@
 #define Separate_S_Str "Separate_S"
 
 typedef enum {
-  Whole,
-  Dual,
-  Split,
-  Separate,
-  Whole_S,
-  Dual_S,
-  Split_US,
-  Split_LS,
-  Separate_S
+    Whole,
+    Dual,
+    Split,
+    Separate,
+    Whole_S,
+    Dual_S,
+    Split_US,
+    Split_LS,
+    Separate_S
 } KeyMode;
 
 #define SUStr "U"
@@ -58,9 +58,9 @@ typedef enum {
 #define SULStr "UL"
 
 typedef enum {
-  SU,
-  SL,
-  SUL
+    SU,
+    SL,
+    SUL
 } ULSet;
 
 #define CMULStr "UL"
@@ -68,9 +68,9 @@ typedef enum {
 #define CMULUStr "ULU"
 
 typedef enum {
-  CMUL,
-  CMULL,
-  CMULU
+    CMUL,
+    CMULL,
+    CMULU
 } ChaseMode;
 
 #define BTR_MIX_Short_Str "BTR_MIX"
@@ -84,10 +84,10 @@ typedef enum {
 #define LTR_SEP_Str "Lower tone reverb, seperate signals"
 
 typedef enum {
-  BTR_MIX, //Both tones reverb, mixed signals
-  BTR_SEP, //Both tones reverb, seperate signals
-  UTR_SEP, //Upper tone reverb, seperate signals
-  LTR_SEP //Lower tone reverb, seperate signals
+    BTR_MIX, //Both tones reverb, mixed signals
+    BTR_SEP, //Both tones reverb, seperate signals
+    UTR_SEP, //Upper tone reverb, seperate signals
+    LTR_SEP //Lower tone reverb, seperate signals
 } OutputMode;
 
 #define SmallHall_Str "Small Hall"
@@ -124,177 +124,177 @@ typedef enum {
 #define Space_Str "Space"
 
 typedef enum {
-  SmallHall,
-  MediumHall,
-  LargeHall,
-  Chapel,
-  Box,
-  SmallMetalRoom,
-  SmallRoom,
-  MediumRoom,
-  MediumLargeRoom,
-  LargeRoom,
-  SimpleDelay_102ms,
-  CrossDelay_180ms,
-  CrossDelay_224ms,
-  CrossDelay_148_296ms,
-  ShortGate_200ms,
-  LongGate_480ms,
-  BrightHall,
-  LargeCave,
-  SteelPan,
-  Delay_248ms,
-  Delay_338ms,
-  CrossDelay_157ms,
-  CrossDelay_252ms,
-  CrossDelay_274_137ms,
-  GateReverb,
-  ReverseGate_360ms,
-  ReverseGate_480ms,
-  ShortSlapBack,
-  MediumSlapBack,
-  LongSlapBack,
-  TwistedSpace,
-  Space
+    SmallHall,
+    MediumHall,
+    LargeHall,
+    Chapel,
+    Box,
+    SmallMetalRoom,
+    SmallRoom,
+    MediumRoom,
+    MediumLargeRoom,
+    LargeRoom,
+    SimpleDelay_102ms,
+    CrossDelay_180ms,
+    CrossDelay_224ms,
+    CrossDelay_148_296ms,
+    ShortGate_200ms,
+    LongGate_480ms,
+    BrightHall,
+    LargeCave,
+    SteelPan,
+    Delay_248ms,
+    Delay_338ms,
+    CrossDelay_157ms,
+    CrossDelay_252ms,
+    CrossDelay_274_137ms,
+    GateReverb,
+    ReverseGate_360ms,
+    ReverseGate_480ms,
+    ShortSlapBack,
+    MediumSlapBack,
+    LongSlapBack,
+    TwistedSpace,
+    Space
 } ReverbType;
 
 class PatchParameter {
 private:
-  char _patchName[PATCHNAME_LENGTH + 1];
-  KeyMode _keyMode;
-  unsigned char _splitPoint; //between 0 and 60, respectively C2 to C7
-  ULSet _portamentoMode;
-  ULSet _holdMode;
-  char _UToneKeyShift; //between -24 and +24
-  char _LToneKeyShift; //between -24 and +24
-  char _UToneFineTune; //between -50 and +50
-  char _LToneFineTune; //between -50 and +50
-  unsigned char _benderRange; //between 0 and 12
-  char _aftertouchPitchBend; //between -12 and +12
-  unsigned char _portamentoTime; //between 0 and 100
-  OutputMode _outputMode;
-  ReverbType _reverbType;
-  unsigned char _reverbBalance; //between 0 and 100
-  unsigned char _totalVolume; //between 0 and 100
-  unsigned char _toneBalance; //between 0 and 100
-  ChaseMode _chaseMode;
-  unsigned char _chaseLevel; //between 0 and 100
-  unsigned char _chaseTime; //between 0 and 100
-  bool _transmitCHBasic;
-  unsigned char _transmitCH; // between 0 and 15
-  bool _separateModeReceiveCHOn;
-  unsigned char _separateModeReceiveCH; //between 0 and 15
-  bool _transmitProgramChangeOn;
-  unsigned char _transmitProgramChange; //between 0 and 99
-  bool _chaseSwitch;
-  bool _portamentoSwitch;
-  bool _separateSwitch;
-  bool _transmitBankSelectOn;
-  unsigned char _transmitBankSelect; //between 0 and 99
-  bool _LowerOn;
-  bool _UpperOn;
-  bool _LowerPartial1On;
-  bool _LowerPartial2On;
-  bool _UpperPartial1On;
-  bool _UpperPartial2On;
+    char _patchName[PATCHNAME_LENGTH + 1];
+    KeyMode _keyMode;
+    unsigned char _splitPoint; //between 0 and 60, respectively C2 to C7
+    ULSet _portamentoMode;
+    ULSet _holdMode;
+    char _UToneKeyShift; //between -24 and +24
+    char _LToneKeyShift; //between -24 and +24
+    char _UToneFineTune; //between -50 and +50
+    char _LToneFineTune; //between -50 and +50
+    unsigned char _benderRange; //between 0 and 12
+    char _aftertouchPitchBend; //between -12 and +12
+    unsigned char _portamentoTime; //between 0 and 100
+    OutputMode _outputMode;
+    ReverbType _reverbType;
+    unsigned char _reverbBalance; //between 0 and 100
+    unsigned char _totalVolume; //between 0 and 100
+    unsigned char _toneBalance; //between 0 and 100
+    ChaseMode _chaseMode;
+    unsigned char _chaseLevel; //between 0 and 100
+    unsigned char _chaseTime; //between 0 and 100
+    bool _transmitCHBasic;
+    unsigned char _transmitCH; // between 0 and 15
+    bool _separateModeReceiveCHOn;
+    unsigned char _separateModeReceiveCH; //between 0 and 15
+    bool _transmitProgramChangeOn;
+    unsigned char _transmitProgramChange; //between 0 and 99
+    bool _chaseSwitch;
+    bool _portamentoSwitch;
+    bool _separateSwitch;
+    bool _transmitBankSelectOn;
+    unsigned char _transmitBankSelect; //between 0 and 99
+    bool _LowerOn;
+    bool _UpperOn;
+    bool _LowerPartial1On;
+    bool _LowerPartial2On;
+    bool _UpperPartial1On;
+    bool _UpperPartial2On;
 
 public:
-  PatchParameter();
-  ~PatchParameter();
+    PatchParameter();
+    ~PatchParameter();
 
-  //affect methods  
-  void setPatchName(char* pn);
-  void setKeyMode(KeyMode km);
-  void setSplitPoint(unsigned char sp);
-  void setPortamentoMode(ULSet pm);
-  void setHoldMode(ULSet hm);
-  void setUToneKeyShift(char u);
-  void setLToneKeyShift(char l);
-  void setUToneFineTune(char u);
-  void setLToneFineTune(char l);
-  void setBenderRange(unsigned char br);
-  void setAftertouchPitchBend(char ap);
-  void setPortamentoTime(unsigned char pt);
-  void setOutputMode(OutputMode om);
-  void setReverbType(ReverbType rt);
-  void setReverbBalance(unsigned char rb);
-  void setTotalVolume(unsigned char tv);
-  void setToneBalance(unsigned char tb);
-  void setChaseMode(ChaseMode cm);
-  void setChaseLevel(unsigned char cl);
-  void setChaseTime(unsigned char ct);
-  void setTransmitCHBasic(bool b);
-  void setTransmitCH(unsigned char ch);
-  void setSeparateModeReceiveCHOn(bool on);
-  void setSeparateModeReceiveCH(unsigned char ch);
-  void setTransmitProgramChangeOn(bool on);
-  void setTransmitProgramChange(unsigned char pc);
-  void setChaseSwitch(bool cs);
-  void setPortamentoSwitch(bool ps);
-  void setSeparateSwitch(bool ss);
-  void setTransmitBankSelectOn(bool on);
-  void setTransmitBankSelect(unsigned char bs);
-  void setLowerOn(bool lo);
-  void setUpperOn(bool uo);
-  void setLowerPartial1On(bool lp1);
-  void setLowerPartial2On(bool lp2);
-  void setUpperPartial1On(bool up1);
-  void setUpperPartial2On(bool up2);
+    //affect methods  
+    void setPatchName(char* pn);
+    void setKeyMode(KeyMode km);
+    void setSplitPoint(unsigned char sp);
+    void setPortamentoMode(ULSet pm);
+    void setHoldMode(ULSet hm);
+    void setUToneKeyShift(char u);
+    void setLToneKeyShift(char l);
+    void setUToneFineTune(char u);
+    void setLToneFineTune(char l);
+    void setBenderRange(unsigned char br);
+    void setAftertouchPitchBend(char ap);
+    void setPortamentoTime(unsigned char pt);
+    void setOutputMode(OutputMode om);
+    void setReverbType(ReverbType rt);
+    void setReverbBalance(unsigned char rb);
+    void setTotalVolume(unsigned char tv);
+    void setToneBalance(unsigned char tb);
+    void setChaseMode(ChaseMode cm);
+    void setChaseLevel(unsigned char cl);
+    void setChaseTime(unsigned char ct);
+    void setTransmitCHBasic(bool b);
+    void setTransmitCH(unsigned char ch);
+    void setSeparateModeReceiveCHOn(bool on);
+    void setSeparateModeReceiveCH(unsigned char ch);
+    void setTransmitProgramChangeOn(bool on);
+    void setTransmitProgramChange(unsigned char pc);
+    void setChaseSwitch(bool cs);
+    void setPortamentoSwitch(bool ps);
+    void setSeparateSwitch(bool ss);
+    void setTransmitBankSelectOn(bool on);
+    void setTransmitBankSelect(unsigned char bs);
+    void setLowerOn(bool lo);
+    void setUpperOn(bool uo);
+    void setLowerPartial1On(bool lp1);
+    void setLowerPartial2On(bool lp2);
+    void setUpperPartial1On(bool up1);
+    void setUpperPartial2On(bool up2);
 
-  //access methods
-  char* getPatchName();
-  KeyMode getKeyMode();
-  unsigned char getSplitPoint();
-  ULSet getPortamentoMode();
-  ULSet getHoldMode();
-  char getUToneKeyShift();
-  char getLToneKeyShift();
-  char getUToneFineTune();
-  char getLToneFineTune();
-  unsigned char getBenderRange();
-  char getAftertouchPitchBend();
-  unsigned char getPortamentoTime();
-  OutputMode getOutputMode();
-  ReverbType getReverbType();
-  unsigned char getReverbBalance();
-  unsigned char getTotalVolume();
-  unsigned char getToneBalance();
-  ChaseMode getChaseMode();
-  unsigned char getChaseLevel();
-  unsigned char getChaseTime();
-  bool getTransmitCHBasic();
-  unsigned char getTransmitCH();
-  bool getSeparateModeReceiveCHOn();
-  unsigned char getSeparateModeReceiveCH();
-  bool getTransmitProgramChangeOn();
-  unsigned char getTransmitProgramChange();
-  bool getChaseSwitch();
-  bool getPortamentoSwitch();
-  bool getSeparateSwitch();
-  bool getTransmitBankSelectOn();  
-  unsigned char getTransmitBankSelect();  
-  bool getLowerOn();
-  bool getUpperOn();
-  bool getLowerPartial1On();
-  bool getLowerPartial2On();
-  bool getUpperPartial1On();
-  bool getUpperPartial2On();
+    //access methods
+    char* getPatchName();
+    KeyMode getKeyMode();
+    unsigned char getSplitPoint();
+    ULSet getPortamentoMode();
+    ULSet getHoldMode();
+    char getUToneKeyShift();
+    char getLToneKeyShift();
+    char getUToneFineTune();
+    char getLToneFineTune();
+    unsigned char getBenderRange();
+    char getAftertouchPitchBend();
+    unsigned char getPortamentoTime();
+    OutputMode getOutputMode();
+    ReverbType getReverbType();
+    unsigned char getReverbBalance();
+    unsigned char getTotalVolume();
+    unsigned char getToneBalance();
+    ChaseMode getChaseMode();
+    unsigned char getChaseLevel();
+    unsigned char getChaseTime();
+    bool getTransmitCHBasic();
+    unsigned char getTransmitCH();
+    bool getSeparateModeReceiveCHOn();
+    unsigned char getSeparateModeReceiveCH();
+    bool getTransmitProgramChangeOn();
+    unsigned char getTransmitProgramChange();
+    bool getChaseSwitch();
+    bool getPortamentoSwitch();
+    bool getSeparateSwitch();
+    bool getTransmitBankSelectOn();  
+    unsigned char getTransmitBankSelect();  
+    bool getLowerOn();
+    bool getUpperOn();
+    bool getLowerPartial1On();
+    bool getLowerPartial2On();
+    bool getUpperPartial1On();
+    bool getUpperPartial2On();
 
-  //dump method
-  void dump(Address& a, unsigned length, unsigned char* data);
+    //dump method
+    void dump(Address& a, unsigned length, unsigned char* data);
 
-  //print methods 
-  char* KeyModeStr(KeyMode km);
-  char* KeyModeStr();
-  char* ULSetStr(ULSet uls);
-  char* OutputModeStr(OutputMode om);
-  char* OutputModeStr();
-  char* ReverbTypeStr(ReverbType rt);
-  char* ReverbTypeStr();
-  char* ChaseModeStr(ChaseMode cm);
-  char* ChaseModeStr();
-  char* pitchStr(int p);
-  void print(int m);
+    //print methods 
+    char* KeyModeStr(KeyMode km);
+    char* KeyModeStr();
+    char* ULSetStr(ULSet uls);
+    char* OutputModeStr(OutputMode om);
+    char* OutputModeStr();
+    char* ReverbTypeStr(ReverbType rt);
+    char* ReverbTypeStr();
+    char* ChaseModeStr(ChaseMode cm);
+    char* ChaseModeStr();
+    char* pitchStr(int p);
+    void print(int m);
 };
 
 #endif

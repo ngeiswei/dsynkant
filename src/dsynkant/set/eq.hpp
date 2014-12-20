@@ -47,22 +47,22 @@
 #define lf840_f 840.0
 
 typedef enum {
-  lf63,
-  lf75,
-  lf88,
-  lf105,
-  lf125,
-  lf150,
-  lf175,
-  lf210,
-  lf250,
-  lf300,
-  lf350,
-  lf420,
-  lf500,
-  lf600,
-  lf700,
-  lf840
+    lf63,
+    lf75,
+    lf88,
+    lf105,
+    lf125,
+    lf150,
+    lf175,
+    lf210,
+    lf250,
+    lf300,
+    lf350,
+    lf420,
+    lf500,
+    lf600,
+    lf700,
+    lf840
 } EQLowFreq;
 
 #define hf250_f 250.0
@@ -89,28 +89,28 @@ typedef enum {
 #define hf9500_f 9500.0
 
 typedef enum {
-  hf250,
-  hf300,
-  hf350,
-  hf420,
-  hf500,
-  hf600,
-  hf700,
-  hf840,
-  hf1000,
-  hf1200,
-  hf1400,
-  hf1700,
-  hf2000,
-  hf2400,
-  hf2800,
-  hf3400,
-  hf4000,
-  hf4800,
-  hf5700,
-  hf6700,
-  hf8000,
-  hf9500
+    hf250,
+    hf300,
+    hf350,
+    hf420,
+    hf500,
+    hf600,
+    hf700,
+    hf840,
+    hf1000,
+    hf1200,
+    hf1400,
+    hf1700,
+    hf2000,
+    hf2400,
+    hf2800,
+    hf3400,
+    hf4000,
+    hf4800,
+    hf5700,
+    hf6700,
+    hf8000,
+    hf9500
 } EQHighFreq;
 
 #define hq0_3_f 0.3
@@ -124,54 +124,54 @@ typedef enum {
 #define hq6_0_f 6.0
 
 typedef enum {
-  hq0_3,
-  hq0_5,
-  hq0_7,
-  hq1_0,
-  hq1_4,
-  hq2_0,
-  hq3_0,
-  hq4_2,
-  hq6_0
+    hq0_3,
+    hq0_5,
+    hq0_7,
+    hq1_0,
+    hq1_4,
+    hq2_0,
+    hq3_0,
+    hq4_2,
+    hq6_0
 } EQHighQ;
 
 class EQ {
 private:
-  EQLowFreq _Lf;
-  char _Lg; //between -12 and +12 (in dB)
-  EQHighFreq _Hf;
-  EQHighQ _HQ;
-  char _Hg; //between -12 and +12 (in dB)  
+    EQLowFreq _Lf;
+    char _Lg; //between -12 and +12 (in dB)
+    EQHighFreq _Hf;
+    EQHighQ _HQ;
+    char _Hg; //between -12 and +12 (in dB)  
   
 public:
-  EQ();
-  ~EQ();
+    EQ();
+    ~EQ();
   
-  //affect methods
-  void setLf(EQLowFreq Lf);
-  void setLg(char Lg);
-  void setHf(EQHighFreq Hf);
-  void setHQ(EQHighQ HQ);
-  void setHg(char Hg);  
+    //affect methods
+    void setLf(EQLowFreq Lf);
+    void setLg(char Lg);
+    void setHf(EQHighFreq Hf);
+    void setHQ(EQHighQ HQ);
+    void setHg(char Hg);  
 
-  //dump method
-  void dump(Address& a, unsigned length, unsigned char* data);
+    //dump method
+    void dump(Address& a, unsigned length, unsigned char* data);
 
-  //access methods
-  EQLowFreq getLf();
-  char getLg();
-  EQHighFreq getHf();
-  EQHighQ getHQ();
-  char getHg();  
+    //access methods
+    EQLowFreq getLf();
+    char getLg();
+    EQHighFreq getHf();
+    EQHighQ getHQ();
+    char getHg();  
 
-  //print and float methods
-  float LowFreqFloat(EQLowFreq lf);
-  float LowFreqFloat();
-  float HighFreqFloat(EQHighFreq hf);
-  float HighFreqFloat();
-  float HighQFloat(EQHighQ hq);
-  float HighQFloat();
-  void print(int m);
+    //print and float methods
+    float LowFreqFloat(EQLowFreq lf);
+    float LowFreqFloat();
+    float HighFreqFloat(EQHighFreq hf);
+    float HighFreqFloat();
+    float HighQFloat(EQHighQ hq);
+    float HighQFloat();
+    void print(int m);
 };
 
 #endif

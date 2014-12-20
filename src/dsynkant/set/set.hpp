@@ -32,20 +32,20 @@ class Bank;
 
 class Set {
 private:
-  char* _setName;
-  std::vector<Bank*> _banks;
+    char* _setName;
+    std::vector<Bank*> _banks;
 
 public:
-  Set();
-  Set(char* sn);
-  ~Set();
+    Set();
+    Set(char* sn);
+    ~Set();
 
-  void addBank(Bank* p);
-  Bank* getBank(unsigned index);
+    void addBank(Bank* p);
+    Bank* getBank(unsigned index);
 
-  void dump(unsigned length, unsigned char* data);
+    void dump(unsigned length, unsigned char* data);
 
-  void print(int m = 0);
+    void print(int m = 0);
 };
 
 #endif

@@ -28,26 +28,26 @@
 
 //constructor destructor
 Bank::Bank() {
-  _bankName = NULL;
+    _bankName = NULL;
 }
 Bank::Bank(char* bn) {
-  _bankName = bn;
+    _bankName = bn;
 }
 
 Bank::~Bank() {
 }
 
 void Bank::addPatch(Patch* p) {
-  _patches.push_back(p);
+    _patches.push_back(p);
 }
 Patch* Bank::getPatch(unsigned index) {
-  if(index < _patches.size()) return _patches[index];
-  else return NULL;
+    if(index < _patches.size()) return _patches[index];
+    else return NULL;
 }
 
 //print method
 void Bank::print(int m) {
-  ps(m);
-  printf("Bank = %s\n", _bankName);
-  for(unsigned i = 0; i < _patches.size(); i++) _patches[i]->print(m+2);
+    ps(m);
+    printf("Bank = %s\n", _bankName);
+    for(unsigned i = 0; i < _patches.size(); i++) _patches[i]->print(m+2);
 }

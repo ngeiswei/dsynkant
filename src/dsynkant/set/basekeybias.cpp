@@ -30,10 +30,10 @@
 /* Constructor destructor */
 /**************************/
 BaseKeyBias::BaseKeyBias(KeyBiasType t) {
-  _type = t;
-  _biasRangeUp = true;
-  _biasRangeKey = 27; //corresponds to C4;
-  _biasLevel = 0;
+    _type = t;
+    _biasRangeUp = true;
+    _biasRangeKey = 27; //corresponds to C4;
+    _biasLevel = 0;
 }
 
 BaseKeyBias::~BaseKeyBias() {
@@ -43,13 +43,13 @@ BaseKeyBias::~BaseKeyBias() {
 /* Affect methods */
 /******************/
 void BaseKeyBias::setBiasRangeUp(bool bru) {
-  _biasRangeUp = bru;
+    _biasRangeUp = bru;
 }
 void BaseKeyBias::setBiasRangeKey(unsigned char brk) {
-  _biasRangeKey = brk;
+    _biasRangeKey = brk;
 }
 void BaseKeyBias::setBiasLevel(char bl) {
-  _biasLevel = bl;
+    _biasLevel = bl;
 }
 
 
@@ -57,70 +57,70 @@ void BaseKeyBias::setBiasLevel(char bl) {
 /* Access methods */
 /******************/
 bool BaseKeyBias::getBiasRangeUp() {
-  return _biasRangeUp;
+    return _biasRangeUp;
 }
 unsigned char BaseKeyBias::getBiasRangeKey() {
-  return _biasRangeKey;
+    return _biasRangeKey;
 }
 char BaseKeyBias::getBiasLevel() {
-  return _biasLevel;
+    return _biasLevel;
 }
 
 /***************/
 /* dump method */
 /***************/
 void BaseKeyBias::dump(Address& a, unsigned length, unsigned char* data) {
-  Address cura;
-  unsigned index = 0;
-  if(length > index && a == cura) {
-    _biasRangeUp = data[index] > 63;
-    _biasRangeKey = data[index] % 64;
-    index++;
-    ++a;
-  }
-  ++cura;
-  if(length > index && a == cura) {
-    _biasLevel = (char)data[index] - (_type == KBTVF?7:12);
-    ++a;
-  }  
+    Address cura;
+    unsigned index = 0;
+    if(length > index && a == cura) {
+        _biasRangeUp = data[index] > 63;
+        _biasRangeKey = data[index] % 64;
+        index++;
+        ++a;
+    }
+    ++cura;
+    if(length > index && a == cura) {
+        _biasLevel = (char)data[index] - (_type == KBTVF?7:12);
+        ++a;
+    }  
 }
 
 /****************/
 /* print method */
 /****************/
 char* BaseKeyBias::pitchStr(int p) {
-  p += 9; //to be A1
-  int octave = p/12 + 1;
-  char sOct[INT_STR_LENGTH];
-  sprintf(sOct, "%d", octave);
-  int note = p%12;
-  char sNote[INT_STR_LENGTH];
-  switch(note) {
-  case 0: strcpy(sNote, "C"); break;
-  case 1: strcpy(sNote, "C#"); break;
-  case 2: strcpy(sNote, "D"); break;
-  case 3: strcpy(sNote, "D#"); break;
-  case 4: strcpy(sNote, "E"); break;
-  case 5: strcpy(sNote, "F"); break;
-  case 6: strcpy(sNote, "F#"); break;
-  case 7: strcpy(sNote, "G"); break;
-  case 8: strcpy(sNote, "G#"); break;
-  case 9: strcpy(sNote, "A"); break;
-  case 10: strcpy(sNote, "A#"); break;
-  case 11: strcpy(sNote, "F"); break;
-  default:
-    printf("pitchStr Error : impossible case\n");
-    break;
-  }
-  return strcat(sNote, sOct);
+    p += 9; //to be A1
+    int octave = p/12 + 1;
+    char sOct[INT_STR_LENGTH];
+    sprintf(sOct, "%d", octave);
+    int note = p%12;
+    char sNote[INT_STR_LENGTH];
+    switch(note) {
+    case 0: strcpy(sNote, "C"); break;
+    case 1: strcpy(sNote, "C#"); break;
+    case 2: strcpy(sNote, "D"); break;
+    case 3: strcpy(sNote, "D#"); break;
+    case 4: strcpy(sNote, "E"); break;
+    case 5: strcpy(sNote, "F"); break;
+    case 6: strcpy(sNote, "F#"); break;
+    case 7: strcpy(sNote, "G"); break;
+    case 8: strcpy(sNote, "G#"); break;
+    case 9: strcpy(sNote, "A"); break;
+    case 10: strcpy(sNote, "A#"); break;
+    case 11: strcpy(sNote, "F"); break;
+    default:
+        printf("pitchStr Error : impossible case\n");
+        break;
+    }
+    return strcat(sNote, sOct);
 }
 
 void BaseKeyBias::print(int m) {
-  ps(m);
-  printf("Bias = ");
-  if(_biasRangeUp) printf(">");
-  else printf("<");
-  printf("%s\n", pitchStr(_biasRangeKey));
-  ps(m);
-  printf("Bias level = %d\n", _biasLevel);  
+    ps(m);
+    printf("Bias = ");
+    if(_biasRangeUp) printf(">");
+    else printf("<");
+    printf("%s\n", pitchStr(_biasRangeKey));
+    ps(m);
+    printf("Bias level = %d\n", _biasLevel);  
 }

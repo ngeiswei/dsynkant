@@ -34,10 +34,10 @@ class BaseModulation;
 #define DUMP_WG_LENGTH 0x0d
 
 typedef enum {
-  LMoff,
-  LMplus,
-  LMminus,
-  LMAnL
+    LMoff,
+    LMplus,
+    LMminus,
+    LMAnL
 } WGLFOMode;
 
 #define offStr "off"
@@ -46,129 +46,129 @@ typedef enum {
 #define AnLStr "AnL"
 
 typedef enum {
-  PEMoff,
-  PEMplus,
-  PEMminus
+    PEMoff,
+    PEMplus,
+    PEMminus
 } WGPEnvMode;
 
 typedef enum {
-  BMoff,
-  BMkeyFollow,
-  BMnormal
+    BMoff,
+    BMkeyFollow,
+    BMnormal
 } WGBenderMode;
 
 #define keyFollowStr "keyFollow"
 #define normalStr "normal"
 
 typedef enum {
-  square,
-  sawtooth
+    square,
+    sawtooth
 } WGWaveform;
 
 #define squareStr "square"
 #define sawtoothStr "sawtooth"
 
 typedef enum {
-  Marimba,
-  Vibraphone,
-  Xylophone_1,
-  Xylophone_2,
-  Log_Bass,
-  Hammer,
-  Japanese_Drum,
-  Kalimba,
-  Pluck_1,
-  Chink,
-  Agogo,
-  Triangle,
-  Bells,
-  NailFile,
-  Pick,
-  Low_Piano,
-  Mid_Piano,
-  High_Piano,
-  Harpsichord,
-  Harp,
-  Organ_Percussion,
-  Steel_Strings,
-  Nylon_Strings,
-  Electric_Guitar_1,
-  Electric_Guitar_2,
-  Dirty_Guitar,
-  Pick_Bass,
-  Pop_Bass,
-  Thump,
-  Upright_Bass,
-  Clarinet,
-  Breath,
-  Steamer,
-  High_Flute,
-  Low_Flute,
-  Guiro,
-  Indian_Flute,
-  Flute_Harmonics,
-  Lips_1,
-  Lips_2,
-  Trumpet,
-  Trombones,
-  Contrabass,
-  Cello,
-  Violon_Bow,
-  Violins,
-  Pizzicart,
-  Draws_bars_Loop,
-  High_Organ_Loop,
-  Low_Organ_Loop,
-  Electric_Piano_Loop_1,
-  Electric_Piano_Loop_2,
-  Clavi_Loop,
-  Harpsichord_Loop,
-  Electric_Bass_Loop_1,
-  Acoustic_Bass_Loop,
-  Electric_Bass_Loop_2,
-  Electric_Bass_Loop_3,
-  Electric_Guitar_Loop,
-  Cello_Loop,
-  Violin_Loop,
-  Lead_Loop,
-  Sax_Loop_1,
-  Sax_Loop_2,
-  Aah_Loop,
-  Ooh_Loop,
-  Male_Loop_1,
-  Spectrum_1_Loop,
-  Spectrum_2_Loop,
-  Spectrum_3_Loop,
-  Spectrum_4_Loop,
-  Spectrum_5_Loop,
-  Spectrum_6_Loop,
-  Spectrum_7_Loop,
-  Male_Loop_2,
-  Noise_Loop,
-  Loop_01,
-  Loop_02,
-  Loop_03,
-  Loop_04,
-  Loop_05,
-  Loop_06,
-  Loop_07,
-  Loop_08,
-  Loop_09,
-  Loop_10,
-  Loop_11,
-  Loop_12,
-  Loop_13,
-  Loop_14,
-  Loop_15,
-  Loop_16,
-  Loop_17,
-  Loop_18,
-  Loop_19,
-  Loop_20,
-  Loop_21,
-  Loop_22,
-  Loop_23,
-  Loop_24
+    Marimba,
+    Vibraphone,
+    Xylophone_1,
+    Xylophone_2,
+    Log_Bass,
+    Hammer,
+    Japanese_Drum,
+    Kalimba,
+    Pluck_1,
+    Chink,
+    Agogo,
+    Triangle,
+    Bells,
+    NailFile,
+    Pick,
+    Low_Piano,
+    Mid_Piano,
+    High_Piano,
+    Harpsichord,
+    Harp,
+    Organ_Percussion,
+    Steel_Strings,
+    Nylon_Strings,
+    Electric_Guitar_1,
+    Electric_Guitar_2,
+    Dirty_Guitar,
+    Pick_Bass,
+    Pop_Bass,
+    Thump,
+    Upright_Bass,
+    Clarinet,
+    Breath,
+    Steamer,
+    High_Flute,
+    Low_Flute,
+    Guiro,
+    Indian_Flute,
+    Flute_Harmonics,
+    Lips_1,
+    Lips_2,
+    Trumpet,
+    Trombones,
+    Contrabass,
+    Cello,
+    Violon_Bow,
+    Violins,
+    Pizzicart,
+    Draws_bars_Loop,
+    High_Organ_Loop,
+    Low_Organ_Loop,
+    Electric_Piano_Loop_1,
+    Electric_Piano_Loop_2,
+    Clavi_Loop,
+    Harpsichord_Loop,
+    Electric_Bass_Loop_1,
+    Acoustic_Bass_Loop,
+    Electric_Bass_Loop_2,
+    Electric_Bass_Loop_3,
+    Electric_Guitar_Loop,
+    Cello_Loop,
+    Violin_Loop,
+    Lead_Loop,
+    Sax_Loop_1,
+    Sax_Loop_2,
+    Aah_Loop,
+    Ooh_Loop,
+    Male_Loop_1,
+    Spectrum_1_Loop,
+    Spectrum_2_Loop,
+    Spectrum_3_Loop,
+    Spectrum_4_Loop,
+    Spectrum_5_Loop,
+    Spectrum_6_Loop,
+    Spectrum_7_Loop,
+    Male_Loop_2,
+    Noise_Loop,
+    Loop_01,
+    Loop_02,
+    Loop_03,
+    Loop_04,
+    Loop_05,
+    Loop_06,
+    Loop_07,
+    Loop_08,
+    Loop_09,
+    Loop_10,
+    Loop_11,
+    Loop_12,
+    Loop_13,
+    Loop_14,
+    Loop_15,
+    Loop_16,
+    Loop_17,
+    Loop_18,
+    Loop_19,
+    Loop_20,
+    Loop_21,
+    Loop_22,
+    Loop_23,
+    Loop_24
 } WGPCMWaveNo;
 
 #define Marimba_Str "Marimba"
@@ -379,65 +379,65 @@ typedef enum {
 /******************/
 class WG : public BaseModulation {
 private:
-  unsigned char _pitchCoarse; //between C1 and C7, C4 is the middle
-  char _pitchFine; //between -50 and +50
-  FracKeyFollow _keyFollow;
-  WGLFOMode _LFOMode;
-  WGPEnvMode _PEnvMode;
-  WGBenderMode _benderMode;
-  WGWaveform _waveform;
-  WGPCMWaveNo _PCMWaveNo;
-  unsigned char _pulseWidth; //between 0 and 100
-  char _velocityRange; //between -7 and +7
-  char _aftertouchRange; //between -7 and +7
+    unsigned char _pitchCoarse; //between C1 and C7, C4 is the middle
+    char _pitchFine; //between -50 and +50
+    FracKeyFollow _keyFollow;
+    WGLFOMode _LFOMode;
+    WGPEnvMode _PEnvMode;
+    WGBenderMode _benderMode;
+    WGWaveform _waveform;
+    WGPCMWaveNo _PCMWaveNo;
+    unsigned char _pulseWidth; //between 0 and 100
+    char _velocityRange; //between -7 and +7
+    char _aftertouchRange; //between -7 and +7
 
 public:
-  //Constructor destructor
-  WG();
-  ~WG();
+    //Constructor destructor
+    WG();
+    ~WG();
 
-  //affect methods
-  void setPitchCoarse(unsigned char pc);
-  void setPitchFine(char pf);
-  void setLFOMode(WGLFOMode lm);
-  void setPEnvMode(WGPEnvMode pm);
-  void setBenderMode(WGBenderMode bm);
-  void setWaveform(WGWaveform wf);
-  void setPCMWaveNo(WGPCMWaveNo pwn);
-  void setPulseWidth(unsigned char pw);
-  void setVelocityRange(char vr);
-  void setAftertouchRange(char ar);
+    //affect methods
+    void setPitchCoarse(unsigned char pc);
+    void setPitchFine(char pf);
+    void setLFOMode(WGLFOMode lm);
+    void setPEnvMode(WGPEnvMode pm);
+    void setBenderMode(WGBenderMode bm);
+    void setWaveform(WGWaveform wf);
+    void setPCMWaveNo(WGPCMWaveNo pwn);
+    void setPulseWidth(unsigned char pw);
+    void setVelocityRange(char vr);
+    void setAftertouchRange(char ar);
 
-  //access methods
-  unsigned char getPitchCoarse();
-  char getPitchFine();
-  WGLFOMode getLFOMode();
-  WGPEnvMode getPEnvMode();
-  WGBenderMode getBenderMode();
-  WGWaveform getWaveform();
-  WGPCMWaveNo getPCMWaveNo();
-  unsigned char getPulseWidth();
-  char getVelocityRange();
-  char getAftertouchRange();
+    //access methods
+    unsigned char getPitchCoarse();
+    char getPitchFine();
+    WGLFOMode getLFOMode();
+    WGPEnvMode getPEnvMode();
+    WGBenderMode getBenderMode();
+    WGWaveform getWaveform();
+    WGPCMWaveNo getPCMWaveNo();
+    unsigned char getPulseWidth();
+    char getVelocityRange();
+    char getAftertouchRange();
 
-  //dump method
-  void dump(Address& a, unsigned length, unsigned char* data);
+    //dump method
+    void dump(Address& a, unsigned length, unsigned char* data);
 
-  //print and string method
-  char* fracKeyFollowStr();
-  char* LFOModeStr(WGLFOMode lm);
-  char* LFOModeStr();
-  char* PEnvModeStr(WGPEnvMode pem);
-  char* PEnvModeStr();
-  char* benderModeStr(WGBenderMode bm);
-  char* benderModeStr();
-  char* waveformStr(WGWaveform wf);
-  char* waveformStr();
-  char* PCMWaveNoShortStr(WGPCMWaveNo pwn);
-  char* PCMWaveNoShortStr();
-  char* PCMWaveNoStr(WGPCMWaveNo pwn);
-  char* PCMWaveNoStr();
-  void print(int m); //print the WG with a margine m
+    //print and string method
+    char* fracKeyFollowStr();
+    char* LFOModeStr(WGLFOMode lm);
+    char* LFOModeStr();
+    char* PEnvModeStr(WGPEnvMode pem);
+    char* PEnvModeStr();
+    char* benderModeStr(WGBenderMode bm);
+    char* benderModeStr();
+    char* waveformStr(WGWaveform wf);
+    char* waveformStr();
+    char* PCMWaveNoShortStr(WGPCMWaveNo pwn);
+    char* PCMWaveNoShortStr();
+    char* PCMWaveNoStr(WGPCMWaveNo pwn);
+    char* PCMWaveNoStr();
+    void print(int m); //print the WG with a margine m
 };
 
 

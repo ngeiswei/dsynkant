@@ -31,14 +31,14 @@ class DSynkant;
 
 class Engine {
 private:
-  DSynkant* _dsynkant;
+    DSynkant* _dsynkant;
 
 public:
-  Engine(DSynkant* ref);
-  ~Engine();
+    Engine(DSynkant* ref);
+    ~Engine();
 
-  //print method
-  void print(int m);
+    //print method
+    void print(int m);
 };
 
 #endif

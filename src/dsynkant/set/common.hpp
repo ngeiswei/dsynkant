@@ -49,52 +49,52 @@ class Chorus;
 #define PPRStr "Mix(P,Ring(P,P))"
 
 typedef enum {
-  SS, //mix of synthe partial 1 and synthe partial 2
-  SSR, //mix of synthe partial 1 and ring mod of synthe partial 1 & 2
-  PS, //mix of PCM partial 1 and synthe partial 2
-  PSR, //mix of PCM partial 1 and ring mod of synthe partial 1 & 2
-  SPR, //mix of synthe partial 1 and ring mod of PCM partial 1 & 2
-  PP, //mix of PCM partial 1 and PCM partial 2
-  PPR //mix of PCM partial 1 and rinf mod of PCM partial 1 & 2
+    SS, //mix of synthe partial 1 and synthe partial 2
+    SSR, //mix of synthe partial 1 and ring mod of synthe partial 1 & 2
+    PS, //mix of PCM partial 1 and synthe partial 2
+    PSR, //mix of PCM partial 1 and ring mod of synthe partial 1 & 2
+    SPR, //mix of synthe partial 1 and ring mod of PCM partial 1 & 2
+    PP, //mix of PCM partial 1 and PCM partial 2
+    PPR //mix of PCM partial 1 and rinf mod of PCM partial 1 & 2
 } Structure;
 
 class Common {
 private:
-  char _toneName[TONENAME_LENGTH + 1];
-  Structure _structure;
-  TVP* _tvp;
-  LFO* _lfo1;
-  LFO* _lfo2;
-  LFO* _lfo3;
-  EQ* _eq;
-  Chorus* _chorus;
-  bool _partial1On;
-  bool _partial2On;
-  unsigned char _partialBalance;
+    char _toneName[TONENAME_LENGTH + 1];
+    Structure _structure;
+    TVP* _tvp;
+    LFO* _lfo1;
+    LFO* _lfo2;
+    LFO* _lfo3;
+    EQ* _eq;
+    Chorus* _chorus;
+    bool _partial1On;
+    bool _partial2On;
+    unsigned char _partialBalance;
 
 public:
-  Common(bool partial1On = false, bool partial2On = false);
-  ~Common();
+    Common(bool partial1On = false, bool partial2On = false);
+    ~Common();
 
-  //affect methods
-  void setToneName(char* s);
-  void setPartial1On(bool on);
-  void setPartial2On(bool on);
-  void setPartialBalance(unsigned char pb);
+    //affect methods
+    void setToneName(char* s);
+    void setPartial1On(bool on);
+    void setPartial2On(bool on);
+    void setPartialBalance(unsigned char pb);
 
-  //access methods
-  char* getToneName();
-  bool isPartial1On();
-  bool isPartial2On();
-  unsigned char getPartialBalance();
+    //access methods
+    char* getToneName();
+    bool isPartial1On();
+    bool isPartial2On();
+    unsigned char getPartialBalance();
 
-  //dump method
-  void dump(Address& a, unsigned length, unsigned char* data);
+    //dump method
+    void dump(Address& a, unsigned length, unsigned char* data);
 
-  //print methods 
-  char* StructureStr(Structure s);
-  char* StructureStr();
-  void print(int m);
+    //print methods 
+    char* StructureStr(Structure s);
+    char* StructureStr();
+    void print(int m);
 };
 
 #endif

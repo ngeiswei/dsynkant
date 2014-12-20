@@ -39,46 +39,46 @@
 #define DimensionStr "Dimension"
 
 typedef enum {
-  Chorus1,
-  Chorus2,
-  Flanger1,
-  Flanger2,
-  FeedbackChorus,
-  Tremolo,
-  ChorusTremolo,
-  Dimension
+    Chorus1,
+    Chorus2,
+    Flanger1,
+    Flanger2,
+    FeedbackChorus,
+    Tremolo,
+    ChorusTremolo,
+    Dimension
 } ChorusType;
 
 class Chorus {
 private:
-  ChorusType _type;
-  unsigned char _rate;
-  unsigned char _depth;
-  unsigned char _balance;
+    ChorusType _type;
+    unsigned char _rate;
+    unsigned char _depth;
+    unsigned char _balance;
   
 public:
-  Chorus();
-  ~Chorus();
+    Chorus();
+    ~Chorus();
   
-  //affect methods
-  void setType(ChorusType t);
-  void setRate(unsigned char r);
-  void setDepth(unsigned char d);
-  void setBalance(unsigned char b);
+    //affect methods
+    void setType(ChorusType t);
+    void setRate(unsigned char r);
+    void setDepth(unsigned char d);
+    void setBalance(unsigned char b);
 
-  //access methods
-  ChorusType getType();
-  unsigned char getRate();
-  unsigned char getDepth();
-  unsigned char getBalance();  
+    //access methods
+    ChorusType getType();
+    unsigned char getRate();
+    unsigned char getDepth();
+    unsigned char getBalance();  
 
-  //dump method
-  void dump(Address& a, unsigned length, unsigned char* data);
+    //dump method
+    void dump(Address& a, unsigned length, unsigned char* data);
 
-  //print and float methods
-  char* ChorusTypeStr(ChorusType t);
-  char* ChorusTypeStr();
-  void print(int m);
+    //print and float methods
+    char* ChorusTypeStr(ChorusType t);
+    char* ChorusTypeStr();
+    void print(int m);
 };
 
 #endif

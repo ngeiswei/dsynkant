@@ -29,9 +29,9 @@
 /* Constructor destructor */
 /**************************/
 BaseModulation::BaseModulation() {
-  _positivePhase = true;
-  _LFOSelect = 2;
-  _LFODepth = 0;
+    _positivePhase = true;
+    _LFOSelect = 2;
+    _LFODepth = 0;
 }
 
 BaseModulation::~BaseModulation() {
@@ -41,52 +41,52 @@ BaseModulation::~BaseModulation() {
 /* Affect methods */
 /******************/
 void BaseModulation::setLFOPhase(bool p) {
-  _positivePhase = p;
+    _positivePhase = p;
 }
 void BaseModulation::setLFOSelect(unsigned char ls) {
-  _LFOSelect = ls;
+    _LFOSelect = ls;
 }
 void BaseModulation::setLFODepth(unsigned char ld) {
-  _LFODepth = ld;
+    _LFODepth = ld;
 }
 
 /******************/
 /* Access methods */
 /******************/
 bool BaseModulation::getLFOPhase() {
-  return _positivePhase;
+    return _positivePhase;
 }
 unsigned char BaseModulation::getLFOSelect() {
-  return _LFOSelect;
+    return _LFOSelect;
 }
 unsigned char BaseModulation::getLFODepth() {
-  return _LFODepth;
+    return _LFODepth;
 }
 
 /***************/
 /* dump method */
 /***************/
 void BaseModulation::dump(Address& a, unsigned length, unsigned char* data) {
-  Address cura;
-  unsigned index = 0;
-  if(length > index && a == cura) {
-    _positivePhase = (0 == data[index]%2);
-    _LFOSelect = 1 + data[index]/2;
-    index++;
-    ++a;
-  }
-  ++cura;
-  if(length > index && a == cura) {
-    _LFODepth = data[index];
-    ++a;
-  }
+    Address cura;
+    unsigned index = 0;
+    if(length > index && a == cura) {
+        _positivePhase = (0 == data[index]%2);
+        _LFOSelect = 1 + data[index]/2;
+        index++;
+        ++a;
+    }
+    ++cura;
+    if(length > index && a == cura) {
+        _LFODepth = data[index];
+        ++a;
+    }
 }
 
 /****************/
 /* print method */
 /****************/
 void BaseModulation::print(int m) {
-  ps(m);
-  printf("Modulation = (LFO phase : %s, LFO select : %d, LFO depth : %d)\n",
-	 (_positivePhase? "+":"-"), _LFOSelect, _LFODepth);
+    ps(m);
+    printf("Modulation = (LFO phase : %s, LFO select : %d, LFO depth : %d)\n",
+           (_positivePhase? "+":"-"), _LFOSelect, _LFODepth);
 }
