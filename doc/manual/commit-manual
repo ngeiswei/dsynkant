@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#generate dsynkant-manual.pdf
+latex dsynkant-manual.tex
+dvipdf dsynkant-manual.dvi
+
+#commit dsynkant-manual.pdf
+scp dsynkant-manual.pdf a-lin@shell.sourceforge.net:/home/groups/d/ds/dsynkant/htdocs/dsynkant-manual
+
+#generate html version of manual
+latex2html dsynkant-manual.tex --address "Nil Geisweiller"
+latex2html dsynkant-manual.tex --address "Nil Geisweiller"
+
+#commit the html version
+scp -r dsynkant-manual a-lin@shell.sourceforge.net:/home/groups/d/ds/dsynkant/htdocs

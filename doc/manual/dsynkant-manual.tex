@@ -1,0 +1,49 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% Documentation of DSynkant %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{report}
+
+\title{User Manual of DSynkant}
+
+\author{Nil Geisweiller}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Introduction}
+
+\section{What is DSynkant?}
+
+DSynkant is virtual clone of the synthesizer D-50 of Roland.
+
+\section{How to install?}
+
+First you need to install DSSI. then just type :\\
+\begin{tabular}{l}
+./configure\\
+make\\
+make install
+\end{tabular}
+
+\section{How to use it}
+
+You need a DSSI host, like Rosegarden, MusE, Om\dots
+(I advice you not to use jack-dssi-host as it does not accept in input
+sysex messages yet). Please note that if you use Rosegarden you won't be able
+send patches to DSynkant due to the fact that
+Rosegarden loads only the first sysex in a file and disgards the others.
+I you use Rosegarden you will have to use an external sysex sender program
+like simplesysexxer or MusE.\\
+
+For the moment there is no GUI at all, everything is controlled by MIDI
+messages. If you want to edit D-50 patches you can use UniQuest VC-1 (but it
+costs money) and D50 Virtual Editor (there is a free version but slightly
+imcomplete, although usable). Maybe I will make an editor but it is not
+my prior goal.
+
+
+\end{document}

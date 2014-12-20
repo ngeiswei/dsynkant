@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#generate dsynkant-blueprint.pdf
+latex dsynkant-blueprint.tex
+dvipdf dsynkant-blueprint.dvi
+
+#commit dsynkant-blueprint.pdf
+scp dsynkant-blueprint.pdf a-lin@shell.sourceforge.net:/home/groups/d/ds/dsynkant/htdocs/dsynkant-blueprint
+
+#generate html version of blueprint
+latex2html dsynkant-blueprint.tex --address "Nil Geisweiller"
+latex2html dsynkant-blueprint.tex --address "Nil Geisweiller"
+
+#commit the html version
+scp -r dsynkant-blueprint a-lin@shell.sourceforge.net:/home/groups/d/ds/dsynkant/htdocs
