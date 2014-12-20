@@ -1,1 +1,1 @@
-add_executable(dssidsynkant dssidsynkant.cpp)
+add_library(dssidsynkant SHARED dssidsynkant.cpp)
