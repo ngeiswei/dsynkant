@@ -25,7 +25,7 @@
 #ifndef __DSSIDSYNKANT_HPP
 #define __DSSIDSYNKANT_HPP
 
-#include "dssiplugin.hpp"
+#include "dssi/dssiplugin.hpp"
 #include "dsynkant/dsynkant.hpp"
 
 class DSynkant;
