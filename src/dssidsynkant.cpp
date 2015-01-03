@@ -119,7 +119,7 @@ void initialise_2() {
     ports.add_port(LADSPA_PORT_AUDIO | LADSPA_PORT_OUTPUT, "Left output");
     ports.add_port(LADSPA_PORT_AUDIO | LADSPA_PORT_OUTPUT, "Right output");
   
-    register_dssi<DSSIDSynkant>(2050, "dssidsynkant", 0, "DSynkant", 
+    register_dssi<DSSIDSynkant>(2050, "DSynkant-DSSI", 0, "DSynkant DSSI plugin",
                                 "Nil Geisweiller", "GPL", ports);
 }
 
