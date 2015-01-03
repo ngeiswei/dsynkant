@@ -26,29 +26,27 @@
 #define __COMMONDEF_HPP
 
 #include <stdio.h>
+#include <string>
 
-#define MIN(x,y) (x<y?x:y)
-#define MAX(x,y) (x>y?x:y)
+const std::string minus1Str="-1";
+const std::string minus1div2Str="-1/2";
+const std::string minus1div4Str="-1/4";
+const std::string zeroStr="0";
+const std::string plus1div8Str="1/8";
+const std::string plus1div4Str="1/4";
+const std::string plus3div8Str="3/8";
+const std::string plus1div2Str="1/2";
+const std::string plus5div8Str="5/8";
+const std::string plus3div4Str="3/4";
+const std::string plus7div8Str="7/8";
+const std::string plus1Str="1";
+const std::string plus5div4Str="5/4";
+const std::string plus3div2Str="3/2";
+const std::string plus2Str="2";
+const std::string s1Str="s1";
+const std::string s2Str="s2";
 
-#define minus1Str "-1"
-#define minus1div2Str "-1/2"
-#define minus1div4Str "-1/4"
-#define zeroStr "0"
-#define plus1div8Str "1/8"
-#define plus1div4Str "1/4"
-#define plus3div8Str "3/8"
-#define plus1div2Str "1/2"
-#define plus5div8Str "5/8"
-#define plus3div4Str "3/4"
-#define plus7div8Str "7/8"
-#define plus1Str "1"
-#define plus5div4Str "5/4"
-#define plus3div2Str "3/2"
-#define plus2Str "2"
-#define s1Str "s1"
-#define s2Str "s2"
-
-typedef enum {
+enum class FracKeyFollow {
     minus1,
     minus1div2,
     minus1div4,
@@ -66,11 +64,11 @@ typedef enum {
     plus2,
     s1,
     s2
-} FracKeyFollow;
+};
 
 void ps(int n); //printf n space
 
-char* FracKeyFollowStr(FracKeyFollow kf);
+std::string FracKeyFollowStr(FracKeyFollow kf);
 
 char D50CharToASCII(unsigned char c);
 

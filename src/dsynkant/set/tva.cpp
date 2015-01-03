@@ -61,26 +61,23 @@ void TVA::setAftertouchRange(char ar) {
 /******************/
 /* Access methods */
 /******************/
-unsigned char TVA::getLevel() {
+unsigned char TVA::getLevel() const {
     return _level;
 }
-char TVA::getVelocityRange() {
+char TVA::getVelocityRange() const {
     return _velocityRange;
 }
-unsigned char TVA::getVelocityFollow() {
+unsigned char TVA::getVelocityFollow() const {
     return _velocityFollow;
 }
-unsigned char TVA::getKeyFollow() {
+unsigned char TVA::getKeyFollow() const {
     return _keyFollow;
 }
-char TVA::getAftertouchRange() {
+char TVA::getAftertouchRange() const {
     return _aftertouchRange;
 }
 
-/****************/
-/* dump method */
-/****************/
-void TVA::dump(Address& a, unsigned length, unsigned char* data) {
+void TVA::dump(Address& a, unsigned length, const unsigned char* data) {
     Address lowBound;
     Address upBound(1);
     unsigned index = 0;

@@ -41,25 +41,25 @@ private:
     unsigned char _LFODepth; //between 0 and 100
 
 public:
-    //constructor destructor
+    // Constructor destructor
     BaseModulation();
     ~BaseModulation();
 
-    //affect methods
+    // Affect methods
     void setLFOPhase(bool p);
     void setLFOSelect(unsigned char ls);
     void setLFODepth(unsigned char ld);
 
-    //access methods
-    bool getLFOPhase();
-    unsigned char getLFOSelect();
-    unsigned char getLFODepth();
+    // Access methods
+    bool getLFOPhase() const;
+    unsigned char getLFOSelect() const;
+    unsigned char getLFODepth() const;
 
-    //dump method
-    void dump(Address& a, unsigned length, unsigned char* data);
+    // Dump method. Note that 'a' will be incremented accordingly.
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
-    //print method
-    void print(int m); //print the modulation on the std output tabulated of m
+    // Print the modulation on the std output tabulated of m
+    void print(int m) const;
 };
 
 #endif

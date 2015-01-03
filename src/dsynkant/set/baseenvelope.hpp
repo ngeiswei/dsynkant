@@ -46,11 +46,11 @@ private:
     unsigned char _endLevel; //between 0 and 100
 
 public:
-    //constructor destructor
+    // Constructor destructor
     BaseEnvelope();
     ~BaseEnvelope();
 
-    //affect methods
+    // Affect methods
     void setTime1(unsigned char t1);
     void setLevel1(unsigned char l1);
     void setTime2(unsigned char t2);
@@ -62,23 +62,23 @@ public:
     void setTime5(unsigned char t5);
     void setEndLevel(unsigned char el);
 
-    //access methods
-    unsigned char getTime1();
-    unsigned char getLevel1();
-    unsigned char getTime2();
-    unsigned char getLevel2();
-    unsigned char getTime3();
-    unsigned char getLevel3();
-    unsigned char getTime4();
-    unsigned char getSustainLevel();
-    unsigned char getTime5();
-    unsigned char getEndLevel();
+    // Access methods
+    unsigned char getTime1() const;
+    unsigned char getLevel1() const;
+    unsigned char getTime2() const;
+    unsigned char getLevel2() const;
+    unsigned char getTime3() const;
+    unsigned char getLevel3() const;
+    unsigned char getTime4() const;
+    unsigned char getSustainLevel() const;
+    unsigned char getTime5() const;
+    unsigned char getEndLevel() const;
 
-    //bump method
-    void dump(Address& a, unsigned length, unsigned char* data);
+    // Bump method. Note that 'a' will be incremented accordingly.
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
-    //print method
-    void print(int m); //print the envelope on the std output tabulated of m
+    // Print the envelope on the std output tabulated of m
+    void print(int m) const ;
 };
 
 #endif

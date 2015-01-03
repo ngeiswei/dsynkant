@@ -22,12 +22,14 @@
 
 ****************************************************************************/
 
+#include <iostream>
+
 #include "chorus.hpp"
 #include "../commondef/commondef.hpp"
 
 //Constructor destructor
 Chorus::Chorus() {
-    _type = Chorus1;
+    _type = ChorusType::Chorus1;
     _rate = 50;
     _depth = 50;
     _balance = 0;
@@ -51,21 +53,20 @@ void Chorus::setBalance(unsigned char b) {
 }
 
 //access methods
-ChorusType Chorus::getType() {
+ChorusType Chorus::getType() const {
     return _type;
 }
-unsigned char Chorus::getRate() {
+unsigned char Chorus::getRate() const {
     return _rate;
 }
-unsigned char Chorus::getDepth() {
+unsigned char Chorus::getDepth() const {
     return _depth;
 }
-unsigned char Chorus::getBalance() {
+unsigned char Chorus::getBalance() const {
     return _balance;
 }
 
-//dump method
-void Chorus::dump(Address& a, unsigned length, unsigned char* data) {
+void Chorus::dump(Address& a, unsigned length, const unsigned char* data) {
     Address cura;
     unsigned index = 0;
     if(length > index & a == cura) {
@@ -93,27 +94,26 @@ void Chorus::dump(Address& a, unsigned length, unsigned char* data) {
 }
 
 //print methods
-char* Chorus::ChorusTypeStr(ChorusType t) {
+std::string Chorus::ChorusTypeStr(ChorusType t) const {
     switch(t) {
-    case Chorus1 : return Chorus1Str; break;
-    case Chorus2 : return Chorus2Str; break;
-    case Flanger1 : return Flanger1Str; break;
-    case Flanger2 : return Flanger2Str; break;
-    case FeedbackChorus : return FeedbackChorusStr; break;
-    case Tremolo : return TremoloStr; break;
-    case ChorusTremolo : return ChorusTremoloStr; break;
-    case Dimension : return DimensionStr; break;
+    case ChorusType::Chorus1 : return Chorus1Str; break;
+    case ChorusType::Chorus2 : return Chorus2Str; break;
+    case ChorusType::Flanger1 : return Flanger1Str; break;
+    case ChorusType::Flanger2 : return Flanger2Str; break;
+    case ChorusType::FeedbackChorus : return FeedbackChorusStr; break;
+    case ChorusType::Tremolo : return TremoloStr; break;
+    case ChorusType::ChorusTremolo : return ChorusTremoloStr; break;
+    case ChorusType::Dimension : return DimensionStr; break;
     default :
-        printf("Chorus::ChorusTypeStr : impossible case\n");
-        return NULL;
-        break;
+        std::cerr << "Chorus::ChorusTypeStr : impossible case";
+        return std::string();
     }
 }
-char* Chorus::ChorusTypeStr() {
+std::string Chorus::ChorusTypeStr() const {
     return ChorusTypeStr(_type);
 }
-void Chorus::print(int m) {
+void Chorus::print(int m) const {
     ps(m);
     printf("Chorus = (type : %s, rate : %d, depth : %d, balance : %d)\n",
-           ChorusTypeStr(), _rate, _depth, _balance);
+           ChorusTypeStr().c_str(), _rate, _depth, _balance);
 }

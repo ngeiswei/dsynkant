@@ -25,16 +25,14 @@
 #ifndef __ENGINE_HPP
 #define __ENGINE_HPP
 
-#include "../dsynkant.hpp"
-
 class DSynkant;
 
 class Engine {
 private:
-    DSynkant* _dsynkant;
+    DSynkant& _dsynkant;
 
 public:
-    Engine(DSynkant* ref);
+    Engine(DSynkant& ref);
     ~Engine();
 
     //print method

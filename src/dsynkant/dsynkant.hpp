@@ -41,7 +41,7 @@ public:
     DSynkant();
     ~DSynkant();
 
-    //assumption : the parameters are not changing during the audio process
+    // Assumption : the parameters are not changing during the audio process
     void audio_process(float* left_out, float* right_out,
                        unsigned long sample_count);
     void noteOn_process(int channel, int pitch, int velocity);

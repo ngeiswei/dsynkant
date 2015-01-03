@@ -56,11 +56,11 @@ private:
     unsigned char _pitchAftertouchModulation; //between 0 and 100
 
 public:
-    //constructor destructor
+    // Constructor destructor
     TVP();
     ~TVP();
 
-    //affect methods
+    // Affect methods
     void setVelocityRange(unsigned char vr);
     void setKeyFollow(unsigned char kf);
     void setLevel0(char l0);
@@ -76,27 +76,27 @@ public:
     void setPitchLeverModulation(unsigned char plm);
     void setPitchAftertouchModulation(unsigned char pam);
 
-    //dump method
-    void dump(Address& a, unsigned length, unsigned char* data);
+    // Dump method. Note that 'a' will be incremented accordingly.
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
-    //access methods
-    unsigned char getVelocityRange();
-    unsigned char getKeyFollow();
-    char getLevel0();
-    unsigned char getTime1();
-    char getLevel1();
-    unsigned char getTime2();
-    char getLevel2();
-    unsigned char getTime3();
-    char getSustainLevel();
-    unsigned char getTime4();
-    char getEndLevel();
-    unsigned char getLFODepth();
-    unsigned char getPitchLeverModulation();
-    unsigned char getPitchAftertouchModulation();
+    // Access methods
+    unsigned char getVelocityRange() const;
+    unsigned char getKeyFollow() const;
+    char getLevel0() const;
+    unsigned char getTime1() const;
+    char getLevel1() const;
+    unsigned char getTime2() const;
+    char getLevel2() const;
+    unsigned char getTime3() const;
+    char getSustainLevel() const;
+    unsigned char getTime4() const;
+    char getEndLevel() const;
+    unsigned char getLFODepth() const;
+    unsigned char getPitchLeverModulation() const;
+    unsigned char getPitchAftertouchModulation() const;
 
-    //print method
-    void print(int m); //print the TVP on the std output tabulated of m
+    // Print the TVP on the std output tabulated of m
+    void print(int m) const;
 };
 
 #endif

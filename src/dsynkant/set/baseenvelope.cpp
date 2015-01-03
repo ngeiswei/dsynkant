@@ -80,41 +80,38 @@ void BaseEnvelope::setEndLevel(unsigned char el) {
 /******************/
 /* Access methods */
 /******************/
-unsigned char BaseEnvelope::getTime1() {
+unsigned char BaseEnvelope::getTime1() const {
     return _time1;
 }
-unsigned char BaseEnvelope::getLevel1() {
+unsigned char BaseEnvelope::getLevel1() const {
     return _level1;
 }
-unsigned char BaseEnvelope::getTime2() {
+unsigned char BaseEnvelope::getTime2() const {
     return _time2;
 }
-unsigned char BaseEnvelope::getLevel2() {
+unsigned char BaseEnvelope::getLevel2() const {
     return _level2;
 }
-unsigned char BaseEnvelope::getTime3() {
+unsigned char BaseEnvelope::getTime3() const {
     return _time3;
 }
-unsigned char BaseEnvelope::getLevel3() {
+unsigned char BaseEnvelope::getLevel3() const {
     return _level3;
 }
-unsigned char BaseEnvelope::getTime4() {
+unsigned char BaseEnvelope::getTime4() const {
     return _time4;
 }
-unsigned char BaseEnvelope::getSustainLevel() {
+unsigned char BaseEnvelope::getSustainLevel() const {
     return _sustainLevel;
 }
-unsigned char BaseEnvelope::getTime5() {
+unsigned char BaseEnvelope::getTime5() const {
     return _time5;
 }
-unsigned char BaseEnvelope::getEndLevel() {
+unsigned char BaseEnvelope::getEndLevel() const {
     return _endLevel;
 }
 
-/***************/
-/* dump method */
-/***************/
-void BaseEnvelope::dump(Address& a, unsigned length, unsigned char* data) {
+void BaseEnvelope::dump(Address& a, unsigned length, const unsigned char* data) {
     Address cura; //current address
     unsigned index = 0;
     if(length > index && a == cura) {
@@ -177,10 +174,7 @@ void BaseEnvelope::dump(Address& a, unsigned length, unsigned char* data) {
     }
 }
 
-/****************/
-/* print method */
-/****************/
-void BaseEnvelope::print(int m) {
+void BaseEnvelope::print(int m) const {
     ps(m);
     printf("Envelope = " 
            "(T1:%d,L1:%d,T2:%d,L2:%d,T3:%d,L3:%d,T4:%d,SL:%d,T5:%d,EL:%d)\n",

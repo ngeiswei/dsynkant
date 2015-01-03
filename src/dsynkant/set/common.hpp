@@ -25,6 +25,8 @@
 #ifndef __COMMON_HPP
 #define __COMMON_HPP
 
+#include <string>
+
 #include "tvp.hpp"
 #include "lfo.hpp"
 #include "eq.hpp"
@@ -48,26 +50,26 @@ class Chorus;
 #define PPStr "Mix(P,P)"
 #define PPRStr "Mix(P,Ring(P,P))"
 
-typedef enum {
-    SS, //mix of synthe partial 1 and synthe partial 2
-    SSR, //mix of synthe partial 1 and ring mod of synthe partial 1 & 2
-    PS, //mix of PCM partial 1 and synthe partial 2
-    PSR, //mix of PCM partial 1 and ring mod of synthe partial 1 & 2
-    SPR, //mix of synthe partial 1 and ring mod of PCM partial 1 & 2
-    PP, //mix of PCM partial 1 and PCM partial 2
-    PPR //mix of PCM partial 1 and rinf mod of PCM partial 1 & 2
-} Structure;
+enum class Structure {
+    SS, // Mix of synthe partial 1 and synthe partial 2
+    SSR, // Mix of synthe partial 1 and ring mod of synthe partial 1 & 2
+    PS, // Mix of PCM partial 1 and synthe partial 2
+    PSR, // Mix of PCM partial 1 and ring mod of synthe partial 1 & 2
+    SPR, // Mix of synthe partial 1 and ring mod of PCM partial 1 & 2
+    PP, // Mix of PCM partial 1 and PCM partial 2
+    PPR // Mix of PCM partial 1 and rinf mod of PCM partial 1 & 2
+};
 
 class Common {
 private:
-    char _toneName[TONENAME_LENGTH + 1];
+    std::string _toneName;
     Structure _structure;
-    TVP* _tvp;
-    LFO* _lfo1;
-    LFO* _lfo2;
-    LFO* _lfo3;
-    EQ* _eq;
-    Chorus* _chorus;
+    TVP _tvp;
+    LFO _lfo1;
+    LFO _lfo2;
+    LFO _lfo3;
+    EQ _eq;
+    Chorus _chorus;
     bool _partial1On;
     bool _partial2On;
     unsigned char _partialBalance;
@@ -76,25 +78,25 @@ public:
     Common(bool partial1On = false, bool partial2On = false);
     ~Common();
 
-    //affect methods
-    void setToneName(char* s);
+    // Affect methods
+    void setToneName(const std::string& s);
     void setPartial1On(bool on);
     void setPartial2On(bool on);
     void setPartialBalance(unsigned char pb);
 
-    //access methods
-    char* getToneName();
-    bool isPartial1On();
-    bool isPartial2On();
-    unsigned char getPartialBalance();
+    // Access methods
+    const char* getToneName() const;
+    bool isPartial1On() const;
+    bool isPartial2On() const;
+    unsigned char getPartialBalance() const;
 
-    //dump method
-    void dump(Address& a, unsigned length, unsigned char* data);
+    // Dump method. Note that 'a' will be incremented accordingly.
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
-    //print methods 
-    char* StructureStr(Structure s);
-    char* StructureStr();
-    void print(int m);
+    // Print methods
+    std::string StructureStr(Structure s) const;
+    std::string StructureStr() const;
+    void print(int m) const;
 };
 
 #endif

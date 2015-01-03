@@ -53,24 +53,24 @@ public:
     TVA();
     ~TVA();
 
-    //affect methods
+    // Affect methods
     void setLevel(unsigned char l);
     void setVelocityRange(char vr);
     void setVelocityFollow(unsigned char vf);
     void setKeyFollow(unsigned char kf);
     void setAftertouchRange(char ar);
 
-    //access methods
-    unsigned char getLevel();
-    char getVelocityRange();
-    unsigned char getVelocityFollow();
-    unsigned char getKeyFollow();
-    char getAftertouchRange();
+    // Access methods
+    unsigned char getLevel() const;
+    char getVelocityRange() const;
+    unsigned char getVelocityFollow() const;
+    unsigned char getKeyFollow() const;
+    char getAftertouchRange() const;
 
-    //dump method
-    void dump(Address& a, unsigned length, unsigned char* data);
+    // Dump method. Note that 'a' will be incremented accordingly.
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
-    //print method
+    // Print method
     void print(int m); //print the TVA on the std output tabulated of m
 };
 

@@ -25,20 +25,22 @@
 #ifndef __CHORUS_HPP
 #define __CHORUS_HPP
 
+#include <string>
+
 #include "address.hpp"
 
 #define DUMP_CHORUS_LENGTH 4
 
-#define Chorus1Str "Chorus 1"
-#define Chorus2Str "Chorus 2"
-#define Flanger1Str "Flanger 1"
-#define Flanger2Str "Flanger 2"
-#define FeedbackChorusStr "Feedback Chorus"
-#define TremoloStr "Tremolo"
-#define ChorusTremoloStr "Chorus Tremolo"
-#define DimensionStr "Dimension"
+const std::string Chorus1Str="Chorus 1";
+const std::string Chorus2Str="Chorus 2";
+const std::string Flanger1Str="Flanger 1";
+const std::string Flanger2Str="Flanger 2";
+const std::string FeedbackChorusStr="Feedback Chorus";
+const std::string TremoloStr="Tremolo";
+const std::string ChorusTremoloStr="Chorus Tremolo";
+const std::string DimensionStr="Dimension";
 
-typedef enum {
+enum class ChorusType {
     Chorus1,
     Chorus2,
     Flanger1,
@@ -47,7 +49,7 @@ typedef enum {
     Tremolo,
     ChorusTremolo,
     Dimension
-} ChorusType;
+};
 
 class Chorus {
 private:
@@ -60,25 +62,25 @@ public:
     Chorus();
     ~Chorus();
   
-    //affect methods
+    // Affect methods
     void setType(ChorusType t);
     void setRate(unsigned char r);
     void setDepth(unsigned char d);
     void setBalance(unsigned char b);
 
-    //access methods
-    ChorusType getType();
-    unsigned char getRate();
-    unsigned char getDepth();
-    unsigned char getBalance();  
+    // Access methods
+    ChorusType getType() const;
+    unsigned char getRate() const;
+    unsigned char getDepth() const;
+    unsigned char getBalance() const;
 
-    //dump method
-    void dump(Address& a, unsigned length, unsigned char* data);
+    // Dump method. Note that 'a' will be incremented accordingly.
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
-    //print and float methods
-    char* ChorusTypeStr(ChorusType t);
-    char* ChorusTypeStr();
-    void print(int m);
+    // Print and float methods
+    std::string ChorusTypeStr(ChorusType t) const;
+    std::string ChorusTypeStr() const;
+    void print(int m) const;
 };
 
 #endif

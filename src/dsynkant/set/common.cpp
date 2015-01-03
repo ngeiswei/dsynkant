@@ -22,40 +22,24 @@
 
 ****************************************************************************/
 
+#include <iostream>
+#include <stdio.h>
+#include <string>
+
 #include "common.hpp"
 #include "../commondef/commondef.hpp"
-#include <stdio.h>
-#include <string.h>
 
 //constructor destrtuctor
-Common::Common(bool partial1On, bool partial2On) {
-    setToneName("Init");
-    _structure = SS;
-    _tvp = new TVP();
-    _lfo1 = new LFO();
-    _lfo2 = new LFO();
-    _lfo3 = new LFO();
-    _eq = new EQ();
-    _chorus = new Chorus();
-    _partial1On = partial1On;
-    _partial2On = partial2On;
-    _partialBalance = 50;
+Common::Common(bool partial1On, bool partial2On)
+    : _toneName("Init"), _structure(Structure::SS), _partial1On(partial1On),
+      _partial2On(partial2On), _partialBalance(50) {}
+
+Common::~Common() {}
+
+void Common::setToneName(const std::string& s) {
+    _toneName = s;
 }
 
-Common::~Common() {
-    delete(_tvp);
-    delete(_lfo1);
-    delete(_lfo2);
-    delete(_lfo3);
-    delete(_eq);
-    delete(_chorus);
-}
-
-//affect methods  
-void Common::setToneName(char* s) {
-    strncpy(_toneName, s, TONENAME_LENGTH);
-    _toneName[TONENAME_LENGTH] = '\0';
-}
 void Common::setPartial1On(bool on) {
     _partial1On = on;
 }
@@ -67,36 +51,32 @@ void Common::setPartialBalance(unsigned char pb) {
 }
 
 //access methods
-char* Common::getToneName() {
-    return _toneName;
-}
-unsigned char Common::getPartialBalance() {
+unsigned char Common::getPartialBalance() const {
     return _partialBalance;
 }
-bool Common::isPartial1On() {
+bool Common::isPartial1On() const {
     return _partial1On;
 }
-bool Common::isPartial2On() {
+bool Common::isPartial2On() const {
     return _partial2On;
 }
 
 //dump method
-void Common::dump(Address& a, unsigned length, unsigned char* data) {
+void Common::dump(Address& a, unsigned length, const unsigned char* data) {
     Address lowBound;
     Address upBound(TONENAME_LENGTH);
     unsigned index = 0;
     if(a == lowBound) {
         while(index < length && index < TONENAME_LENGTH) {
-            _toneName[index] = D50CharToASCII(data[index]);
+            _toneName += D50CharToASCII(data[index]);
             index++;
             ++a;
         }
-        _toneName[index] = '\0';
     }
     lowBound += TONENAME_LENGTH;
-    ++upBound; 
+    ++upBound;
     if(length > index && a == lowBound) {
-        _structure = (Structure) data[index];
+        _structure = static_cast<Structure>(data[index]);
         index++;
         ++a;
     }
@@ -105,7 +85,7 @@ void Common::dump(Address& a, unsigned length, unsigned char* data) {
     if(length > index && a >= lowBound && a < upBound) {
         Address la = a - lowBound;
         Address prela = la;
-        _tvp->dump(la, length - index, &data[index]);
+        _tvp.dump(la, length - index, &data[index]);
         Address diffa = la - prela;
         index += diffa.toInt();
         a += diffa;
@@ -115,7 +95,7 @@ void Common::dump(Address& a, unsigned length, unsigned char* data) {
     if(length > index && a >= lowBound && a < upBound) {
         Address la = a - lowBound;
         Address prela = la;
-        _lfo1->dump(la, length - index, &data[index]);
+        _lfo1.dump(la, length - index, &data[index]);
         Address diffa = la - prela;
         index += diffa.toInt();
         a += diffa;
@@ -125,7 +105,7 @@ void Common::dump(Address& a, unsigned length, unsigned char* data) {
     if(length > index && a >= lowBound && a < upBound) {
         Address la = a - lowBound;
         Address prela = la;
-        _lfo2->dump(la, length - index, &data[index]);
+        _lfo2.dump(la, length - index, &data[index]);
         Address diffa = la - prela;
         index += diffa.toInt();
         a += diffa;
@@ -135,7 +115,7 @@ void Common::dump(Address& a, unsigned length, unsigned char* data) {
     if(length > index && a >= lowBound && a < upBound) {
         Address la = a - lowBound;
         Address prela = la;
-        _lfo3->dump(la, length - index, &data[index]);
+        _lfo3.dump(la, length - index, &data[index]);
         Address diffa = la - prela;
         index += diffa.toInt();
         a += diffa;
@@ -145,7 +125,7 @@ void Common::dump(Address& a, unsigned length, unsigned char* data) {
     if(length > index && a >= lowBound && a < upBound) {
         Address la = a - lowBound;
         Address prela = la;
-        _eq->dump(la, length - index, &data[index]);
+        _eq.dump(la, length - index, &data[index]);
         Address diffa = la - prela;
         index += diffa.toInt();
         a += diffa;
@@ -155,7 +135,7 @@ void Common::dump(Address& a, unsigned length, unsigned char* data) {
     if(length > index && a >= lowBound && a < upBound) {
         Address la = a - lowBound;
         Address prela = la;
-        _chorus->dump(la, length - index, &data[index]);
+        _chorus.dump(la, length - index, &data[index]);
         Address diffa = la - prela;
         index += diffa.toInt();
         a += diffa;
@@ -175,36 +155,34 @@ void Common::dump(Address& a, unsigned length, unsigned char* data) {
     }
 }
 
-//print methods
-char* Common::StructureStr(Structure s) {
+std::string Common::StructureStr(Structure s) const {
     switch(s) {
-    case SS : return SSStr; break;
-    case SSR : return SSRStr; break;
-    case PS : return PSStr; break;
-    case PSR : return PSRStr; break;
-    case SPR : return SPRStr; break;
-    case PP : return PPStr; break;
-    case PPR : return PPRStr; break;
+    case Structure::SS : return SSStr; break;
+    case Structure::SSR : return SSRStr; break;
+    case Structure::PS : return PSStr; break;
+    case Structure::PSR : return PSRStr; break;
+    case Structure::SPR : return SPRStr; break;
+    case Structure::PP : return PPStr; break;
+    case Structure::PPR : return PPRStr; break;
     default :
-        printf("Common::StructureStr : impossible case\n");
-        return NULL;
-        break;
+        std::cerr << "Common::StructureStr : impossible case";
+        return std::string();
     }
 }
-char* Common::StructureStr() {
+std::string Common::StructureStr() const {
     return StructureStr(_structure);
 }
-void Common::print(int m) {
+void Common::print(int m) const {
     ps(m);
-    printf("Tone name = %s\n", _toneName);
+    printf("Tone name = %s\n", _toneName.c_str());
     ps(m);
-    printf("Structure = %s\n", StructureStr());
-    _tvp->print(m);
-    _lfo1->print(m);
-    _lfo2->print(m);
-    _lfo3->print(m);
-    _eq->print(m);
-    _chorus->print(m);
+    printf("Structure = %s\n", StructureStr().c_str());
+    _tvp.print(m);
+    _lfo1.print(m);
+    _lfo2.print(m);
+    _lfo3.print(m);
+    _eq.print(m);
+    _chorus.print(m);
     ps(m);
     printf("Partial mute = (P1 : %d, P2 : %d)\n",
            isPartial1On(), isPartial2On());

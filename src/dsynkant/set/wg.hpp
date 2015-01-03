@@ -68,7 +68,7 @@ typedef enum {
 #define squareStr "square"
 #define sawtoothStr "sawtooth"
 
-typedef enum {
+enum class WGPCMWaveNo {
     Marimba,
     Vibraphone,
     Xylophone_1,
@@ -169,209 +169,209 @@ typedef enum {
     Loop_22,
     Loop_23,
     Loop_24
-} WGPCMWaveNo;
+};
 
-#define Marimba_Str "Marimba"
-#define Vibraphone_Str "Vibraphone"
-#define Xylophone_1_Str "Xylophone 1"
-#define Xylophone_2_Str "Xylophone 2"
-#define Log_Bass_Str "Log Bass"
-#define Hammer_Str "Hammer"
-#define Japanese_Drum_Str "Japanese Drum"
-#define Kalimba_Str "Kalimba"
-#define Pluck_1_Str "Pluck 1"
-#define Chink_Str "Chink"
-#define Agogo_Str "Agogo"
-#define Triangle_Str "Triangle"
-#define Bells_Str "Bells"
-#define Nail_File_Str "Nail File"
-#define Pick_Str "Pick"
-#define Low_Piano_Str "Low Piano"
-#define Mid_Piano_Str "Mid Piano"
-#define High_Piano_Str "High Piano"
-#define Harpsichord_Str "Harpsichord"
-#define Harp_Str "Harp"
-#define Organ_Percussion_Str "Organ Percussion"
-#define Steel_Strings_Str "Steel Strings"
-#define Nylon_Strings_Str "Nylon Strings"
-#define Electric_Guitar_1_Str "Electric Guitar 1"
-#define Electric_Guitar_2_Str "Electric Guitar 2"
-#define Dirty_Guitar_Str "Dirty Guitar"
-#define Pick_Bass_Str "Pick Bass"
-#define Pop_Bass_Str "Pop Bass"
-#define Thump_Str "Thump"
-#define Upright_Bass_Str "Upright Bass"
-#define Clarinet_Str "Clarinet"
-#define Breath_Str "Breath"
-#define Steamer_Str "Steamer"
-#define High_Flute_Str "High Flute"
-#define Low_Flute_Str "Low Flute"
-#define Guiro_Str "Guiro"
-#define Indian_Flute_Str "Indian Flute"
-#define Flute_Harmonics_Str "Flute Harmonics"
-#define Lips_1_Str "Lips 1"
-#define Lips_2_Str "Lips 2"
-#define Trumpet_Str "Trumpet"
-#define Trombones_Str "Trombones"
-#define Contrabass_Str "Contrabass"
-#define Cello_Str "Cello"
-#define Violon_Bow_Str "Violon Bow"
-#define Violins_Str "Violins"
-#define Pizzicart_Str "Pizzicart"
-#define Draws_bars_Loop_Str "Draws bars Loop"
-#define High_Organ_Loop_Str "High Organ Loop"
-#define Low_Organ_Loop_Str "Low Organ Loop"
-#define Electric_Piano_Loop_1_Str "Electric Piano Loop 1"
-#define Electric_Piano_Loop_2_Str "Electric Piano Loop 2"
-#define Clavi_Loop_Str "Clavi Loop"
-#define Harpsichord_Loop_Str "Harpsichord Loop"
-#define Electric_Bass_Loop_1_Str "Electric_Bass Loop 1"
-#define Acoustic_Bass_Loop_Str "Acoustic Bass Loop"
-#define Electric_Bass_Loop_2_Str "Electric Bass Loop 2"
-#define Electric_Bass_Loop_3_Str "Electric Bass Loop 3"
-#define Electric_Guitar_Loop_Str "Electric Guitar Loop"
-#define Cello_Loop_Str "Cello Loop"
-#define Violin_Loop_Str "Violin Loop"
-#define Lead_Loop_Str "Lead Loop"
-#define Sax_Loop_1_Str "Sax Loop 1"
-#define Sax_Loop_2_Str "Sax Loop 2"
-#define Aah_Loop_Str "Aah Loop"
-#define Ooh_Loop_Str "Ooh Loop"
-#define Male_Loop_1_Str "Male Loop 1"
-#define Spectrum_1_Loop_Str "Spectrum 1 Loop"
-#define Spectrum_2_Loop_Str "Spectrum 2 Loop"
-#define Spectrum_3_Loop_Str "Spectrum 3 Loop"
-#define Spectrum_4_Loop_Str "Spectrum 4 Loop"
-#define Spectrum_5_Loop_Str "Spectrum 5 Loop"
-#define Spectrum_6_Loop_Str "Spectrum 6 Loop"
-#define Spectrum_7_Loop_Str "Spectrum 7 Loop"
-#define Male_Loop_2_Str "Male Loop 2"
-#define Noise_Loop_Str "Noise Loop"
-#define Loop_01_Str "Loop 01"
-#define Loop_02_Str "Loop 02"
-#define Loop_03_Str "Loop 03"
-#define Loop_04_Str "Loop 04"
-#define Loop_05_Str "Loop 05"
-#define Loop_06_Str "Loop 06"
-#define Loop_07_Str "Loop 07"
-#define Loop_08_Str "Loop 08"
-#define Loop_09_Str "Loop 09"
-#define Loop_10_Str "Loop 10"
-#define Loop_11_Str "Loop 11"
-#define Loop_12_Str "Loop 12"
-#define Loop_13_Str "Loop 13"
-#define Loop_14_Str "Loop 14"
-#define Loop_15_Str "Loop 15"
-#define Loop_16_Str "Loop 16"
-#define Loop_17_Str "Loop 17"
-#define Loop_18_Str "Loop 18"
-#define Loop_19_Str "Loop 19"
-#define Loop_20_Str "Loop 20"
-#define Loop_21_Str "Loop 21"
-#define Loop_22_Str "Loop 22"
-#define Loop_23_Str "Loop 23"
-#define Loop_24_Str "Loop 24"
+const std::string Marimba_Str="Marimba";
+const std::string Vibraphone_Str="Vibraphone";
+const std::string Xylophone_1_Str="Xylophone 1";
+const std::string Xylophone_2_Str="Xylophone 2";
+const std::string Log_Bass_Str="Log Bass";
+const std::string Hammer_Str="Hammer";
+const std::string Japanese_Drum_Str="Japanese Drum";
+const std::string Kalimba_Str="Kalimba";
+const std::string Pluck_1_Str="Pluck 1";
+const std::string Chink_Str="Chink";
+const std::string Agogo_Str="Agogo";
+const std::string Triangle_Str="Triangle";
+const std::string Bells_Str="Bells";
+const std::string Nail_File_Str="Nail File";
+const std::string Pick_Str="Pick";
+const std::string Low_Piano_Str="Low Piano";
+const std::string Mid_Piano_Str="Mid Piano";
+const std::string High_Piano_Str="High Piano";
+const std::string Harpsichord_Str="Harpsichord";
+const std::string Harp_Str="Harp";
+const std::string Organ_Percussion_Str="Organ Percussion";
+const std::string Steel_Strings_Str="Steel Strings";
+const std::string Nylon_Strings_Str="Nylon Strings";
+const std::string Electric_Guitar_1_Str="Electric Guitar 1";
+const std::string Electric_Guitar_2_Str="Electric Guitar 2";
+const std::string Dirty_Guitar_Str="Dirty Guitar";
+const std::string Pick_Bass_Str="Pick Bass";
+const std::string Pop_Bass_Str="Pop Bass";
+const std::string Thump_Str="Thump";
+const std::string Upright_Bass_Str="Upright Bass";
+const std::string Clarinet_Str="Clarinet";
+const std::string Breath_Str="Breath";
+const std::string Steamer_Str="Steamer";
+const std::string High_Flute_Str="High Flute";
+const std::string Low_Flute_Str="Low Flute";
+const std::string Guiro_Str="Guiro";
+const std::string Indian_Flute_Str="Indian Flute";
+const std::string Flute_Harmonics_Str="Flute Harmonics";
+const std::string Lips_1_Str="Lips 1";
+const std::string Lips_2_Str="Lips 2";
+const std::string Trumpet_Str="Trumpet";
+const std::string Trombones_Str="Trombones";
+const std::string Contrabass_Str="Contrabass";
+const std::string Cello_Str="Cello";
+const std::string Violon_Bow_Str="Violon Bow";
+const std::string Violins_Str="Violins";
+const std::string Pizzicart_Str="Pizzicart";
+const std::string Draws_bars_Loop_Str="Draws bars Loop";
+const std::string High_Organ_Loop_Str="High Organ Loop";
+const std::string Low_Organ_Loop_Str="Low Organ Loop";
+const std::string Electric_Piano_Loop_1_Str="Electric Piano Loop 1";
+const std::string Electric_Piano_Loop_2_Str="Electric Piano Loop 2";
+const std::string Clavi_Loop_Str="Clavi Loop";
+const std::string Harpsichord_Loop_Str="Harpsichord Loop";
+const std::string Electric_Bass_Loop_1_Str="Electric_Bass Loop 1";
+const std::string Acoustic_Bass_Loop_Str="Acoustic Bass Loop";
+const std::string Electric_Bass_Loop_2_Str="Electric Bass Loop 2";
+const std::string Electric_Bass_Loop_3_Str="Electric Bass Loop 3";
+const std::string Electric_Guitar_Loop_Str="Electric Guitar Loop";
+const std::string Cello_Loop_Str="Cello Loop";
+const std::string Violin_Loop_Str="Violin Loop";
+const std::string Lead_Loop_Str="Lead Loop";
+const std::string Sax_Loop_1_Str="Sax Loop 1";
+const std::string Sax_Loop_2_Str="Sax Loop 2";
+const std::string Aah_Loop_Str="Aah Loop";
+const std::string Ooh_Loop_Str="Ooh Loop";
+const std::string Male_Loop_1_Str="Male Loop 1";
+const std::string Spectrum_1_Loop_Str="Spectrum 1 Loop";
+const std::string Spectrum_2_Loop_Str="Spectrum 2 Loop";
+const std::string Spectrum_3_Loop_Str="Spectrum 3 Loop";
+const std::string Spectrum_4_Loop_Str="Spectrum 4 Loop";
+const std::string Spectrum_5_Loop_Str="Spectrum 5 Loop";
+const std::string Spectrum_6_Loop_Str="Spectrum 6 Loop";
+const std::string Spectrum_7_Loop_Str="Spectrum 7 Loop";
+const std::string Male_Loop_2_Str="Male Loop 2";
+const std::string Noise_Loop_Str="Noise Loop";
+const std::string Loop_01_Str="Loop 01";
+const std::string Loop_02_Str="Loop 02";
+const std::string Loop_03_Str="Loop 03";
+const std::string Loop_04_Str="Loop 04";
+const std::string Loop_05_Str="Loop 05";
+const std::string Loop_06_Str="Loop 06";
+const std::string Loop_07_Str="Loop 07";
+const std::string Loop_08_Str="Loop 08";
+const std::string Loop_09_Str="Loop 09";
+const std::string Loop_10_Str="Loop 10";
+const std::string Loop_11_Str="Loop 11";
+const std::string Loop_12_Str="Loop 12";
+const std::string Loop_13_Str="Loop 13";
+const std::string Loop_14_Str="Loop 14";
+const std::string Loop_15_Str="Loop 15";
+const std::string Loop_16_Str="Loop 16";
+const std::string Loop_17_Str="Loop 17";
+const std::string Loop_18_Str="Loop 18";
+const std::string Loop_19_Str="Loop 19";
+const std::string Loop_20_Str="Loop 20";
+const std::string Loop_21_Str="Loop 21";
+const std::string Loop_22_Str="Loop 22";
+const std::string Loop_23_Str="Loop 23";
+const std::string Loop_24_Str="Loop 24";
 
-#define Marimba_Short_Str "Marmba"
-#define Vibraphone_Short_Str "Vibes"
-#define Xylophone_1_Short_Str "Xylo1"
-#define Xylophone_2_Short_Str "Xylo2"
-#define Log_Bass_Short_Str "Log_Bs"
-#define Hammer_Short_Str "Hammer"
-#define Japanese_Drum_Short_Str "JpnDrm"
-#define Kalimba_Short_Str "Kalmba"
-#define Pluck_1_Short_Str "Pluck1"
-#define Chink_Short_Str "Chink"
-#define Agogo_Short_Str "Agogo"
-#define Triangle_Short_Str "3angle"
-#define Bells_Short_Str "Bells"
-#define Nail_File_Short_Str "Nails"
-#define Pick_Short_Str "Pick"
-#define Low_Piano_Short_Str "LPiano"
-#define Mid_Piano_Short_Str "MPiano"
-#define High_Piano_Short_Str "HPiano"
-#define Harpsichord_Short_Str "Harpsi"
-#define Harp_Short_Str "Harp"
-#define Organ_Percussion_Short_Str "Orgprc"
-#define Steel_Strings_Short_Str "Steel"
-#define Nylon_Strings_Short_Str "Nylon"
-#define Electric_Guitar_1_Short_Str "Eguit1"
-#define Electric_Guitar_2_Short_Str "Eguit2"
-#define Dirty_Guitar_Short_Str "Dirt"
-#define Pick_Bass_Short_Str "P_Bass"
-#define Pop_Bass_Short_Str "Pop"
-#define Thump_Short_Str "Thump"
-#define Upright_Bass_Short_Str "Uprit"
-#define Clarinet_Short_Str "Clarnt"
-#define Breath_Short_Str "Breath"
-#define Steamer_Short_Str "Steam"
-#define High_Flute_Short_Str "FluteH"
-#define Low_Flute_Short_Str "FluteL"
-#define Guiro_Short_Str "Guiro"
-#define Indian_Flute_Short_Str "IndFlt"
-#define Flute_Harmonics_Short_Str "Harmo"
-#define Lips_1_Short_Str "Lips1"
-#define Lips_2_Short_Str "Lips2"
-#define Trumpet_Short_Str "Trumpt"
-#define Trombones_Short_Str "Bones"
-#define Contrabass_Short_Str "Contra"
-#define Cello_Short_Str "Cello"
-#define Violon_Bow_Short_Str "VioBow"
-#define Violins_Short_Str "Violns"
-#define Pizzicart_Short_Str "Pizz"
-#define Draws_bars_Loop_Short_Str "Drawbr"
-#define High_Organ_Loop_Short_Str "Horgan"
-#define Low_Organ_Loop_Short_Str "Lorgan"
-#define Electric_Piano_Loop_1_Short_Str "EP_lp1"
-#define Electric_Piano_Loop_2_Short_Str "EP_lp2"
-#define Clavi_Loop_Short_Str "CLAVlp"
-#define Harpsichord_Loop_Short_Str "HC_lp"
-#define Electric_Bass_Loop_1_Short_Str "EB_lp1"
-#define Acoustic_Bass_Loop_Short_Str "AB_lp"
-#define Electric_Bass_Loop_2_Short_Str "EB_lp2"
-#define Electric_Bass_Loop_3_Short_Str "EB_lp3"
-#define Electric_Guitar_Loop_Short_Str "EG_lp"
-#define Cello_Loop_Short_Str "CELLlp"
-#define Violin_Loop_Short_Str "VIOLlp"
-#define Lead_Loop_Short_Str "Reedlp"
-#define Sax_Loop_1_Short_Str "SAXlp1"
-#define Sax_Loop_2_Short_Str "SAXlp2"
-#define Aah_Loop_Short_Str "Aah_lp"
-#define Ooh_Loop_Short_Str "Ooh_lp"
-#define Male_Loop_1_Short_Str "Manlp1"
-#define Spectrum_1_Loop_Short_Str "Spect1"
-#define Spectrum_2_Loop_Short_Str "Spect2"
-#define Spectrum_3_Loop_Short_Str "Spect3"
-#define Spectrum_4_Loop_Short_Str "Spect4"
-#define Spectrum_5_Loop_Short_Str "Spect5"
-#define Spectrum_6_Loop_Short_Str "Spect6"
-#define Spectrum_7_Loop_Short_Str "Spect7"
-#define Male_Loop_2_Short_Str "Manlp2"
-#define Noise_Loop_Short_Str "Noise"
-#define Loop_01_Short_Str "Loop01"
-#define Loop_02_Short_Str "Loop02"
-#define Loop_03_Short_Str "Loop03"
-#define Loop_04_Short_Str "Loop04"
-#define Loop_05_Short_Str "Loop05"
-#define Loop_06_Short_Str "Loop06"
-#define Loop_07_Short_Str "Loop07"
-#define Loop_08_Short_Str "Loop08"
-#define Loop_09_Short_Str "Loop09"
-#define Loop_10_Short_Str "Loop10"
-#define Loop_11_Short_Str "Loop11"
-#define Loop_12_Short_Str "Loop12"
-#define Loop_13_Short_Str "Loop13"
-#define Loop_14_Short_Str "Loop14"
-#define Loop_15_Short_Str "Loop15"
-#define Loop_16_Short_Str "Loop16"
-#define Loop_17_Short_Str "Loop17"
-#define Loop_18_Short_Str "Loop18"
-#define Loop_19_Short_Str "Loop19"
-#define Loop_20_Short_Str "Loop20"
-#define Loop_21_Short_Str "Loop21"
-#define Loop_22_Short_Str "Loop22"
-#define Loop_23_Short_Str "Loop23"
-#define Loop_24_Short_Str "Loop24"
+const std::string Marimba_Short_Str="Marmba";
+const std::string Vibraphone_Short_Str="Vibes";
+const std::string Xylophone_1_Short_Str="Xylo1";
+const std::string Xylophone_2_Short_Str="Xylo2";
+const std::string Log_Bass_Short_Str="Log_Bs";
+const std::string Hammer_Short_Str="Hammer";
+const std::string Japanese_Drum_Short_Str="JpnDrm";
+const std::string Kalimba_Short_Str="Kalmba";
+const std::string Pluck_1_Short_Str="Pluck1";
+const std::string Chink_Short_Str="Chink";
+const std::string Agogo_Short_Str="Agogo";
+const std::string Triangle_Short_Str="3angle";
+const std::string Bells_Short_Str="Bells";
+const std::string Nail_File_Short_Str="Nails";
+const std::string Pick_Short_Str="Pick";
+const std::string Low_Piano_Short_Str="LPiano";
+const std::string Mid_Piano_Short_Str="MPiano";
+const std::string High_Piano_Short_Str="HPiano";
+const std::string Harpsichord_Short_Str="Harpsi";
+const std::string Harp_Short_Str="Harp";
+const std::string Organ_Percussion_Short_Str="Orgprc";
+const std::string Steel_Strings_Short_Str="Steel";
+const std::string Nylon_Strings_Short_Str="Nylon";
+const std::string Electric_Guitar_1_Short_Str="Eguit1";
+const std::string Electric_Guitar_2_Short_Str="Eguit2";
+const std::string Dirty_Guitar_Short_Str="Dirt";
+const std::string Pick_Bass_Short_Str="P_Bass";
+const std::string Pop_Bass_Short_Str="Pop";
+const std::string Thump_Short_Str="Thump";
+const std::string Upright_Bass_Short_Str="Uprit";
+const std::string Clarinet_Short_Str="Clarnt";
+const std::string Breath_Short_Str="Breath";
+const std::string Steamer_Short_Str="Steam";
+const std::string High_Flute_Short_Str="FluteH";
+const std::string Low_Flute_Short_Str="FluteL";
+const std::string Guiro_Short_Str="Guiro";
+const std::string Indian_Flute_Short_Str="IndFlt";
+const std::string Flute_Harmonics_Short_Str="Harmo";
+const std::string Lips_1_Short_Str="Lips1";
+const std::string Lips_2_Short_Str="Lips2";
+const std::string Trumpet_Short_Str="Trumpt";
+const std::string Trombones_Short_Str="Bones";
+const std::string Contrabass_Short_Str="Contra";
+const std::string Cello_Short_Str="Cello";
+const std::string Violon_Bow_Short_Str="VioBow";
+const std::string Violins_Short_Str="Violns";
+const std::string Pizzicart_Short_Str="Pizz";
+const std::string Draws_bars_Loop_Short_Str="Drawbr";
+const std::string High_Organ_Loop_Short_Str="Horgan";
+const std::string Low_Organ_Loop_Short_Str="Lorgan";
+const std::string Electric_Piano_Loop_1_Short_Str="EP_lp1";
+const std::string Electric_Piano_Loop_2_Short_Str="EP_lp2";
+const std::string Clavi_Loop_Short_Str="CLAVlp";
+const std::string Harpsichord_Loop_Short_Str="HC_lp";
+const std::string Electric_Bass_Loop_1_Short_Str="EB_lp1";
+const std::string Acoustic_Bass_Loop_Short_Str="AB_lp";
+const std::string Electric_Bass_Loop_2_Short_Str="EB_lp2";
+const std::string Electric_Bass_Loop_3_Short_Str="EB_lp3";
+const std::string Electric_Guitar_Loop_Short_Str="EG_lp";
+const std::string Cello_Loop_Short_Str="CELLlp";
+const std::string Violin_Loop_Short_Str="VIOLlp";
+const std::string Lead_Loop_Short_Str="Reedlp";
+const std::string Sax_Loop_1_Short_Str="SAXlp1";
+const std::string Sax_Loop_2_Short_Str="SAXlp2";
+const std::string Aah_Loop_Short_Str="Aah_lp";
+const std::string Ooh_Loop_Short_Str="Ooh_lp";
+const std::string Male_Loop_1_Short_Str="Manlp1";
+const std::string Spectrum_1_Loop_Short_Str="Spect1";
+const std::string Spectrum_2_Loop_Short_Str="Spect2";
+const std::string Spectrum_3_Loop_Short_Str="Spect3";
+const std::string Spectrum_4_Loop_Short_Str="Spect4";
+const std::string Spectrum_5_Loop_Short_Str="Spect5";
+const std::string Spectrum_6_Loop_Short_Str="Spect6";
+const std::string Spectrum_7_Loop_Short_Str="Spect7";
+const std::string Male_Loop_2_Short_Str="Manlp2";
+const std::string Noise_Loop_Short_Str="Noise";
+const std::string Loop_01_Short_Str="Loop01";
+const std::string Loop_02_Short_Str="Loop02";
+const std::string Loop_03_Short_Str="Loop03";
+const std::string Loop_04_Short_Str="Loop04";
+const std::string Loop_05_Short_Str="Loop05";
+const std::string Loop_06_Short_Str="Loop06";
+const std::string Loop_07_Short_Str="Loop07";
+const std::string Loop_08_Short_Str="Loop08";
+const std::string Loop_09_Short_Str="Loop09";
+const std::string Loop_10_Short_Str="Loop10";
+const std::string Loop_11_Short_Str="Loop11";
+const std::string Loop_12_Short_Str="Loop12";
+const std::string Loop_13_Short_Str="Loop13";
+const std::string Loop_14_Short_Str="Loop14";
+const std::string Loop_15_Short_Str="Loop15";
+const std::string Loop_16_Short_Str="Loop16";
+const std::string Loop_17_Short_Str="Loop17";
+const std::string Loop_18_Short_Str="Loop18";
+const std::string Loop_19_Short_Str="Loop19";
+const std::string Loop_20_Short_Str="Loop20";
+const std::string Loop_21_Short_Str="Loop21";
+const std::string Loop_22_Short_Str="Loop22";
+const std::string Loop_23_Short_Str="Loop23";
+const std::string Loop_24_Short_Str="Loop24";
 
 
 /******************/
@@ -392,11 +392,11 @@ private:
     char _aftertouchRange; //between -7 and +7
 
 public:
-    //Constructor destructor
+    // Constructor destructor
     WG();
     ~WG();
 
-    //affect methods
+    // Affect methods
     void setPitchCoarse(unsigned char pc);
     void setPitchFine(char pf);
     void setLFOMode(WGLFOMode lm);
@@ -408,36 +408,36 @@ public:
     void setVelocityRange(char vr);
     void setAftertouchRange(char ar);
 
-    //access methods
-    unsigned char getPitchCoarse();
-    char getPitchFine();
-    WGLFOMode getLFOMode();
-    WGPEnvMode getPEnvMode();
-    WGBenderMode getBenderMode();
-    WGWaveform getWaveform();
-    WGPCMWaveNo getPCMWaveNo();
-    unsigned char getPulseWidth();
-    char getVelocityRange();
-    char getAftertouchRange();
+    // Access methods
+    unsigned char getPitchCoarse() const;
+    char getPitchFine() const;
+    WGLFOMode getLFOMode() const;
+    WGPEnvMode getPEnvMode() const;
+    WGBenderMode getBenderMode() const;
+    WGWaveform getWaveform() const;
+    WGPCMWaveNo getPCMWaveNo() const;
+    unsigned char getPulseWidth() const;
+    char getVelocityRange() const;
+    char getAftertouchRange() const;
 
-    //dump method
-    void dump(Address& a, unsigned length, unsigned char* data);
+    // Dump method. Note that 'a' will be incremented accordingly.
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
-    //print and string method
-    char* fracKeyFollowStr();
-    char* LFOModeStr(WGLFOMode lm);
-    char* LFOModeStr();
-    char* PEnvModeStr(WGPEnvMode pem);
-    char* PEnvModeStr();
-    char* benderModeStr(WGBenderMode bm);
-    char* benderModeStr();
-    char* waveformStr(WGWaveform wf);
-    char* waveformStr();
-    char* PCMWaveNoShortStr(WGPCMWaveNo pwn);
-    char* PCMWaveNoShortStr();
-    char* PCMWaveNoStr(WGPCMWaveNo pwn);
-    char* PCMWaveNoStr();
-    void print(int m); //print the WG with a margine m
+    // Print and string method
+    std::string fracKeyFollowStr() const;
+    std::string LFOModeStr(WGLFOMode lm) const;
+    std::string LFOModeStr() const;
+    std::string PEnvModeStr(WGPEnvMode pem) const;
+    std::string PEnvModeStr() const;
+    std::string benderModeStr(WGBenderMode bm) const;
+    std::string benderModeStr() const;
+    std::string waveformStr(WGWaveform wf) const;
+    std::string waveformStr() const;
+    std::string PCMWaveNoShortStr(WGPCMWaveNo pwn) const;
+    std::string PCMWaveNoShortStr() const;
+    std::string PCMWaveNoStr(WGPCMWaveNo pwn) const;
+    std::string PCMWaveNoStr() const;
+    void print(int m) const; // Print the WG with a margine m
 };
 
 

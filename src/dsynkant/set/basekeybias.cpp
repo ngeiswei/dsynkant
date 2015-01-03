@@ -56,20 +56,17 @@ void BaseKeyBias::setBiasLevel(char bl) {
 /******************/
 /* Access methods */
 /******************/
-bool BaseKeyBias::getBiasRangeUp() {
+bool BaseKeyBias::getBiasRangeUp() const {
     return _biasRangeUp;
 }
-unsigned char BaseKeyBias::getBiasRangeKey() {
+unsigned char BaseKeyBias::getBiasRangeKey() const {
     return _biasRangeKey;
 }
-char BaseKeyBias::getBiasLevel() {
+char BaseKeyBias::getBiasLevel() const {
     return _biasLevel;
 }
 
-/***************/
-/* dump method */
-/***************/
-void BaseKeyBias::dump(Address& a, unsigned length, unsigned char* data) {
+void BaseKeyBias::dump(Address& a, unsigned length, const unsigned char* data) {
     Address cura;
     unsigned index = 0;
     if(length > index && a == cura) {
@@ -88,7 +85,7 @@ void BaseKeyBias::dump(Address& a, unsigned length, unsigned char* data) {
 /****************/
 /* print method */
 /****************/
-char* BaseKeyBias::pitchStr(int p) {
+char* BaseKeyBias::pitchStr(int p) const {
     p += 9; //to be A1
     int octave = p/12 + 1;
     char sOct[INT_STR_LENGTH];
@@ -115,7 +112,7 @@ char* BaseKeyBias::pitchStr(int p) {
     return strcat(sNote, sOct);
 }
 
-void BaseKeyBias::print(int m) {
+void BaseKeyBias::print(int m) const {
     ps(m);
     printf("Bias = ");
     if(_biasRangeUp) printf(">");

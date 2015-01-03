@@ -29,25 +29,25 @@ void ps(int s) {
     for(int i = 0; i < s; i++) printf(" ");
 }
 
-char* FracKeyFollowStr(FracKeyFollow kf) {
+std::string FracKeyFollowStr(FracKeyFollow kf) {
     switch(kf) {
-    case minus1 : return minus1Str; break;
-    case minus1div2 : return minus1div2Str; break;
-    case minus1div4 : return minus1div4Str; break;
-    case zero : return zeroStr; break;
-    case plus1div8 : return plus1div8Str; break;
-    case plus1div4 : return plus1div4Str; break;
-    case plus3div8 : return plus3div8Str; break;
-    case plus1div2 : return plus1div2Str; break;
-    case plus5div8 : return plus5div8Str; break;
-    case plus3div4 : return plus3div4Str; break;
-    case plus7div8 : return plus7div8Str; break;
-    case plus1 : return plus1Str; break;
-    case plus5div4 : return plus5div4Str; break;
-    case plus3div2 : return plus3div2Str; break;
-    case plus2 : return plus2Str; break;
-    case s1 : return s1Str; break;
-    case s2 : return s2Str; break;
+    case FracKeyFollow::minus1 : return minus1Str; break;
+    case FracKeyFollow::minus1div2 : return minus1div2Str; break;
+    case FracKeyFollow::minus1div4 : return minus1div4Str; break;
+    case FracKeyFollow::zero : return zeroStr; break;
+    case FracKeyFollow::plus1div8 : return plus1div8Str; break;
+    case FracKeyFollow::plus1div4 : return plus1div4Str; break;
+    case FracKeyFollow::plus3div8 : return plus3div8Str; break;
+    case FracKeyFollow::plus1div2 : return plus1div2Str; break;
+    case FracKeyFollow::plus5div8 : return plus5div8Str; break;
+    case FracKeyFollow::plus3div4 : return plus3div4Str; break;
+    case FracKeyFollow::plus7div8 : return plus7div8Str; break;
+    case FracKeyFollow::plus1 : return plus1Str; break;
+    case FracKeyFollow::plus5div4 : return plus5div4Str; break;
+    case FracKeyFollow::plus3div2 : return plus3div2Str; break;
+    case FracKeyFollow::plus2 : return plus2Str; break;
+    case FracKeyFollow::s1 : return s1Str; break;
+    case FracKeyFollow::s2 : return s2Str; break;
     default : 
         printf("WG::keyFollowStr : %d impossible case\n", (int)kf);
         return NULL;

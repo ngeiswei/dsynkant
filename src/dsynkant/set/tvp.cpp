@@ -97,53 +97,50 @@ void TVP::setPitchAftertouchModulation(unsigned char pam) {
 /******************/
 /* Access methods */
 /******************/
-unsigned char TVP::getVelocityRange() {
+unsigned char TVP::getVelocityRange() const {
     return _velocityRange;
 }
-unsigned char TVP::getKeyFollow() {
+unsigned char TVP::getKeyFollow() const {
     return _keyFollow;
 }
-char TVP::getLevel0() {
+char TVP::getLevel0() const {
     return _level0;
 }
-unsigned char TVP::getTime1() {
+unsigned char TVP::getTime1() const {
     return _time1;
 }
-char TVP::getLevel1() {
+char TVP::getLevel1() const {
     return _level1;
 }
-unsigned char TVP::getTime2() {
+unsigned char TVP::getTime2() const {
     return _time2;
 }
-char TVP::getLevel2() {
+char TVP::getLevel2() const {
     return _level2;
 }
-unsigned char TVP::getTime3() {
+unsigned char TVP::getTime3() const {
     return _time3;
 }
-char TVP::getSustainLevel() {
+char TVP::getSustainLevel() const {
     return _sustainLevel;
 }
-unsigned char TVP::getTime4() {
+unsigned char TVP::getTime4() const {
     return _time4;
 }
-char TVP::getEndLevel() {
+char TVP::getEndLevel() const {
     return _endLevel;
 }
-unsigned char TVP::getLFODepth() {
+unsigned char TVP::getLFODepth() const {
     return _LFODepth;
 }
-unsigned char TVP::getPitchLeverModulation() {
+unsigned char TVP::getPitchLeverModulation() const {
     return _pitchLeverModulation;
 } 
-unsigned char TVP::getPitchAftertouchModulation() {
+unsigned char TVP::getPitchAftertouchModulation() const {
     return _pitchAftertouchModulation;
 }
 
-/***************/
-/* dump method */
-/***************/
-void TVP::dump(Address& a, unsigned length, unsigned char* data) {
+void TVP::dump(Address& a, unsigned length, const unsigned char* data) {
     Address cura;
     unsigned index = 0;
     if(length > index) {
@@ -230,10 +227,7 @@ void TVP::dump(Address& a, unsigned length, unsigned char* data) {
     }
 }
 
-/****************/
-/* print method */
-/****************/
-void TVP::print(int m) {
+void TVP::print(int m) const {
     ps(m);
     printf("Velocity range = %d\n", _velocityRange);
     ps(m);

@@ -28,16 +28,14 @@
 //Constructor destructor
 EQ::EQ() {
     _Lf = lf150;
-    _Lg = 0; //most likely
+    _Lg = 0; // Most likely
     _Hf = hf1000;
     _HQ = hq0_3;
-    _Hg = 0; //most likely
+    _Hg = 0; // Most likely
 }
 
-EQ::~EQ() {
-}
+EQ::~EQ() {}
 
-//affect methods
 void EQ::setLf(EQLowFreq Lf) {
     _Lf = Lf;
 }
@@ -54,25 +52,23 @@ void EQ::setHg(char Hg) {
     _Hg = Hg;
 }
 
-//access methods
-EQLowFreq EQ::getLf() {
+EQLowFreq EQ::getLf() const {
     return _Lf;
 }
-char EQ::getLg() {
+char EQ::getLg() const {
     return _Lg;
 }
-EQHighFreq EQ::getHf() {
+EQHighFreq EQ::getHf() const {
     return _Hf;
 }
-EQHighQ EQ::getHQ() {
+EQHighQ EQ::getHQ() const {
     return _HQ;
 }
-char EQ::getHg() {
+char EQ::getHg() const {
     return _Hg;
 }
 
-//dump method
-void EQ::dump(Address& a, unsigned length, unsigned char* data) {
+void EQ::dump(Address& a, unsigned length, const unsigned char* data) {
     Address cura;
     unsigned index = 0;
     if(length > index && a == cura) {
@@ -105,8 +101,7 @@ void EQ::dump(Address& a, unsigned length, unsigned char* data) {
     }
 }
 
-//print and float methods
-float EQ::LowFreqFloat(EQLowFreq lf) {
+float EQ::LowFreqFloat(EQLowFreq lf) const {
     switch(lf) {
     case lf63 : return lf63_f; break;
     case lf75 : return lf75_f; break;
@@ -130,10 +125,10 @@ float EQ::LowFreqFloat(EQLowFreq lf) {
         break;
     }
 }
-float EQ::LowFreqFloat() {
+float EQ::LowFreqFloat() const {
     return LowFreqFloat(_Lf);
 }
-float EQ::HighFreqFloat(EQHighFreq hf) {
+float EQ::HighFreqFloat(EQHighFreq hf) const {
     switch(hf) {
     case hf250 : return hf250_f; break;
     case hf300 : return hf300_f; break;
@@ -163,10 +158,10 @@ float EQ::HighFreqFloat(EQHighFreq hf) {
         break;
     }
 }
-float EQ::HighFreqFloat() {
+float EQ::HighFreqFloat() const {
     return HighFreqFloat(_Hf);
 }
-float EQ::HighQFloat(EQHighQ hq) {
+float EQ::HighQFloat(EQHighQ hq) const {
     switch(hq) {
     case hq0_3 : return hq0_3_f; break;
     case hq0_5 : return hq0_5_f; break;
@@ -183,10 +178,10 @@ float EQ::HighQFloat(EQHighQ hq) {
         break;
     }
 }
-float EQ::HighQFloat() {
+float EQ::HighQFloat() const {
     return HighQFloat(_HQ);
 }
-void EQ::print(int m) {
+void EQ::print(int m) const {
     ps(m);
     printf("Eq = (Lf : %f, Lg : %d, Hf : %f, HQ : %f, Hg : %d)\n",
            LowFreqFloat(), _Lg, HighFreqFloat(), HighQFloat(), _Hg);

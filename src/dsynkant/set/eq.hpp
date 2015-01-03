@@ -147,31 +147,31 @@ public:
     EQ();
     ~EQ();
   
-    //affect methods
+    // Affect methods
     void setLf(EQLowFreq Lf);
     void setLg(char Lg);
     void setHf(EQHighFreq Hf);
     void setHQ(EQHighQ HQ);
     void setHg(char Hg);  
 
-    //dump method
-    void dump(Address& a, unsigned length, unsigned char* data);
+    // Dump method. Note that 'a' will be incremented accordingly.
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
-    //access methods
-    EQLowFreq getLf();
-    char getLg();
-    EQHighFreq getHf();
-    EQHighQ getHQ();
-    char getHg();  
+    // Access methods
+    EQLowFreq getLf() const;
+    char getLg() const;
+    EQHighFreq getHf() const;
+    EQHighQ getHQ() const;
+    char getHg() const;
 
-    //print and float methods
-    float LowFreqFloat(EQLowFreq lf);
-    float LowFreqFloat();
-    float HighFreqFloat(EQHighFreq hf);
-    float HighFreqFloat();
-    float HighQFloat(EQHighQ hq);
-    float HighQFloat();
-    void print(int m);
+    // Print and float methods
+    float LowFreqFloat(EQLowFreq lf) const;
+    float LowFreqFloat() const;
+    float HighFreqFloat(EQHighFreq hf) const;
+    float HighFreqFloat() const;
+    float HighQFloat(EQHighQ hq) const;
+    float HighQFloat() const;
+    void print(int m) const;
 };
 
 #endif

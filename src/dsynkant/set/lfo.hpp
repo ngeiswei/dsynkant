@@ -25,71 +25,73 @@
 #ifndef __LFO_HPP
 #define __LFO_HPP
 
+#include <string>
+
 #include "address.hpp"
 
 #define DUMP_LFO_LENGTH 4
 
-#define TRI_Short_Str "TRI"
-#define SAW_Short_Str "SAW"
-#define SQU_Short_Str "SQU"
-#define RND_Short_Str "RND"
+const std::string TRI_Short_Str="TRI";
+const std::string SAW_Short_Str="SAW";
+const std::string SQU_Short_Str="SQU";
+const std::string RND_Short_Str="RND";
 
-#define TRI_Str "Triangle"
-#define SAW_Str "Sawtooth"
-#define SQU_Str "Square"
-#define RND_Str "Random"
+const std::string TRI_Str="Triangle";
+const std::string SAW_Str="Sawtooth";
+const std::string SQU_Str="Square";
+const std::string RND_Str="Random";
 
-typedef enum {
+enum class LFOWaveform {
     TRI,
     SAW,
     SQU,
     RND
-} LFOWaveform;
+};
 
-#define SyncOff_Str "off"
-#define SyncOn_Str "on"
-#define SyncKey_Str "key"
+const std::string SyncOff_Str="off";
+const std::string SyncOn_Str="on";
+const std::string SyncKey_Str="key";
 
-typedef enum {
-    SyncOff,
-    SyncOn,
-    SyncKey
-} Sync;
+enum class Sync {
+    Off,
+    On,
+    Key
+};
 
 class LFO {
 private:
     LFOWaveform _waveform;
-    unsigned char _rate; //betweem 0 and 100
-    unsigned char _delayTime; //between 0 and 100
+    unsigned char _rate; // Betweem 0 and 100
+    unsigned char _delayTime; // Between 0 and 100
     Sync _sync;
   
 public:
-    LFO(unsigned char _rate = 50, Sync sync = SyncOff);
+    LFO(unsigned char _rate = 50, Sync sync = Sync::Off);
     ~LFO();
   
-    //affect methods
+    // Affect methods
     void setWaveform(LFOWaveform wf);
     void setRate(unsigned char r);
     void setDelayTime(unsigned char dt);
     void setSync(Sync s);
 
-    //access methods
-    LFOWaveform getWaveform();
-    unsigned char getRate();
-    unsigned char getDelayTime();
-    Sync getSync();
+    // Access methods
+    LFOWaveform getWaveform() const;
+    unsigned char getRate() const;
+    unsigned char getDelayTime() const;
+    Sync getSync() const;
 
-    //dump method
-    void dump(Address& a, unsigned length, unsigned char* data);
+    // Dump method. Note that 'a' will be incremented accordingly.
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
-    //print method
-    char* LFOWaveformStr(LFOWaveform wf);
-    char* LFOWaveformStr();
-    char* LFOWaveformShortStr(LFOWaveform wf);
-    char* LFOWaveformShortStr();
-    char* SyncStr(Sync s);
-    char* SyncStr();
-    void print(int m);
+    // Print method
+    std::string LFOWaveformStr(LFOWaveform wf) const;
+    std::string LFOWaveformStr() const;
+    std::string LFOWaveformShortStr(LFOWaveform wf) const;
+    std::string LFOWaveformShortStr() const;
+    std::string SyncStr(Sync s) const;
+    std::string SyncStr() const;
+    void print(int m) const;
 };
 
 #endif

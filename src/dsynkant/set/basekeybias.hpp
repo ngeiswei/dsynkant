@@ -48,26 +48,26 @@ private:
     KeyBiasType _type; //this is just to know if it used by TVF or TVA
 
 public:
-    //constructor destructor
+    // Constructor destructor
     BaseKeyBias(KeyBiasType t);
     ~BaseKeyBias();
 
-    //affect methods
+    // Affect methods
     void setBiasRangeUp(bool bru);
     void setBiasRangeKey(unsigned char brk);
     void setBiasLevel(char bl);
 
-    //access methods
-    bool getBiasRangeUp();
-    unsigned char getBiasRangeKey();
-    char getBiasLevel();
+    // Access methods
+    bool getBiasRangeUp() const;
+    unsigned char getBiasRangeKey() const;
+    char getBiasLevel() const;
 
-    //dump method
-    void dump(Address& a, unsigned length, unsigned char* data);
+    // Dump method. Note that 'a' will be incremented accordingly.
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
-    //print method
-    char* pitchStr(int p);
-    void print(int m); //print the key bias on the std output tabulated of m
+    // Print method
+    char* pitchStr(int p) const;
+    void print(int m) const; // Print the key bias on the std output tabulated of m
 };
 
 #endif

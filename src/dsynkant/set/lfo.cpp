@@ -22,13 +22,15 @@
 
 ****************************************************************************/
 
+#include <iostream>
+
 #include "lfo.hpp"
 #include "../commondef/commondef.hpp"
 #include <stdio.h>
 
 //Constructor destructor
 LFO::LFO(unsigned char rate, Sync sync) {
-    _waveform = TRI;
+    _waveform = LFOWaveform::TRI;
     _rate = rate;
     _delayTime = 0;
     _sync = sync;
@@ -52,21 +54,20 @@ void LFO::setSync(Sync s) {
 }
 
 //access methods
-LFOWaveform LFO::getWaveform() {
+LFOWaveform LFO::getWaveform() const {
     return _waveform;
 }
-unsigned char LFO::getRate() {
+unsigned char LFO::getRate() const {
     return _rate;
 }
-unsigned char LFO::getDelayTime() {
+unsigned char LFO::getDelayTime() const {
     return _delayTime;
 }
-Sync LFO::getSync() {
+Sync LFO::getSync() const {
     return _sync;
 }
 
-//dump method
-void LFO::dump(Address& a, unsigned length, unsigned char* data) {
+void LFO::dump(Address& a, unsigned length, const unsigned char* data) {
     Address cura;
     unsigned index = 0;
     if(length > index && a == cura) {
@@ -93,58 +94,54 @@ void LFO::dump(Address& a, unsigned length, unsigned char* data) {
     }
 }
 
-//print method
-char* LFO::LFOWaveformStr(LFOWaveform wf) {
+std::string LFO::LFOWaveformStr(LFOWaveform wf) const {
     switch(wf) {
-    case TRI : return TRI_Str; break;
-    case SAW : return SAW_Str; break;
-    case SQU : return SQU_Str; break;
-    case RND : return RND_Str; break;
+    case LFOWaveform::TRI : return TRI_Str; break;
+    case LFOWaveform::SAW : return SAW_Str; break;
+    case LFOWaveform::SQU : return SQU_Str; break;
+    case LFOWaveform::RND : return RND_Str; break;
     default :
-        printf("LFO::LFOWaveformStr error : impossible case\n");
-        return NULL;
-        break;
+        std::cerr << "LFO::LFOWaveformStr error : impossible case";
+        return std::string();
     }
 }
-char* LFO::LFOWaveformStr() {
+std::string LFO::LFOWaveformStr() const {
     return LFOWaveformStr(_waveform);
 }
-char* LFO::LFOWaveformShortStr(LFOWaveform wf) {
+std::string LFO::LFOWaveformShortStr(LFOWaveform wf) const {
     switch(wf) {
-    case TRI : return TRI_Short_Str; break;
-    case SAW : return SAW_Short_Str; break;
-    case SQU : return SQU_Short_Str; break;
-    case RND : return RND_Short_Str; break;
+    case LFOWaveform::TRI : return TRI_Short_Str; break;
+    case LFOWaveform::SAW : return SAW_Short_Str; break;
+    case LFOWaveform::SQU : return SQU_Short_Str; break;
+    case LFOWaveform::RND : return RND_Short_Str; break;
     default :
-        printf("LFO::LFOWaveformStr error : impossible case\n");
-        return NULL;
-        break;
+        std::cerr << "LFO::LFOWaveformStr error : impossible case";
+        return std::string();
     }
 }
-char* LFO::LFOWaveformShortStr() {
+std::string LFO::LFOWaveformShortStr() const {
     return LFOWaveformShortStr(_waveform);
 }
-char* LFO::SyncStr(Sync s) {
+std::string LFO::SyncStr(Sync s) const {
     switch(s) {
-    case SyncOff : return SyncOff_Str; break;
-    case SyncOn : return SyncOn_Str; break;
-    case SyncKey : return SyncKey_Str; break;
+    case Sync::Off : return SyncOff_Str; break;
+    case Sync::On : return SyncOn_Str; break;
+    case Sync::Key : return SyncKey_Str; break;
     default :
-        printf("LFO::SyncStr : impossible case\n");
-        return NULL;
-        break;
+        std::cerr << "LFO::SyncStr : impossible case";
+        return std::string();
     }
 }
-char* LFO::SyncStr() {
+std::string LFO::SyncStr() const {
     return SyncStr(_sync);
 }
-void LFO::print(int m) {
+void LFO::print(int m) const {
     ps(m);
-    printf("Waveform = %s\n", LFOWaveformStr());
+    printf("Waveform = %s\n", LFOWaveformStr().c_str());
     ps(m);
     printf("Rate = %d\n", _rate);
     ps(m);
     printf("Delay time = %d\n", _delayTime);
     ps(m);
-    printf("Sync = %s\n", SyncStr());
+    printf("Sync = %s\n", SyncStr().c_str());
 }

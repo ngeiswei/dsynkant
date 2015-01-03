@@ -29,7 +29,7 @@
 TVF::TVF() : BaseKeyBias(KBTVF) {
     _cutoffFrequency = 50;
     _resonance = 0;
-    _cutoffPointKeyFollow = plus1div2;
+    _cutoffPointKeyFollow = FracKeyFollow::plus1div2;
     _ENVDepth = 0;
     _velocityRange = 0;
     _depthKeyFollow = 0;
@@ -188,7 +188,7 @@ void TVF::print(int m) {
     printf("Resonance = %d\n", _resonance);
     ps(m);
     printf("Cutoff point key follow = %s\n",
-           FracKeyFollowStr(_cutoffPointKeyFollow));
+           FracKeyFollowStr(_cutoffPointKeyFollow).c_str());
     BaseKeyBias::print(m);
     ps(m);
     printf("Envelope depth = %d\n", _ENVDepth);

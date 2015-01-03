@@ -53,20 +53,17 @@ void BaseModulation::setLFODepth(unsigned char ld) {
 /******************/
 /* Access methods */
 /******************/
-bool BaseModulation::getLFOPhase() {
+bool BaseModulation::getLFOPhase() const {
     return _positivePhase;
 }
-unsigned char BaseModulation::getLFOSelect() {
+unsigned char BaseModulation::getLFOSelect() const {
     return _LFOSelect;
 }
-unsigned char BaseModulation::getLFODepth() {
+unsigned char BaseModulation::getLFODepth() const {
     return _LFODepth;
 }
 
-/***************/
-/* dump method */
-/***************/
-void BaseModulation::dump(Address& a, unsigned length, unsigned char* data) {
+void BaseModulation::dump(Address& a, unsigned length, const unsigned char* data) {
     Address cura;
     unsigned index = 0;
     if(length > index && a == cura) {
@@ -82,10 +79,7 @@ void BaseModulation::dump(Address& a, unsigned length, unsigned char* data) {
     }
 }
 
-/****************/
-/* print method */
-/****************/
-void BaseModulation::print(int m) {
+void BaseModulation::print(int m) const {
     ps(m);
     printf("Modulation = (LFO phase : %s, LFO select : %d, LFO depth : %d)\n",
            (_positivePhase? "+":"-"), _LFOSelect, _LFODepth);
