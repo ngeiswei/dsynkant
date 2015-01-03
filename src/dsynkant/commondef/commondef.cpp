@@ -61,5 +61,5 @@ char D50CharToASCII(unsigned char c) {
     else if(c<53) return (char)(c-27+0x61);
     else if(c<63) return (char)(c-53+0x30);
     else if(c == 63) return '-';
-    else return NULL;
+    else return 0;
 }
