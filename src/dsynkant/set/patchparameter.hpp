@@ -25,6 +25,8 @@
 #ifndef __PATCHPARAMETER_HPP
 #define __PATCHPARAMETER_HPP
 
+#include <string>
+
 #include "address.hpp"
 
 #define DUMP_PATCHPARAMETER_LENGTH 0x40
@@ -160,7 +162,7 @@ typedef enum {
 
 class PatchParameter {
 private:
-    char _patchName[PATCHNAME_LENGTH + 1];
+    std::string _patchName;
     KeyMode _keyMode;
     unsigned char _splitPoint; //between 0 and 60, respectively C2 to C7
     ULSet _portamentoMode;
@@ -202,8 +204,8 @@ public:
     PatchParameter();
     ~PatchParameter();
 
-    //affect methods  
-    void setPatchName(char* pn);
+    // Affect methods
+    void setPatchName(const std::string& pn);
     void setKeyMode(KeyMode km);
     void setSplitPoint(unsigned char sp);
     void setPortamentoMode(ULSet pm);
@@ -241,60 +243,60 @@ public:
     void setUpperPartial1On(bool up1);
     void setUpperPartial2On(bool up2);
 
-    //access methods
-    char* getPatchName();
-    KeyMode getKeyMode();
-    unsigned char getSplitPoint();
-    ULSet getPortamentoMode();
-    ULSet getHoldMode();
-    char getUToneKeyShift();
-    char getLToneKeyShift();
-    char getUToneFineTune();
-    char getLToneFineTune();
-    unsigned char getBenderRange();
-    char getAftertouchPitchBend();
-    unsigned char getPortamentoTime();
-    OutputMode getOutputMode();
-    ReverbType getReverbType();
-    unsigned char getReverbBalance();
-    unsigned char getTotalVolume();
-    unsigned char getToneBalance();
-    ChaseMode getChaseMode();
-    unsigned char getChaseLevel();
-    unsigned char getChaseTime();
-    bool getTransmitCHBasic();
-    unsigned char getTransmitCH();
-    bool getSeparateModeReceiveCHOn();
-    unsigned char getSeparateModeReceiveCH();
-    bool getTransmitProgramChangeOn();
-    unsigned char getTransmitProgramChange();
-    bool getChaseSwitch();
-    bool getPortamentoSwitch();
-    bool getSeparateSwitch();
-    bool getTransmitBankSelectOn();  
-    unsigned char getTransmitBankSelect();  
-    bool getLowerOn();
-    bool getUpperOn();
-    bool getLowerPartial1On();
-    bool getLowerPartial2On();
-    bool getUpperPartial1On();
-    bool getUpperPartial2On();
+    // Access methods
+    const std::string& getPatchName() const;
+    KeyMode getKeyMode() const;
+    unsigned char getSplitPoint() const;
+    ULSet getPortamentoMode() const;
+    ULSet getHoldMode() const;
+    char getUToneKeyShift() const;
+    char getLToneKeyShift() const;
+    char getUToneFineTune() const;
+    char getLToneFineTune() const;
+    unsigned char getBenderRange() const;
+    char getAftertouchPitchBend() const;
+    unsigned char getPortamentoTime() const;
+    OutputMode getOutputMode() const;
+    ReverbType getReverbType() const;
+    unsigned char getReverbBalance() const;
+    unsigned char getTotalVolume() const;
+    unsigned char getToneBalance() const;
+    ChaseMode getChaseMode() const;
+    unsigned char getChaseLevel() const;
+    unsigned char getChaseTime() const;
+    bool getTransmitCHBasic() const;
+    unsigned char getTransmitCH() const;
+    bool getSeparateModeReceiveCHOn() const;
+    unsigned char getSeparateModeReceiveCH() const;
+    bool getTransmitProgramChangeOn() const;
+    unsigned char getTransmitProgramChange() const;
+    bool getChaseSwitch() const;
+    bool getPortamentoSwitch() const;
+    bool getSeparateSwitch() const;
+    bool getTransmitBankSelectOn() const;
+    unsigned char getTransmitBankSelect() const;
+    bool getLowerOn() const;
+    bool getUpperOn() const;
+    bool getLowerPartial1On() const;
+    bool getLowerPartial2On() const;
+    bool getUpperPartial1On() const;
+    bool getUpperPartial2On() const;
 
-    //dump method
-    void dump(Address& a, unsigned length, unsigned char* data);
+    // Dump method
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
-    //print methods 
-    char* KeyModeStr(KeyMode km);
-    char* KeyModeStr();
-    char* ULSetStr(ULSet uls);
-    char* OutputModeStr(OutputMode om);
-    char* OutputModeStr();
-    char* ReverbTypeStr(ReverbType rt);
-    char* ReverbTypeStr();
-    char* ChaseModeStr(ChaseMode cm);
-    char* ChaseModeStr();
-    char* pitchStr(int p);
-    void print(int m);
+    // Print methods
+    std::string KeyModeStr(KeyMode km) const;
+    std::string KeyModeStr() const;
+    std::string ULSetStr(ULSet uls) const;
+    std::string OutputModeStr(OutputMode om) const;
+    std::string OutputModeStr() const;
+    std::string ReverbTypeStr(ReverbType rt) const;
+    std::string ReverbTypeStr() const;
+    std::string ChaseModeStr(ChaseMode cm) const;
+    std::string ChaseModeStr() const;
+    std::string pitchStr(int p) const;
+    void print(int m) const;
 };
 
 #endif

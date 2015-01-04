@@ -22,13 +22,14 @@
 
 ****************************************************************************/
 
-#include "patchparameter.hpp"
-#include "../commondef/commondef.hpp"
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-//constructor destrtuctor
+#include "patchparameter.hpp"
+#include "../commondef/commondef.hpp"
+
 PatchParameter::PatchParameter() {
     setPatchName("DSynkant Init");
     _keyMode = Dual;
@@ -69,13 +70,10 @@ PatchParameter::PatchParameter() {
     _UpperPartial2On = true; //unknown ?
 }
 
-PatchParameter::~PatchParameter() {
-}
+PatchParameter::~PatchParameter() {}
 
-//affect methods  
-void PatchParameter::setPatchName(char* pn) {
-    strncpy(_patchName, pn, PATCHNAME_LENGTH);
-    _patchName[PATCHNAME_LENGTH] = '\0';
+void PatchParameter::setPatchName(const std::string& pn) {
+    _patchName = pn;
 }
 void PatchParameter::setKeyMode(KeyMode km) {
     _keyMode = km;
@@ -186,121 +184,120 @@ void PatchParameter::setUpperPartial2On(bool up2) {
     _UpperPartial2On = up2;
 }
 
-//access methods
-char* PatchParameter::getPatchName() {
+const std::string& PatchParameter::getPatchName() const {
     return _patchName;
 }
-KeyMode PatchParameter::getKeyMode() {
+KeyMode PatchParameter::getKeyMode() const {
     return _keyMode;
 }
-unsigned char PatchParameter::getSplitPoint() {
+unsigned char PatchParameter::getSplitPoint() const {
     return _splitPoint;
 }
-ULSet PatchParameter::getPortamentoMode() {
+ULSet PatchParameter::getPortamentoMode() const {
     return _portamentoMode;
 }
-ULSet PatchParameter::getHoldMode() {
+ULSet PatchParameter::getHoldMode() const {
     return _holdMode;
 }
-char PatchParameter::getUToneKeyShift() {
+char PatchParameter::getUToneKeyShift() const {
     return _UToneKeyShift;
 }
-char PatchParameter::getLToneKeyShift() {
+char PatchParameter::getLToneKeyShift() const {
     return _LToneKeyShift;
 }
-char PatchParameter::getUToneFineTune() {
+char PatchParameter::getUToneFineTune() const {
     return _UToneFineTune;
 }
-char PatchParameter::getLToneFineTune() {
+char PatchParameter::getLToneFineTune() const {
     return _LToneFineTune;
 }
-unsigned char PatchParameter::getBenderRange() {
+unsigned char PatchParameter::getBenderRange() const {
     return _benderRange;
 }
-char PatchParameter::getAftertouchPitchBend() {
+char PatchParameter::getAftertouchPitchBend() const {
     return _aftertouchPitchBend;
 }
-unsigned char PatchParameter::getPortamentoTime() {
+unsigned char PatchParameter::getPortamentoTime() const {
     return _portamentoTime;
 }
-OutputMode PatchParameter::getOutputMode() {
+OutputMode PatchParameter::getOutputMode() const {
     return _outputMode;
 }
-ReverbType PatchParameter::getReverbType() {
+ReverbType PatchParameter::getReverbType() const {
     return _reverbType;
 }
-unsigned char PatchParameter::getReverbBalance() {
+unsigned char PatchParameter::getReverbBalance() const {
     return _reverbBalance;
 }
-unsigned char PatchParameter::getTotalVolume() {
+unsigned char PatchParameter::getTotalVolume() const {
     return _totalVolume;
 }
-unsigned char PatchParameter::getToneBalance() {
+unsigned char PatchParameter::getToneBalance() const {
     return _toneBalance;
 }
-ChaseMode PatchParameter::getChaseMode() {
+ChaseMode PatchParameter::getChaseMode() const {
     return _chaseMode;
 }
-unsigned char PatchParameter::getChaseLevel() {
+unsigned char PatchParameter::getChaseLevel() const {
     return _chaseLevel;
 }
-unsigned char PatchParameter::getChaseTime() {
+unsigned char PatchParameter::getChaseTime() const {
     return _chaseTime;
 }
-bool PatchParameter::getTransmitCHBasic() {
+bool PatchParameter::getTransmitCHBasic() const {
     return _transmitCHBasic;
 }
-unsigned char PatchParameter::getTransmitCH() {
+unsigned char PatchParameter::getTransmitCH() const {
     return _transmitCH;
 }
-bool PatchParameter::getSeparateModeReceiveCHOn() {
+bool PatchParameter::getSeparateModeReceiveCHOn() const {
     return _separateModeReceiveCHOn;
 }
-unsigned char PatchParameter::getSeparateModeReceiveCH() {
+unsigned char PatchParameter::getSeparateModeReceiveCH() const {
     return _separateModeReceiveCH;
 }
-bool PatchParameter::getTransmitProgramChangeOn() {
+bool PatchParameter::getTransmitProgramChangeOn() const {
     return _transmitProgramChangeOn;
 }
-unsigned char PatchParameter::getTransmitProgramChange() {
+unsigned char PatchParameter::getTransmitProgramChange() const {
     return _transmitProgramChange;
 }
-bool PatchParameter::getChaseSwitch() {
+bool PatchParameter::getChaseSwitch() const {
     return _chaseSwitch;
 }
-bool PatchParameter::getPortamentoSwitch() {
+bool PatchParameter::getPortamentoSwitch() const {
     return _portamentoSwitch;
 }
-bool PatchParameter::getSeparateSwitch() {
+bool PatchParameter::getSeparateSwitch() const {
     return _separateSwitch;
 }
-bool PatchParameter::getTransmitBankSelectOn() {
+bool PatchParameter::getTransmitBankSelectOn() const {
     return _transmitBankSelectOn;
 }
-unsigned char PatchParameter::getTransmitBankSelect() {
+unsigned char PatchParameter::getTransmitBankSelect() const {
     return _transmitBankSelect;
 }
-bool PatchParameter::getLowerOn() {
+bool PatchParameter::getLowerOn() const {
     return _LowerOn;
 }
-bool PatchParameter::getUpperOn() {
+bool PatchParameter::getUpperOn() const {
     return _UpperOn;
 }
-bool PatchParameter::getLowerPartial1On() {
+bool PatchParameter::getLowerPartial1On() const {
     return _LowerPartial1On;
 }
-bool PatchParameter::getLowerPartial2On() {
+bool PatchParameter::getLowerPartial2On() const {
     return _LowerPartial2On;
 }
-bool PatchParameter::getUpperPartial1On() {
+bool PatchParameter::getUpperPartial1On() const {
     return _UpperPartial1On;
 }
-bool PatchParameter::getUpperPartial2On() {
+bool PatchParameter::getUpperPartial2On() const {
     return _UpperPartial2On;
 }
 
 //dump method
-void PatchParameter::dump(Address& a, unsigned length, unsigned char* data) {
+void PatchParameter::dump(Address& a, unsigned length, const unsigned char* data) {
     Address cura;
     unsigned index = 0;
     if(a == cura) {
@@ -503,8 +500,7 @@ void PatchParameter::dump(Address& a, unsigned length, unsigned char* data) {
     }
 }
 
-//print methods
-char* PatchParameter::KeyModeStr(KeyMode km) {
+std::string PatchParameter::KeyModeStr(KeyMode km) const {
     switch(km) {
     case Whole : return "Whole"; break;
     case Dual : return "Dual"; break;
@@ -516,41 +512,38 @@ char* PatchParameter::KeyModeStr(KeyMode km) {
     case Split_LS : return "Split_LS"; break;
     case Separate_S : return "Separate_S"; break;
     default :
-        printf("PatchParameter::KeyModeStr : impossible case\n");
-        return NULL;
-        break;
+        std::cerr << "PatchParameter::KeyModeStr : impossible case";
+        return std::string();
     }
 }
-char* PatchParameter::KeyModeStr() {
+std::string PatchParameter::KeyModeStr() const {
     return KeyModeStr(_keyMode);
 }
-char* PatchParameter::ULSetStr(ULSet uls) {
+std::string PatchParameter::ULSetStr(ULSet uls) const {
     switch(uls) {
     case SU : return SUStr; break;
     case SL : return SLStr; break;
     case SUL : return SULStr; break;
     default :
-        printf("PatchParameter::ULSetStr : impossible case\n");
-        return NULL;
-        break;
+        std::cerr << "PatchParameter::ULSetStr : impossible case";
+        return std::string();
     }
 }
-char* PatchParameter::OutputModeStr(OutputMode om) {
+std::string PatchParameter::OutputModeStr(OutputMode om) const {
     switch(om) {
     case BTR_MIX : return BTR_MIX_Str; break;
     case BTR_SEP : return BTR_SEP_Str; break;
     case UTR_SEP : return UTR_SEP_Str; break;
     case LTR_SEP : return LTR_SEP_Str; break;
     default :
-        printf("PatchParameter::OutputModeStr : impossible case\n");
-        return NULL;
-        break;
+        std::cerr << "PatchParameter::OutputModeStr : impossible case";
+        return std::string();
     }
 }
-char* PatchParameter::OutputModeStr() {
+std::string PatchParameter::OutputModeStr() const {
     return OutputModeStr(_outputMode);
 }
-char* PatchParameter::ReverbTypeStr(ReverbType rt) {
+std::string PatchParameter::ReverbTypeStr(ReverbType rt) const {
     switch(rt) {
     case SmallHall : return SmallHall_Str; break;
     case MediumHall : return MediumHall_Str; break;
@@ -585,29 +578,27 @@ char* PatchParameter::ReverbTypeStr(ReverbType rt) {
     case TwistedSpace : return TwistedSpace_Str; break;
     case Space : return Space_Str; break;
     default :
-        printf("PatchParameter::ReverbTypeStr : impossible case\n");
-        return NULL;
-        break;
+        std::cerr << "PatchParameter::ReverbTypeStr : impossible case";
+        return std::string();
     }
 }
-char* PatchParameter::ReverbTypeStr() {
+std::string PatchParameter::ReverbTypeStr() const {
     return ReverbTypeStr(_reverbType);
 }
-char* PatchParameter::ChaseModeStr(ChaseMode cm) {
+std::string PatchParameter::ChaseModeStr(ChaseMode cm) const {
     switch(cm) {
     case CMUL : return CMULStr; break;
     case CMULL : return CMULLStr; break;
     case CMULU : return CMULUStr; break;
     default :
-        printf("PatchParameter::ChaseModeStr : impossible case\n");
-        return NULL;
-        break;
+        std::cerr << "PatchParameter::ChaseModeStr : impossible case";
+        return std::string();
     }
 }
-char* PatchParameter::ChaseModeStr() {
+std::string PatchParameter::ChaseModeStr() const {
     return ChaseModeStr(_chaseMode);
 }
-char* PatchParameter::pitchStr(int p) {
+std::string PatchParameter::pitchStr(int p) const {
     int octave = p/12 + 2;
     char* sOct = (char *) malloc(sizeof(char)*128);
     sprintf(sOct, "%d", octave);
@@ -639,23 +630,22 @@ char* PatchParameter::pitchStr(int p) {
     case 11: strcpy(sNote, "B");
         break;
     default:
-        printf("PatchParameter::pitchStr Error : impossible case\n");
+        std::cerr << "PatchParameter::pitchStr Error : impossible case";
         strcpy(sNote, "");
-        break;
     }
     return strcat(sNote, sOct);
 }
-void PatchParameter::print(int m) {
+void PatchParameter::print(int m) const {
     ps(m);
-    printf("Patch name = %s\n", getPatchName());
+    printf("Patch name = %s\n", getPatchName().c_str());
     ps(m);
-    printf("Key mode = %s\n", KeyModeStr());
+    printf("Key mode = %s\n", KeyModeStr().c_str());
     ps(m);
-    printf("Split point = %s\n", pitchStr(_splitPoint));
+    printf("Split point = %s\n", pitchStr(_splitPoint).c_str());
     ps(m);
-    printf("Portamento mode = %s\n", ULSetStr(_portamentoMode));
+    printf("Portamento mode = %s\n", ULSetStr(_portamentoMode).c_str());
     ps(m);
-    printf("Hold mode = %s\n", ULSetStr(_holdMode));
+    printf("Hold mode = %s\n", ULSetStr(_holdMode).c_str());
     ps(m);
     printf("UTone key shift = %d\n", _UToneKeyShift);
     ps(m);
@@ -671,9 +661,9 @@ void PatchParameter::print(int m) {
     ps(m);
     printf("Portamento time = %d\n", _portamentoTime);
     ps(m);
-    printf("Output mode = %s\n", OutputModeStr());
+    printf("Output mode = %s\n", OutputModeStr().c_str());
     ps(m);
-    printf("Reverb type = %s\n", ReverbTypeStr());
+    printf("Reverb type = %s\n", ReverbTypeStr().c_str());
     ps(m);
     printf("Reverb balance = %d\n", _reverbBalance);
     ps(m);
@@ -681,7 +671,7 @@ void PatchParameter::print(int m) {
     ps(m);
     printf("Tone balance = %d\n", _toneBalance);
     ps(m);
-    printf("Chase mode = %s\n", ChaseModeStr());
+    printf("Chase mode = %s\n", ChaseModeStr().c_str());
     ps(m);
     printf("Chase level = %d\n", _chaseLevel);
     ps(m);
