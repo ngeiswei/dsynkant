@@ -27,32 +27,28 @@
 #include <stdio.h>
 
 //constructor destructor
-Set::Set() {
-    _setName = NULL;
-}
-Set::Set(char* bn) {
-    _setName = bn;
-}
+Set::Set() {}
+Set::Set(const std::string& bn) : _setName(bn) {}
+Set::~Set() {}
 
-Set::~Set() {
-}
-
-void Set::addBank(Bank* b) {
+void Set::addBank(const Bank& b) {
     _banks.push_back(b);
 }
-Bank* Set::getBank(unsigned index) {
-    if(index < _banks.size()) return _banks[index];
-    else return NULL;
+const Bank& Set::getBank(unsigned index) const {
+    return _banks[index];
+}
+Bank& Set::getBank(unsigned index) {
+    return _banks[index];
 }
 
 //dump method
-void Set::dump(unsigned length, unsigned char* data) {
+void Set::dump(unsigned length, const unsigned char* data) {
     //TODO
 }
 
 //print method
-void Set::print(int m) {
+void Set::print(int m) const {
     ps(m);
-    printf("Set = %s\n", _setName);
-    for(unsigned i = 0; i < _banks.size(); i++) _banks[i]->print(m+2);
+    printf("Set = %s\n", _setName.c_str());
+    for(const Bank& bank : _banks) bank.print(m+2);
 }

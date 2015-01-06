@@ -36,24 +36,24 @@ class PatchParameter;
 
 class Patch {
 private:
-    Partial* _upperPartial1;
-    Partial* _upperPartial2;
-    Common* _upperCommon;
-    Partial* _lowerPartial1;
-    Partial* _lowerPartial2;
-    Common* _lowerCommon;
-    PatchParameter* _patchParameter;
+    Partial _upperPartial1;
+    Partial _upperPartial2;
+    Common _upperCommon;
+    Partial _lowerPartial1;
+    Partial _lowerPartial2;
+    Common _lowerCommon;
+    PatchParameter _patchParameter;
 
 public:
-    //constructor destructor
+    // Constructor destructor
     Patch();
     ~Patch();
 
-    //dump method
-    void dump(Address& a, unsigned length, unsigned char* data);
+    // Dump method
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
-    //print method
-    void print(int m = 0);
+    // Print method
+    void print(int m = 0) const;
 };
 
 #endif

@@ -66,33 +66,33 @@ void TVF::setAftertouchRange(char ar) {
 }
 
 //access methods
-unsigned char TVF::getCutoffFrequency() {
+unsigned char TVF::getCutoffFrequency() const {
     return _cutoffFrequency;
 }
-unsigned char TVF::getResonance() {
+unsigned char TVF::getResonance() const {
     return _resonance;
 }
-FracKeyFollow TVF::getCutoffPointKeyFollow() {
+FracKeyFollow TVF::getCutoffPointKeyFollow() const {
     return _cutoffPointKeyFollow;
 }
-unsigned char TVF::getENVDepth() {
+unsigned char TVF::getENVDepth() const {
     return _ENVDepth;
 }
-unsigned char TVF::getVelocityRange() {
+unsigned char TVF::getVelocityRange() const {
     return _velocityRange;
 }
-unsigned char TVF::getDepthKeyFollow() {
+unsigned char TVF::getDepthKeyFollow() const {
     return _depthKeyFollow;
 }
-unsigned char TVF::getTimeKeyFollow() {
+unsigned char TVF::getTimeKeyFollow() const {
     return _timeKeyFollow;
 }
-char TVF::getAftertouchRange() {
+char TVF::getAftertouchRange() const {
     return _aftertouchRange;
 }
 
 //dump method
-void TVF::dump(Address& a, unsigned length, unsigned char* data) {
+void TVF::dump(Address& a, unsigned length, const unsigned char* data) {
     Address lowBound;
     Address upBound(1);
     unsigned index = 0;
@@ -181,7 +181,7 @@ void TVF::dump(Address& a, unsigned length, unsigned char* data) {
 }
 
 //print methods
-void TVF::print(int m) {
+void TVF::print(int m) const {
     ps(m);
     printf("Cutoff frequency = %d\n", _cutoffFrequency);
     ps(m);

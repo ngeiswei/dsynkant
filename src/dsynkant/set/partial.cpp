@@ -25,27 +25,19 @@
 #include "partial.hpp"
 
 //constructor desturctor
-Partial::Partial() {
-    _wg = new WG();
-    _tvf = new TVF();
-    _tva = new TVA();
-}
+Partial::Partial() {}
 
-Partial::~Partial() {
-    delete(_wg);
-    delete(_tvf);
-    delete(_tva);
-}
+Partial::~Partial() {}
 
 //bump method
-void Partial::dump(Address& a, unsigned length, unsigned char* data) {
+void Partial::dump(Address& a, unsigned length, const unsigned char* data) {
     Address lowBound(0, 0);
     Address upBound(0, DUMP_PARTIAL_LENGTH);
     unsigned index = 0;
     if(length > index && a >= lowBound && a < upBound) {
         Address la = a - lowBound; //local address
         Address prela = la; //to keep before the dump
-        _wg->dump(la, length, data);
+        _wg.dump(la, length, data);
         Address diffa = la - prela; //distance made by dump
         index += diffa.toInt();
         a += diffa;
@@ -55,7 +47,7 @@ void Partial::dump(Address& a, unsigned length, unsigned char* data) {
     if(length > index && a >= lowBound && a < upBound) {
         Address la = a - lowBound; //local address
         Address prela = la; //to keep before the dump
-        _tvf->dump(la, length - index, &data[index]);
+        _tvf.dump(la, length - index, &data[index]);
         Address diffa = la - prela; //distance made by dump
         index += diffa.toInt();
         a += diffa;
@@ -65,22 +57,20 @@ void Partial::dump(Address& a, unsigned length, unsigned char* data) {
     if(length > index && a >= lowBound && a < upBound) {
         Address la = a - lowBound; //local address
         Address prela = la; //to keep before the dump
-        _tva->dump(la, length - index, &data[index]);
+        _tva.dump(la, length - index, &data[index]);
         Address last(DUMP_PARTIAL_LENGTH);
         a = DUMP_PARTIAL_LENGTH;
     }
 }
 
-
-//print method
-void Partial::print(int m) {
+void Partial::print(int m) const {
     ps(m);
     printf("Wave Generator :\n");
-    if(_wg) _wg->print(m+2);
+    _wg.print(m+2);
     ps(m);
     printf("Time Variant Filter :\n");
-    if(_tvf) _tvf->print(m+2);
+    _tvf.print(m+2);
     ps(m);
     printf("Time Variant Amplitude :\n");
-    if(_tva) _tva->print(m+2);
+    _tva.print(m+2);
 }

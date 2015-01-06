@@ -40,10 +40,10 @@ typedef enum {
     LMAnL
 } WGLFOMode;
 
-#define offStr "off"
-#define plusStr "plus"
-#define minusStr "minus"
-#define AnLStr "AnL"
+const std::string offStr="off";
+const std::string plusStr="plus";
+const std::string minusStr="minus";
+const std::string AnLStr="AnL";
 
 typedef enum {
     PEMoff,
@@ -57,16 +57,16 @@ typedef enum {
     BMnormal
 } WGBenderMode;
 
-#define keyFollowStr "keyFollow"
-#define normalStr "normal"
+const std::string keyFollowStr="keyFollow";
+const std::string normalStr="normal";
 
 typedef enum {
     square,
     sawtooth
 } WGWaveform;
 
-#define squareStr "square"
-#define sawtoothStr "sawtooth"
+const std::string squareStr="square";
+const std::string sawtoothStr="sawtooth";
 
 enum class WGPCMWaveNo {
     Marimba,

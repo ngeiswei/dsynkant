@@ -33,15 +33,15 @@
 
 #define PATCHNAME_LENGTH 18
 
-#define Whole_Str "Whole"
-#define Dual_Str "Dual"
-#define Split_Str "Split"
-#define Separate_Str "Separate"
-#define Whole_S_Str "Whole_S"
-#define Dual_S_Str "Dual_S"
-#define Split_US_Str "Dual_US"
-#define Split_LS_Str "Split_LS"
-#define Separate_S_Str "Separate_S"
+const std::string Whole_Str="Whole";
+const std::string Dual_Str="Dual";
+const std::string Split_Str="Split";
+const std::string Separate_Str="Separate";
+const std::string Whole_S_Str="Whole_S";
+const std::string Dual_S_Str="Dual_S";
+const std::string Split_US_Str="Dual_US";
+const std::string Split_LS_Str="Split_LS";
+const std::string Separate_S_Str="Separate_S";
 
 typedef enum {
     Whole,
@@ -65,9 +65,9 @@ typedef enum {
     SUL
 } ULSet;
 
-#define CMULStr "UL"
-#define CMULLStr "ULL"
-#define CMULUStr "ULU"
+const std::string CMULStr="UL";
+const std::string CMULLStr="ULL";
+const std::string CMULUStr="ULU";
 
 typedef enum {
     CMUL,
@@ -75,15 +75,15 @@ typedef enum {
     CMULU
 } ChaseMode;
 
-#define BTR_MIX_Short_Str "BTR_MIX"
-#define BTR_SEP_Short_Str "BTR_SEP"
-#define UTR_SEP_Short_Str "UTR_SEP"
-#define LTR_SEP_Short_Str "LTR_SEP"
+const std::string BTR_MIX_Short_Str="BTR_MIX";
+const std::string BTR_SEP_Short_Str="BTR_SEP";
+const std::string UTR_SEP_Short_Str="UTR_SEP";
+const std::string LTR_SEP_Short_Str="LTR_SEP";
 
-#define BTR_MIX_Str "Both tones reverb, mixed signals"
-#define BTR_SEP_Str "Both tones reverb, seperate signals"
-#define UTR_SEP_Str "Upper tone reverb, seperate signals"
-#define LTR_SEP_Str "Lower tone reverb, seperate signals"
+const std::string BTR_MIX_Str="Both tones reverb, mixed signals";
+const std::string BTR_SEP_Str="Both tones reverb, seperate signals";
+const std::string UTR_SEP_Str="Upper tone reverb, seperate signals";
+const std::string LTR_SEP_Str="Lower tone reverb, seperate signals";
 
 typedef enum {
     BTR_MIX, //Both tones reverb, mixed signals
@@ -92,38 +92,38 @@ typedef enum {
     LTR_SEP //Lower tone reverb, seperate signals
 } OutputMode;
 
-#define SmallHall_Str "Small Hall"
-#define MediumHall_Str "Medium Hall"
-#define LargeHall_Str "Large Hall"
-#define Chapel_Str "Chapel"
-#define Box_Str "Box"
-#define SmallMetalRoom_Str "Small Metal Room"
-#define SmallRoom_Str "Small Room"
-#define MediumRoom_Str "Medium Room"
-#define MediumLargeRoom_Str "Medium Large Room"
-#define LargeRoom_Str "Large Room"
-#define SimpleDelay_102ms_Str "Simple Delay(102ms)"
-#define CrossDelay_180ms_Str "Cross Delay(180ms)"
-#define CrossDelay_224ms_Str "Cross Delay(224ms)"
-#define CrossDelay_148_296ms_Str "Cross Delay(148-296ms)"
-#define ShortGate_200ms_Str "Short Gate(200ms)"
-#define LongGate_480ms_Str "Long Gate(480ms)"
-#define BrightHall_Str "Bright Hall"
-#define LargeCave_Str "Large Cave"
-#define SteelPan_Str "Steel Pan"
-#define Delay_248ms_Str "Delay(248ms)"
-#define Delay_338ms_Str "Delay(338ms)"
-#define CrossDelay_157ms_Str "Cross Delay(157ms)"
-#define CrossDelay_252ms_Str "Cross Delay(252ms)"
-#define CrossDelay_274_137ms_Str "Cross Delay(274-137ms)"
-#define GateReverb_Str "Gate Reverb"
-#define ReverseGate_360ms_Str "Reverse Gate(360ms)"
-#define ReverseGate_480ms_Str "Reverse Gate(480ms)"
-#define ShortSlapBack_Str "Short Slap Back"
-#define MediumSlapBack_Str "Medium Slap Back"
-#define LongSlapBack_Str "Long Slap Back"
-#define TwistedSpace_Str "Twisted Space"
-#define Space_Str "Space"
+const std::string SmallHall_Str="Small Hall";
+const std::string MediumHall_Str="Medium Hall";
+const std::string LargeHall_Str="Large Hall";
+const std::string Chapel_Str="Chapel";
+const std::string Box_Str="Box";
+const std::string SmallMetalRoom_Str="Small Metal Room";
+const std::string SmallRoom_Str="Small Room";
+const std::string MediumRoom_Str="Medium Room";
+const std::string MediumLargeRoom_Str="Medium Large Room";
+const std::string LargeRoom_Str="Large Room";
+const std::string SimpleDelay_102ms_Str="Simple Delay(102ms)";
+const std::string CrossDelay_180ms_Str="Cross Delay(180ms)";
+const std::string CrossDelay_224ms_Str="Cross Delay(224ms)";
+const std::string CrossDelay_148_296ms_Str="Cross Delay(148-296ms)";
+const std::string ShortGate_200ms_Str="Short Gate(200ms)";
+const std::string LongGate_480ms_Str="Long Gate(480ms)";
+const std::string BrightHall_Str="Bright Hall";
+const std::string LargeCave_Str="Large Cave";
+const std::string SteelPan_Str="Steel Pan";
+const std::string Delay_248ms_Str="Delay(248ms)";
+const std::string Delay_338ms_Str="Delay(338ms)";
+const std::string CrossDelay_157ms_Str="Cross Delay(157ms)";
+const std::string CrossDelay_252ms_Str="Cross Delay(252ms)";
+const std::string CrossDelay_274_137ms_Str="Cross Delay(274-137ms)";
+const std::string GateReverb_Str="Gate Reverb";
+const std::string ReverseGate_360ms_Str="Reverse Gate(360ms)";
+const std::string ReverseGate_480ms_Str="Reverse Gate(480ms)";
+const std::string ShortSlapBack_Str="Short Slap Back";
+const std::string MediumSlapBack_Str="Medium Slap Back";
+const std::string LongSlapBack_Str="Long Slap Back";
+const std::string TwistedSpace_Str="Twisted Space";
+const std::string Space_Str="Space";
 
 typedef enum {
     SmallHall,
@@ -245,6 +245,7 @@ public:
 
     // Access methods
     const std::string& getPatchName() const;
+    std::string& getPatchName();
     KeyMode getKeyMode() const;
     unsigned char getSplitPoint() const;
     ULSet getPortamentoMode() const;

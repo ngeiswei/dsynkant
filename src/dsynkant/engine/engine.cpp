@@ -32,6 +32,6 @@ Engine::Engine(DSynkant& ref) : _dsynkant(ref) {}
 Engine::~Engine() {}
 
 //print method
-void Engine::print(int m) {
+void Engine::print(int m) const {
     //TODO
 }

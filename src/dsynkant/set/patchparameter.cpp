@@ -187,6 +187,9 @@ void PatchParameter::setUpperPartial2On(bool up2) {
 const std::string& PatchParameter::getPatchName() const {
     return _patchName;
 }
+std::string& PatchParameter::getPatchName() {
+    return _patchName;
+}
 KeyMode PatchParameter::getKeyMode() const {
     return _keyMode;
 }

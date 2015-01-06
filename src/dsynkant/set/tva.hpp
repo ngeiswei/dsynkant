@@ -49,7 +49,7 @@ private:
     char _aftertouchRange; //between -7 and +7
 
 public:
-    //constructor destructor
+    // Constructor destructor
     TVA();
     ~TVA();
 
@@ -71,7 +71,7 @@ public:
     void dump(Address& a, unsigned length, const unsigned char* data);
 
     // Print method
-    void print(int m); //print the TVA on the std output tabulated of m
+    void print(int m) const; // Print the TVA on the std output tabulated of m
 };
 
 #endif

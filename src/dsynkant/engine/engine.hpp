@@ -36,7 +36,7 @@ public:
     ~Engine();
 
     //print method
-    void print(int m);
+    void print(int m) const;
 };
 
 #endif

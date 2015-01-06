@@ -33,17 +33,17 @@
 
 class Partial {
 private:
-    WG* _wg;
-    TVF* _tvf;
-    TVA* _tva;
+    WG _wg;
+    TVF _tvf;
+    TVA _tva;
   
 public:
     Partial();
     ~Partial();
 
-    void dump(Address& a, unsigned length, unsigned char* data);
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
-    void print(int m);
+    void print(int m) const;
 };
 
 #endif

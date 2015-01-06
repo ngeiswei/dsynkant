@@ -148,7 +148,7 @@ void TVA::dump(Address& a, unsigned length, const unsigned char* data) {
 /****************/
 /* print method */
 /****************/
-void TVA::print(int m) {
+void TVA::print(int m) const {
     ps(m);
     printf("Level = %d\n", _level);
     ps(m);

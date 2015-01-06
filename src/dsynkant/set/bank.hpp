@@ -25,25 +25,28 @@
 #ifndef __BANK_HPP
 #define __BANK_HPP
 
-#include "patch.hpp"
+#include <string>
 #include <vector>
+
+#include "patch.hpp"
 
 class Patch;
 
 class Bank {
 private:
-    char* _bankName;
-    std::vector<Patch*> _patches;
+    std::string _bankName;
+    std::vector<Patch> _patches;
 
 public:
     Bank();
-    Bank(char* bn);
+    Bank(const std::string& bn);
     ~Bank();
 
-    void addPatch(Patch* p);
-    Patch* getPatch(unsigned index);
+    void addPatch(const Patch& p);
+    const Patch& getPatch(unsigned index) const;
+    Patch& getPatch(unsigned index);
 
-    void print(int m);
+    void print(int m) const;
 };
 
 #endif

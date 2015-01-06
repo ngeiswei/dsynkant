@@ -66,20 +66,20 @@ public:
     void setAftertouchRange(char ar);
   
     //access methods
-    unsigned char getCutoffFrequency();
-    unsigned char getResonance();
-    FracKeyFollow getCutoffPointKeyFollow();
-    unsigned char getENVDepth();
-    unsigned char getVelocityRange();
-    unsigned char getDepthKeyFollow();
-    unsigned char getTimeKeyFollow();
-    char getAftertouchRange();
+    unsigned char getCutoffFrequency() const;
+    unsigned char getResonance() const;
+    FracKeyFollow getCutoffPointKeyFollow() const;
+    unsigned char getENVDepth() const;
+    unsigned char getVelocityRange() const;
+    unsigned char getDepthKeyFollow() const;
+    unsigned char getTimeKeyFollow() const;
+    char getAftertouchRange() const;
 
     //dump method
-    void dump(Address& a, unsigned length, unsigned char* data);
+    void dump(Address& a, unsigned length, const unsigned char* data);
 
     //print methods
-    void print(int m);
+    void print(int m) const;
 };
 
 #endif
