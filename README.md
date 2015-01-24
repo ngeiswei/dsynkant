@@ -5,12 +5,12 @@ Descripion
 ----------
 
 DSynkant is a virtual synthesizer that emulate the Roland D50/D550. So
-far it supports DSSI but is being developed in such a way that would
-be easy to suport other softsynth API like VST.
+far it supports DSSI but is being developed in a way that would be
+easily to other softsynth API like VST.
 
 It is largely incomplete, if you want to help you are more than
-welcome, in fact it might just be enough to motivate me to resume work
-on it.
+welcome. In particular, I don't own a Roland D-50, so if you own one,
+I can definitely find ways to help.
 
 Requirement
 -----------
@@ -20,14 +20,14 @@ Requirement
 Compilation
 -----------
 
-Something like :
+```
+mkdir build
+cd build
+cmake ..
+make -j4
+```
 
-./configure
-make
-su -c "make install"
-
-should work. If not maybe you have to install DSSI first, otherwise 
-see the file INSTALL
+should work. If not maybe you have to install DSSI first.
 
 Bugs
 ----
