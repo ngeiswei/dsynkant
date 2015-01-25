@@ -2,9 +2,9 @@
     
     DSynkant an emulator of the Roland D50 synthsizer
 
-    engine.hpp
+    voice.hpp
 
-    Copyleft (c) 2006-2007 Nil Geisweiller
+    Copyleft (c) 2015 Nil Geisweiller
  
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,29 +22,16 @@
 
 ****************************************************************************/
 
-#ifndef __ENGINE_HPP
-#define __ENGINE_HPP
-
-class DSynkant;
+#ifndef __VOICE_HPP
+#define __VOICE_HPP
 
 /**
- * The engine holds the information of each voice, state of the
- * frequency, volume, sample offset, etc. And provide the render of
- * each voice and the whole mix.
+ * Holds information about the state of a voice (note, sample freq,
+ * volume, sample offset, etc)
  */
 
-class Engine {
-private:
-	DSynkant& _dsynkant;
-
-	std::multiset<Voice> _voices;
-
-public:
-	Engine(DSynkant& ref);
-	~Engine();
-
-	//print method
-	void print(int m) const;
-};
+class Voice {
+	
+}
 
 #endif
