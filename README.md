@@ -37,8 +37,8 @@ be accepted.
 
 1. Indentation: smart-tab, see
    http://www.emacswiki.org/emacs/SmartTabs for Emacs and
-   http://www.vim.org/scripts/script.php?script_id=231 for Vim
-2. 80 columns max per line
+   http://www.vim.org/scripts/script.php?script_id=231 for Vim.
+2. 80 columns max per line.
 
 Bugs
 ----
