@@ -32,6 +32,9 @@ welcome. In particular, I don't own a Roland D-50, so if you own one,
 I can definitely find helpful tasks for you.
 
 ### Coding standard:
+Patches (pull requests) that do not meet the coding standard will not
+be accepted.
+
 1. Indentation: smart-tab, see
    http://www.emacswiki.org/emacs/SmartTabs for Emacs and
    http://www.vim.org/scripts/script.php?script_id=231 for Vim
