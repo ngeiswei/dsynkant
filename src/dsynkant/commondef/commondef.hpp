@@ -47,24 +47,24 @@ const std::string s1Str="s1";
 const std::string s2Str="s2";
 
 enum class FracKeyFollow {
-    minus1,
-    minus1div2,
-    minus1div4,
-    zero,
-    plus1div8,
-    plus1div4,
-    plus3div8,
-    plus1div2,
-    plus5div8,
-    plus3div4,
-    plus7div8,
-    plus1,
-    plus5div4,
-    plus3div2,
-    plus2,
-    s1,
-    s2
-};
+	minus1,
+		minus1div2,
+		minus1div4,
+		zero,
+		plus1div8,
+		plus1div4,
+		plus3div8,
+		plus1div2,
+		plus5div8,
+		plus3div4,
+		plus7div8,
+		plus1,
+		plus5div4,
+		plus3div2,
+		plus2,
+		s1,
+		s2
+		};
 
 void ps(int n); //printf n space
 
