@@ -30,33 +30,33 @@
 
 class DSSIDSynkant : public DSSIPlugin {
 public:
-    DSynkant dsynkant;
+	DSynkant dsynkant;
 
-    DSSIDSynkant(unsigned long frame_rate);
-  
-    void run_synth(unsigned long sample_count, snd_seq_event_t* events,
-                   unsigned long event_count);
-    int get_midi_controller_for_port(unsigned long port);
-  
-    const DSSI_Program_Descriptor* get_program(unsigned long index);
-    void select_program(unsigned long bank, unsigned long program);
-  
-    char* configure(const char* key, const char* value);
-  
+	DSSIDSynkant(unsigned long frame_rate);
+
+	void run_synth(unsigned long sample_count, snd_seq_event_t* events,
+	               unsigned long event_count);
+	int get_midi_controller_for_port(unsigned long port);
+
+	const DSSI_Program_Descriptor* get_program(unsigned long index);
+	void select_program(unsigned long bank, unsigned long program);
+
+	char* configure(const char* key, const char* value);
+
 protected:
-  
-  
-    unsigned long m_frame_rate;
-    unsigned long m_last_frame;
-  
-    LADSPA_Data m_velocity;
-    LADSPA_Data m_pitch;
-    unsigned char m_note;
-    bool m_note_is_on;
-    
-    DSSI_Program_Descriptor m_prog;
-  
-    LADSPA_Data m_pitchbend;
+
+
+	unsigned long m_frame_rate;
+	unsigned long m_last_frame;
+
+	LADSPA_Data m_velocity;
+	LADSPA_Data m_pitch;
+	unsigned char m_note;
+	bool m_note_is_on;
+
+	DSSI_Program_Descriptor m_prog;
+
+	LADSPA_Data m_pitchbend;
 };
 
 
