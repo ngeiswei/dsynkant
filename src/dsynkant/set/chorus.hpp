@@ -41,46 +41,46 @@ const std::string ChorusTremoloStr="Chorus Tremolo";
 const std::string DimensionStr="Dimension";
 
 enum class ChorusType {
-    Chorus1,
-    Chorus2,
-    Flanger1,
-    Flanger2,
-    FeedbackChorus,
-    Tremolo,
-    ChorusTremolo,
-    Dimension
-};
+	Chorus1,
+		Chorus2,
+		Flanger1,
+		Flanger2,
+		FeedbackChorus,
+		Tremolo,
+		ChorusTremolo,
+		Dimension
+		};
 
 class Chorus {
 private:
-    ChorusType _type;
-    unsigned char _rate;
-    unsigned char _depth;
-    unsigned char _balance;
+	ChorusType _type;
+	unsigned char _rate;
+	unsigned char _depth;
+	unsigned char _balance;
   
 public:
-    Chorus();
-    ~Chorus();
+	Chorus();
+	~Chorus();
   
-    // Affect methods
-    void setType(ChorusType t);
-    void setRate(unsigned char r);
-    void setDepth(unsigned char d);
-    void setBalance(unsigned char b);
+	// Affect methods
+	void setType(ChorusType t);
+	void setRate(unsigned char r);
+	void setDepth(unsigned char d);
+	void setBalance(unsigned char b);
 
-    // Access methods
-    ChorusType getType() const;
-    unsigned char getRate() const;
-    unsigned char getDepth() const;
-    unsigned char getBalance() const;
+	// Access methods
+	ChorusType getType() const;
+	unsigned char getRate() const;
+	unsigned char getDepth() const;
+	unsigned char getBalance() const;
 
-    // Dump method. Note that 'a' will be incremented accordingly.
-    void dump(Address& a, unsigned length, const unsigned char* data);
+	// Dump method. Note that 'a' will be incremented accordingly.
+	void dump(Address& a, unsigned length, const unsigned char* data);
 
-    // Print and float methods
-    std::string ChorusTypeStr(ChorusType t) const;
-    std::string ChorusTypeStr() const;
-    void print(int m) const;
+	// Print and float methods
+	std::string ChorusTypeStr(ChorusType t) const;
+	std::string ChorusTypeStr() const;
+	void print(int m) const;
 };
 
 #endif

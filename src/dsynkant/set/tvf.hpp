@@ -43,43 +43,43 @@ class BaseModulation;
 
 class TVF : public BaseKeyBias, public BaseEnvelope, public BaseModulation {
 private:
-    unsigned char _cutoffFrequency; //between 0 and 100
-    unsigned char _resonance; //between 0 and 30
-    FracKeyFollow _cutoffPointKeyFollow; //but without s1 and s2
-    unsigned char _ENVDepth; //between 0 and 100
-    unsigned char _velocityRange; //between 0 and 100
-    unsigned char _depthKeyFollow; //between 0 and 4
-    unsigned char _timeKeyFollow; //between 0 and 4
-    char _aftertouchRange; //between -7 and +7
+	unsigned char _cutoffFrequency; //between 0 and 100
+	unsigned char _resonance; //between 0 and 30
+	FracKeyFollow _cutoffPointKeyFollow; //but without s1 and s2
+	unsigned char _ENVDepth; //between 0 and 100
+	unsigned char _velocityRange; //between 0 and 100
+	unsigned char _depthKeyFollow; //between 0 and 4
+	unsigned char _timeKeyFollow; //between 0 and 4
+	char _aftertouchRange; //between -7 and +7
 public:
-    TVF();
-    ~TVF();
+	TVF();
+	~TVF();
 
-    //affect methods
-    void setCutoffFrequency(unsigned char cf);
-    void setResonance(unsigned char r);
-    void setCutoffPointKeyFollow(FracKeyFollow cpkf);
-    void setENVDepth(unsigned char ed);
-    void setVelocityRange(unsigned char vr);
-    void setDepthKeyFollow(unsigned char dkf);
-    void setTimeKeyFollow(unsigned char tkf);
-    void setAftertouchRange(char ar);
+	//affect methods
+	void setCutoffFrequency(unsigned char cf);
+	void setResonance(unsigned char r);
+	void setCutoffPointKeyFollow(FracKeyFollow cpkf);
+	void setENVDepth(unsigned char ed);
+	void setVelocityRange(unsigned char vr);
+	void setDepthKeyFollow(unsigned char dkf);
+	void setTimeKeyFollow(unsigned char tkf);
+	void setAftertouchRange(char ar);
   
-    //access methods
-    unsigned char getCutoffFrequency() const;
-    unsigned char getResonance() const;
-    FracKeyFollow getCutoffPointKeyFollow() const;
-    unsigned char getENVDepth() const;
-    unsigned char getVelocityRange() const;
-    unsigned char getDepthKeyFollow() const;
-    unsigned char getTimeKeyFollow() const;
-    char getAftertouchRange() const;
+	//access methods
+	unsigned char getCutoffFrequency() const;
+	unsigned char getResonance() const;
+	FracKeyFollow getCutoffPointKeyFollow() const;
+	unsigned char getENVDepth() const;
+	unsigned char getVelocityRange() const;
+	unsigned char getDepthKeyFollow() const;
+	unsigned char getTimeKeyFollow() const;
+	char getAftertouchRange() const;
 
-    //dump method
-    void dump(Address& a, unsigned length, const unsigned char* data);
+	//dump method
+	void dump(Address& a, unsigned length, const unsigned char* data);
 
-    //print methods
-    void print(int m) const;
+	//print methods
+	void print(int m) const;
 };
 
 #endif

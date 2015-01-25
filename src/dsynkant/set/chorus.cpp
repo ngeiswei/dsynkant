@@ -29,10 +29,10 @@
 
 //Constructor destructor
 Chorus::Chorus() {
-    _type = ChorusType::Chorus1;
-    _rate = 50;
-    _depth = 50;
-    _balance = 0;
+	_type = ChorusType::Chorus1;
+	_rate = 50;
+	_depth = 50;
+	_balance = 0;
 }
 
 Chorus::~Chorus() {
@@ -40,80 +40,80 @@ Chorus::~Chorus() {
 
 //affect methods
 void Chorus::setType(ChorusType t) {
-    _type = t;
+	_type = t;
 }
 void Chorus::setRate(unsigned char r) {
-    _rate = r;
+	_rate = r;
 }
 void Chorus::setDepth(unsigned char d) {
-    _depth = d;
+	_depth = d;
 }
 void Chorus::setBalance(unsigned char b) {
-    _balance = b;
+	_balance = b;
 }
 
 //access methods
 ChorusType Chorus::getType() const {
-    return _type;
+	return _type;
 }
 unsigned char Chorus::getRate() const {
-    return _rate;
+	return _rate;
 }
 unsigned char Chorus::getDepth() const {
-    return _depth;
+	return _depth;
 }
 unsigned char Chorus::getBalance() const {
-    return _balance;
+	return _balance;
 }
 
 void Chorus::dump(Address& a, unsigned length, const unsigned char* data) {
-    Address cura;
-    unsigned index = 0;
-    if(length > index & a == cura) {
-        _type = (ChorusType) data[index];
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index & a == cura) {
-        _rate = data[index];
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index & a == cura) {
-        _depth = data[index];
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index & a == cura) {
-        _balance = data[index];
-        ++a;
-    }
+	Address cura;
+	unsigned index = 0;
+	if(length > index & a == cura) {
+		_type = (ChorusType) data[index];
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index & a == cura) {
+		_rate = data[index];
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index & a == cura) {
+		_depth = data[index];
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index & a == cura) {
+		_balance = data[index];
+		++a;
+	}
 }
 
 //print methods
 std::string Chorus::ChorusTypeStr(ChorusType t) const {
-    switch(t) {
-    case ChorusType::Chorus1 : return Chorus1Str; break;
-    case ChorusType::Chorus2 : return Chorus2Str; break;
-    case ChorusType::Flanger1 : return Flanger1Str; break;
-    case ChorusType::Flanger2 : return Flanger2Str; break;
-    case ChorusType::FeedbackChorus : return FeedbackChorusStr; break;
-    case ChorusType::Tremolo : return TremoloStr; break;
-    case ChorusType::ChorusTremolo : return ChorusTremoloStr; break;
-    case ChorusType::Dimension : return DimensionStr; break;
-    default :
-        std::cerr << "Chorus::ChorusTypeStr : impossible case";
-        return std::string();
-    }
+	switch(t) {
+	case ChorusType::Chorus1 : return Chorus1Str; break;
+	case ChorusType::Chorus2 : return Chorus2Str; break;
+	case ChorusType::Flanger1 : return Flanger1Str; break;
+	case ChorusType::Flanger2 : return Flanger2Str; break;
+	case ChorusType::FeedbackChorus : return FeedbackChorusStr; break;
+	case ChorusType::Tremolo : return TremoloStr; break;
+	case ChorusType::ChorusTremolo : return ChorusTremoloStr; break;
+	case ChorusType::Dimension : return DimensionStr; break;
+	default :
+		std::cerr << "Chorus::ChorusTypeStr : impossible case";
+		return std::string();
+	}
 }
 std::string Chorus::ChorusTypeStr() const {
-    return ChorusTypeStr(_type);
+	return ChorusTypeStr(_type);
 }
 void Chorus::print(int m) const {
-    ps(m);
-    printf("Chorus = (type : %s, rate : %d, depth : %d, balance : %d)\n",
-           ChorusTypeStr().c_str(), _rate, _depth, _balance);
+	ps(m);
+	printf("Chorus = (type : %s, rate : %d, depth : %d, balance : %d)\n",
+	       ChorusTypeStr().c_str(), _rate, _depth, _balance);
 }

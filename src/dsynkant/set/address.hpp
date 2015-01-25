@@ -27,35 +27,35 @@
 
 class Address {
 private:
-    int _aa;
-    int _bb;
-    int _cc;
+	int _aa;
+	int _bb;
+	int _cc;
 public:
-    Address();
-    Address(int cc);
-    Address(int bb, int cc);
-    Address(int aa, int bb, int cc);
-    Address(const Address& a);
-    ~Address();
+	Address();
+	Address(int cc);
+	Address(int bb, int cc);
+	Address(int aa, int bb, int cc);
+	Address(const Address& a);
+	~Address();
 
-    void operator=(const Address& a);
-    void operator+=(int i);
-    void operator+=(const Address& a);
-    void operator-=(const Address& a);
-    void operator-=(int i);
-    void operator++();
+	void operator=(const Address& a);
+	void operator+=(int i);
+	void operator+=(const Address& a);
+	void operator-=(const Address& a);
+	void operator-=(int i);
+	void operator++();
   
-    Address& operator-(const Address& a) const;
+	Address& operator-(const Address& a) const;
 
-    bool operator>=(const Address& a) const;
-    bool operator>(const Address& a) const;
-    bool operator<(const Address& a) const;
-    bool operator<=(const Address& a) const;
-    bool operator==(const Address& a) const;
-    bool operator!=(const Address& a) const;
+	bool operator>=(const Address& a) const;
+	bool operator>(const Address& a) const;
+	bool operator<(const Address& a) const;
+	bool operator<=(const Address& a) const;
+	bool operator==(const Address& a) const;
+	bool operator!=(const Address& a) const;
 
-    int toInt() const;
-    char* toStr() const;
+	int toInt() const;
+	char* toStr() const;
 };
 
 #endif

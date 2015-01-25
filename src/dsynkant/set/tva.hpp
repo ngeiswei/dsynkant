@@ -41,37 +41,37 @@ class BaseModulation;
 /**************************/
 class TVA : public BaseKeyBias, public BaseEnvelope, public BaseModulation {
 private:
-    unsigned char _level; //between 0 and 100
-    char _velocityRange; //between -50 and +50
-    unsigned char _velocityFollow; //between 0 and 4, shorten the time1
-    unsigned char _keyFollow; //between 0 and 4, shorten the whole envelope
-    //Aftertouch
-    char _aftertouchRange; //between -7 and +7
+	unsigned char _level; //between 0 and 100
+	char _velocityRange; //between -50 and +50
+	unsigned char _velocityFollow; //between 0 and 4, shorten the time1
+	unsigned char _keyFollow; //between 0 and 4, shorten the whole envelope
+	//Aftertouch
+	char _aftertouchRange; //between -7 and +7
 
 public:
-    // Constructor destructor
-    TVA();
-    ~TVA();
+	// Constructor destructor
+	TVA();
+	~TVA();
 
-    // Affect methods
-    void setLevel(unsigned char l);
-    void setVelocityRange(char vr);
-    void setVelocityFollow(unsigned char vf);
-    void setKeyFollow(unsigned char kf);
-    void setAftertouchRange(char ar);
+	// Affect methods
+	void setLevel(unsigned char l);
+	void setVelocityRange(char vr);
+	void setVelocityFollow(unsigned char vf);
+	void setKeyFollow(unsigned char kf);
+	void setAftertouchRange(char ar);
 
-    // Access methods
-    unsigned char getLevel() const;
-    char getVelocityRange() const;
-    unsigned char getVelocityFollow() const;
-    unsigned char getKeyFollow() const;
-    char getAftertouchRange() const;
+	// Access methods
+	unsigned char getLevel() const;
+	char getVelocityRange() const;
+	unsigned char getVelocityFollow() const;
+	unsigned char getKeyFollow() const;
+	char getAftertouchRange() const;
 
-    // Dump method. Note that 'a' will be incremented accordingly.
-    void dump(Address& a, unsigned length, const unsigned char* data);
+	// Dump method. Note that 'a' will be incremented accordingly.
+	void dump(Address& a, unsigned length, const unsigned char* data);
 
-    // Print method
-    void print(int m) const; // Print the TVA on the std output tabulated of m
+	// Print method
+	void print(int m) const; // Print the TVA on the std output tabulated of m
 };
 
 #endif

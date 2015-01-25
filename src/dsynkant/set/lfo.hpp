@@ -42,56 +42,56 @@ const std::string SQU_Str="Square";
 const std::string RND_Str="Random";
 
 enum class LFOWaveform {
-    TRI,
-    SAW,
-    SQU,
-    RND
-};
+	TRI,
+		SAW,
+		SQU,
+		RND
+		};
 
 const std::string SyncOff_Str="off";
 const std::string SyncOn_Str="on";
 const std::string SyncKey_Str="key";
 
 enum class Sync {
-    Off,
-    On,
-    Key
-};
+	Off,
+		On,
+		Key
+		};
 
 class LFO {
 private:
-    LFOWaveform _waveform;
-    unsigned char _rate; // Betweem 0 and 100
-    unsigned char _delayTime; // Between 0 and 100
-    Sync _sync;
+	LFOWaveform _waveform;
+	unsigned char _rate; // Betweem 0 and 100
+	unsigned char _delayTime; // Between 0 and 100
+	Sync _sync;
   
 public:
-    LFO(unsigned char _rate = 50, Sync sync = Sync::Off);
-    ~LFO();
+	LFO(unsigned char _rate = 50, Sync sync = Sync::Off);
+	~LFO();
   
-    // Affect methods
-    void setWaveform(LFOWaveform wf);
-    void setRate(unsigned char r);
-    void setDelayTime(unsigned char dt);
-    void setSync(Sync s);
+	// Affect methods
+	void setWaveform(LFOWaveform wf);
+	void setRate(unsigned char r);
+	void setDelayTime(unsigned char dt);
+	void setSync(Sync s);
 
-    // Access methods
-    LFOWaveform getWaveform() const;
-    unsigned char getRate() const;
-    unsigned char getDelayTime() const;
-    Sync getSync() const;
+	// Access methods
+	LFOWaveform getWaveform() const;
+	unsigned char getRate() const;
+	unsigned char getDelayTime() const;
+	Sync getSync() const;
 
-    // Dump method. Note that 'a' will be incremented accordingly.
-    void dump(Address& a, unsigned length, const unsigned char* data);
+	// Dump method. Note that 'a' will be incremented accordingly.
+	void dump(Address& a, unsigned length, const unsigned char* data);
 
-    // Print method
-    std::string LFOWaveformStr(LFOWaveform wf) const;
-    std::string LFOWaveformStr() const;
-    std::string LFOWaveformShortStr(LFOWaveform wf) const;
-    std::string LFOWaveformShortStr() const;
-    std::string SyncStr(Sync s) const;
-    std::string SyncStr() const;
-    void print(int m) const;
+	// Print method
+	std::string LFOWaveformStr(LFOWaveform wf) const;
+	std::string LFOWaveformStr() const;
+	std::string LFOWaveformShortStr(LFOWaveform wf) const;
+	std::string LFOWaveformShortStr() const;
+	std::string SyncStr(Sync s) const;
+	std::string SyncStr() const;
+	void print(int m) const;
 };
 
 #endif

@@ -29,20 +29,20 @@
 /* Constructor destructor */
 /**************************/
 TVP::TVP() {
-    _velocityRange = 0;
-    _keyFollow = 0;
-    _level0 = 0;
-    _time1 = 0;
-    _level1 = 0;
-    _time2 = 50;
-    _level2 = 0;
-    _time3 = 50;
-    _sustainLevel = 0;
-    _time4 = 50;
-    _endLevel = 0;
-    _LFODepth = 0;
-    _pitchLeverModulation = 20;
-    _pitchAftertouchModulation = 0;
+	_velocityRange = 0;
+	_keyFollow = 0;
+	_level0 = 0;
+	_time1 = 0;
+	_level1 = 0;
+	_time2 = 50;
+	_level2 = 0;
+	_time3 = 50;
+	_sustainLevel = 0;
+	_time4 = 50;
+	_endLevel = 0;
+	_LFODepth = 0;
+	_pitchLeverModulation = 20;
+	_pitchAftertouchModulation = 0;
 }
 
 TVP::~TVP() {
@@ -52,191 +52,191 @@ TVP::~TVP() {
 /* Affect methods */
 /******************/
 void TVP::setVelocityRange(unsigned char vr) {
-    _velocityRange = vr;
+	_velocityRange = vr;
 }
 void TVP::setKeyFollow(unsigned char kf) {
-    _keyFollow = kf;
+	_keyFollow = kf;
 }
 void TVP::setLevel0(char l0) {
-    _level0 = l0;
+	_level0 = l0;
 }
 void TVP::setTime1(unsigned char t1) {
-    _time1 = t1;
+	_time1 = t1;
 }
 void TVP::setLevel1(char l1) {
-    _level1 = l1;
+	_level1 = l1;
 }
 void TVP::setTime2(unsigned char t2) {
-    _time2 = t2;
+	_time2 = t2;
 }
 void TVP::setLevel2(char l2) {
-    _level2 = l2;
+	_level2 = l2;
 }
 void TVP::setTime3(unsigned char t3) {
-    _time3 = t3;
+	_time3 = t3;
 }
 void TVP::setSustainLevel(char sl) {
-    _sustainLevel = sl;
+	_sustainLevel = sl;
 }
 void TVP::setTime4(unsigned char t4) {
-    _time4 = t4;
+	_time4 = t4;
 }
 void TVP::setEndLevel(char el) {
-    _endLevel = el;
+	_endLevel = el;
 }
 void TVP::setLFODepth(unsigned char ld) {
-    _LFODepth = ld;
+	_LFODepth = ld;
 }
 void TVP::setPitchLeverModulation(unsigned char plm) {
-    _pitchLeverModulation = plm;
+	_pitchLeverModulation = plm;
 } 
 void TVP::setPitchAftertouchModulation(unsigned char pam) {
-    _pitchAftertouchModulation = pam;
+	_pitchAftertouchModulation = pam;
 }
 
 /******************/
 /* Access methods */
 /******************/
 unsigned char TVP::getVelocityRange() const {
-    return _velocityRange;
+	return _velocityRange;
 }
 unsigned char TVP::getKeyFollow() const {
-    return _keyFollow;
+	return _keyFollow;
 }
 char TVP::getLevel0() const {
-    return _level0;
+	return _level0;
 }
 unsigned char TVP::getTime1() const {
-    return _time1;
+	return _time1;
 }
 char TVP::getLevel1() const {
-    return _level1;
+	return _level1;
 }
 unsigned char TVP::getTime2() const {
-    return _time2;
+	return _time2;
 }
 char TVP::getLevel2() const {
-    return _level2;
+	return _level2;
 }
 unsigned char TVP::getTime3() const {
-    return _time3;
+	return _time3;
 }
 char TVP::getSustainLevel() const {
-    return _sustainLevel;
+	return _sustainLevel;
 }
 unsigned char TVP::getTime4() const {
-    return _time4;
+	return _time4;
 }
 char TVP::getEndLevel() const {
-    return _endLevel;
+	return _endLevel;
 }
 unsigned char TVP::getLFODepth() const {
-    return _LFODepth;
+	return _LFODepth;
 }
 unsigned char TVP::getPitchLeverModulation() const {
-    return _pitchLeverModulation;
+	return _pitchLeverModulation;
 } 
 unsigned char TVP::getPitchAftertouchModulation() const {
-    return _pitchAftertouchModulation;
+	return _pitchAftertouchModulation;
 }
 
 void TVP::dump(Address& a, unsigned length, const unsigned char* data) {
-    Address cura;
-    unsigned index = 0;
-    if(length > index) {
-        _velocityRange = data[index];
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index) {
-        _keyFollow = data[index];
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index) {
-        _time1 = data[index];
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index) {
-        _time2 = data[index];
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index) {
-        _time3 = data[index];
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index) {
-        _time4 = data[index];
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index) {
-        _level0 = (char)data[index] - 50;
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index) {
-        _level1 = (char)data[index] - 50;
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index) {
-        _level2 = (char)data[index] - 50;
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index) {
-        _sustainLevel = (char)data[index] - 50;
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index) {
-        _endLevel = (char)data[index] - 50;
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index) {
-        _LFODepth = data[index];
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index) {
-        _pitchLeverModulation = data[index];
-        index++;
-        ++a;
-    }
-    ++cura;
-    if(length > index) {
-        _pitchAftertouchModulation = data[index];
-        ++a;
-    }
+	Address cura;
+	unsigned index = 0;
+	if(length > index) {
+		_velocityRange = data[index];
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index) {
+		_keyFollow = data[index];
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index) {
+		_time1 = data[index];
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index) {
+		_time2 = data[index];
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index) {
+		_time3 = data[index];
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index) {
+		_time4 = data[index];
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index) {
+		_level0 = (char)data[index] - 50;
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index) {
+		_level1 = (char)data[index] - 50;
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index) {
+		_level2 = (char)data[index] - 50;
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index) {
+		_sustainLevel = (char)data[index] - 50;
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index) {
+		_endLevel = (char)data[index] - 50;
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index) {
+		_LFODepth = data[index];
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index) {
+		_pitchLeverModulation = data[index];
+		index++;
+		++a;
+	}
+	++cura;
+	if(length > index) {
+		_pitchAftertouchModulation = data[index];
+		++a;
+	}
 }
 
 void TVP::print(int m) const {
-    ps(m);
-    printf("Velocity range = %d\n", _velocityRange);
-    ps(m);
-    printf("Key follow = %d\n", _keyFollow);
-    ps(m);
-    printf("Env = (l0:%d,t1:%d,l1:%d,t2:%d,l2:%d,t3:%d,sl:%d,t4:%d,el:%d)\n",
-           _level0, _time1, _level1, _time2, _level2, _time3, _sustainLevel,
-           _time4, _endLevel);
-    ps(m);
-    printf("Modulation = (LFODepth : %d, PLM : %d, PAM : %d)\n",
-           _LFODepth, _pitchLeverModulation, _pitchAftertouchModulation);
+	ps(m);
+	printf("Velocity range = %d\n", _velocityRange);
+	ps(m);
+	printf("Key follow = %d\n", _keyFollow);
+	ps(m);
+	printf("Env = (l0:%d,t1:%d,l1:%d,t2:%d,l2:%d,t3:%d,sl:%d,t4:%d,el:%d)\n",
+	       _level0, _time1, _level1, _time2, _level2, _time3, _sustainLevel,
+	       _time4, _endLevel);
+	ps(m);
+	printf("Modulation = (LFODepth : %d, PLM : %d, PAM : %d)\n",
+	       _LFODepth, _pitchLeverModulation, _pitchAftertouchModulation);
 }

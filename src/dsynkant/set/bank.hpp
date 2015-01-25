@@ -34,19 +34,19 @@ class Patch;
 
 class Bank {
 private:
-    std::string _bankName;
-    std::vector<Patch> _patches;
+	std::string _bankName;
+	std::vector<Patch> _patches;
 
 public:
-    Bank();
-    Bank(const std::string& bn);
-    ~Bank();
+	Bank();
+	Bank(const std::string& bn);
+	~Bank();
 
-    void addPatch(const Patch& p);
-    const Patch& getPatch(unsigned index) const;
-    Patch& getPatch(unsigned index);
+	void addPatch(const Patch& p);
+	const Patch& getPatch(unsigned index) const;
+	Patch& getPatch(unsigned index);
 
-    void print(int m) const;
+	void print(int m) const;
 };
 
 #endif

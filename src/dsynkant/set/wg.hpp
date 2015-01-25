@@ -34,10 +34,10 @@ class BaseModulation;
 #define DUMP_WG_LENGTH 0x0d
 
 typedef enum {
-    LMoff,
-    LMplus,
-    LMminus,
-    LMAnL
+	LMoff,
+	LMplus,
+	LMminus,
+	LMAnL
 } WGLFOMode;
 
 const std::string offStr="off";
@@ -46,130 +46,130 @@ const std::string minusStr="minus";
 const std::string AnLStr="AnL";
 
 typedef enum {
-    PEMoff,
-    PEMplus,
-    PEMminus
+	PEMoff,
+	PEMplus,
+	PEMminus
 } WGPEnvMode;
 
 typedef enum {
-    BMoff,
-    BMkeyFollow,
-    BMnormal
+	BMoff,
+	BMkeyFollow,
+	BMnormal
 } WGBenderMode;
 
 const std::string keyFollowStr="keyFollow";
 const std::string normalStr="normal";
 
 typedef enum {
-    square,
-    sawtooth
+	square,
+	sawtooth
 } WGWaveform;
 
 const std::string squareStr="square";
 const std::string sawtoothStr="sawtooth";
 
 enum class WGPCMWaveNo {
-    Marimba,
-    Vibraphone,
-    Xylophone_1,
-    Xylophone_2,
-    Log_Bass,
-    Hammer,
-    Japanese_Drum,
-    Kalimba,
-    Pluck_1,
-    Chink,
-    Agogo,
-    Triangle,
-    Bells,
-    NailFile,
-    Pick,
-    Low_Piano,
-    Mid_Piano,
-    High_Piano,
-    Harpsichord,
-    Harp,
-    Organ_Percussion,
-    Steel_Strings,
-    Nylon_Strings,
-    Electric_Guitar_1,
-    Electric_Guitar_2,
-    Dirty_Guitar,
-    Pick_Bass,
-    Pop_Bass,
-    Thump,
-    Upright_Bass,
-    Clarinet,
-    Breath,
-    Steamer,
-    High_Flute,
-    Low_Flute,
-    Guiro,
-    Indian_Flute,
-    Flute_Harmonics,
-    Lips_1,
-    Lips_2,
-    Trumpet,
-    Trombones,
-    Contrabass,
-    Cello,
-    Violon_Bow,
-    Violins,
-    Pizzicart,
-    Draws_bars_Loop,
-    High_Organ_Loop,
-    Low_Organ_Loop,
-    Electric_Piano_Loop_1,
-    Electric_Piano_Loop_2,
-    Clavi_Loop,
-    Harpsichord_Loop,
-    Electric_Bass_Loop_1,
-    Acoustic_Bass_Loop,
-    Electric_Bass_Loop_2,
-    Electric_Bass_Loop_3,
-    Electric_Guitar_Loop,
-    Cello_Loop,
-    Violin_Loop,
-    Lead_Loop,
-    Sax_Loop_1,
-    Sax_Loop_2,
-    Aah_Loop,
-    Ooh_Loop,
-    Male_Loop_1,
-    Spectrum_1_Loop,
-    Spectrum_2_Loop,
-    Spectrum_3_Loop,
-    Spectrum_4_Loop,
-    Spectrum_5_Loop,
-    Spectrum_6_Loop,
-    Spectrum_7_Loop,
-    Male_Loop_2,
-    Noise_Loop,
-    Loop_01,
-    Loop_02,
-    Loop_03,
-    Loop_04,
-    Loop_05,
-    Loop_06,
-    Loop_07,
-    Loop_08,
-    Loop_09,
-    Loop_10,
-    Loop_11,
-    Loop_12,
-    Loop_13,
-    Loop_14,
-    Loop_15,
-    Loop_16,
-    Loop_17,
-    Loop_18,
-    Loop_19,
-    Loop_20,
-    Loop_21,
-    Loop_22,
-    Loop_23,
-    Loop_24
-};
+	Marimba,
+		Vibraphone,
+		Xylophone_1,
+		Xylophone_2,
+		Log_Bass,
+		Hammer,
+		Japanese_Drum,
+		Kalimba,
+		Pluck_1,
+		Chink,
+		Agogo,
+		Triangle,
+		Bells,
+		NailFile,
+		Pick,
+		Low_Piano,
+		Mid_Piano,
+		High_Piano,
+		Harpsichord,
+		Harp,
+		Organ_Percussion,
+		Steel_Strings,
+		Nylon_Strings,
+		Electric_Guitar_1,
+		Electric_Guitar_2,
+		Dirty_Guitar,
+		Pick_Bass,
+		Pop_Bass,
+		Thump,
+		Upright_Bass,
+		Clarinet,
+		Breath,
+		Steamer,
+		High_Flute,
+		Low_Flute,
+		Guiro,
+		Indian_Flute,
+		Flute_Harmonics,
+		Lips_1,
+		Lips_2,
+		Trumpet,
+		Trombones,
+		Contrabass,
+		Cello,
+		Violon_Bow,
+		Violins,
+		Pizzicart,
+		Draws_bars_Loop,
+		High_Organ_Loop,
+		Low_Organ_Loop,
+		Electric_Piano_Loop_1,
+		Electric_Piano_Loop_2,
+		Clavi_Loop,
+		Harpsichord_Loop,
+		Electric_Bass_Loop_1,
+		Acoustic_Bass_Loop,
+		Electric_Bass_Loop_2,
+		Electric_Bass_Loop_3,
+		Electric_Guitar_Loop,
+		Cello_Loop,
+		Violin_Loop,
+		Lead_Loop,
+		Sax_Loop_1,
+		Sax_Loop_2,
+		Aah_Loop,
+		Ooh_Loop,
+		Male_Loop_1,
+		Spectrum_1_Loop,
+		Spectrum_2_Loop,
+		Spectrum_3_Loop,
+		Spectrum_4_Loop,
+		Spectrum_5_Loop,
+		Spectrum_6_Loop,
+		Spectrum_7_Loop,
+		Male_Loop_2,
+		Noise_Loop,
+		Loop_01,
+		Loop_02,
+		Loop_03,
+		Loop_04,
+		Loop_05,
+		Loop_06,
+		Loop_07,
+		Loop_08,
+		Loop_09,
+		Loop_10,
+		Loop_11,
+		Loop_12,
+		Loop_13,
+		Loop_14,
+		Loop_15,
+		Loop_16,
+		Loop_17,
+		Loop_18,
+		Loop_19,
+		Loop_20,
+		Loop_21,
+		Loop_22,
+		Loop_23,
+		Loop_24
+		};
 
 const std::string Marimba_Str="Marimba";
 const std::string Vibraphone_Str="Vibraphone";
@@ -379,65 +379,65 @@ const std::string Loop_24_Short_Str="Loop24";
 /******************/
 class WG : public BaseModulation {
 private:
-    unsigned char _pitchCoarse; //between C1 and C7, C4 is the middle
-    char _pitchFine; //between -50 and +50
-    FracKeyFollow _keyFollow;
-    WGLFOMode _LFOMode;
-    WGPEnvMode _PEnvMode;
-    WGBenderMode _benderMode;
-    WGWaveform _waveform;
-    WGPCMWaveNo _PCMWaveNo;
-    unsigned char _pulseWidth; //between 0 and 100
-    char _velocityRange; //between -7 and +7
-    char _aftertouchRange; //between -7 and +7
+	unsigned char _pitchCoarse; //between C1 and C7, C4 is the middle
+	char _pitchFine; //between -50 and +50
+	FracKeyFollow _keyFollow;
+	WGLFOMode _LFOMode;
+	WGPEnvMode _PEnvMode;
+	WGBenderMode _benderMode;
+	WGWaveform _waveform;
+	WGPCMWaveNo _PCMWaveNo;
+	unsigned char _pulseWidth; //between 0 and 100
+	char _velocityRange; //between -7 and +7
+	char _aftertouchRange; //between -7 and +7
 
 public:
-    // Constructor destructor
-    WG();
-    ~WG();
+	// Constructor destructor
+	WG();
+	~WG();
 
-    // Affect methods
-    void setPitchCoarse(unsigned char pc);
-    void setPitchFine(char pf);
-    void setLFOMode(WGLFOMode lm);
-    void setPEnvMode(WGPEnvMode pm);
-    void setBenderMode(WGBenderMode bm);
-    void setWaveform(WGWaveform wf);
-    void setPCMWaveNo(WGPCMWaveNo pwn);
-    void setPulseWidth(unsigned char pw);
-    void setVelocityRange(char vr);
-    void setAftertouchRange(char ar);
+	// Affect methods
+	void setPitchCoarse(unsigned char pc);
+	void setPitchFine(char pf);
+	void setLFOMode(WGLFOMode lm);
+	void setPEnvMode(WGPEnvMode pm);
+	void setBenderMode(WGBenderMode bm);
+	void setWaveform(WGWaveform wf);
+	void setPCMWaveNo(WGPCMWaveNo pwn);
+	void setPulseWidth(unsigned char pw);
+	void setVelocityRange(char vr);
+	void setAftertouchRange(char ar);
 
-    // Access methods
-    unsigned char getPitchCoarse() const;
-    char getPitchFine() const;
-    WGLFOMode getLFOMode() const;
-    WGPEnvMode getPEnvMode() const;
-    WGBenderMode getBenderMode() const;
-    WGWaveform getWaveform() const;
-    WGPCMWaveNo getPCMWaveNo() const;
-    unsigned char getPulseWidth() const;
-    char getVelocityRange() const;
-    char getAftertouchRange() const;
+	// Access methods
+	unsigned char getPitchCoarse() const;
+	char getPitchFine() const;
+	WGLFOMode getLFOMode() const;
+	WGPEnvMode getPEnvMode() const;
+	WGBenderMode getBenderMode() const;
+	WGWaveform getWaveform() const;
+	WGPCMWaveNo getPCMWaveNo() const;
+	unsigned char getPulseWidth() const;
+	char getVelocityRange() const;
+	char getAftertouchRange() const;
 
-    // Dump method. Note that 'a' will be incremented accordingly.
-    void dump(Address& a, unsigned length, const unsigned char* data);
+	// Dump method. Note that 'a' will be incremented accordingly.
+	void dump(Address& a, unsigned length, const unsigned char* data);
 
-    // Print and string method
-    std::string fracKeyFollowStr() const;
-    std::string LFOModeStr(WGLFOMode lm) const;
-    std::string LFOModeStr() const;
-    std::string PEnvModeStr(WGPEnvMode pem) const;
-    std::string PEnvModeStr() const;
-    std::string benderModeStr(WGBenderMode bm) const;
-    std::string benderModeStr() const;
-    std::string waveformStr(WGWaveform wf) const;
-    std::string waveformStr() const;
-    std::string PCMWaveNoShortStr(WGPCMWaveNo pwn) const;
-    std::string PCMWaveNoShortStr() const;
-    std::string PCMWaveNoStr(WGPCMWaveNo pwn) const;
-    std::string PCMWaveNoStr() const;
-    void print(int m) const; // Print the WG with a margine m
+	// Print and string method
+	std::string fracKeyFollowStr() const;
+	std::string LFOModeStr(WGLFOMode lm) const;
+	std::string LFOModeStr() const;
+	std::string PEnvModeStr(WGPEnvMode pem) const;
+	std::string PEnvModeStr() const;
+	std::string benderModeStr(WGBenderMode bm) const;
+	std::string benderModeStr() const;
+	std::string waveformStr(WGWaveform wf) const;
+	std::string waveformStr() const;
+	std::string PCMWaveNoShortStr(WGPCMWaveNo pwn) const;
+	std::string PCMWaveNoShortStr() const;
+	std::string PCMWaveNoStr(WGPCMWaveNo pwn) const;
+	std::string PCMWaveNoStr() const;
+	void print(int m) const; // Print the WG with a margine m
 };
 
 

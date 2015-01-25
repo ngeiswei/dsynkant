@@ -33,18 +33,18 @@ Bank::Bank(const std::string& bn) : _bankName(bn) {}
 Bank::~Bank() {}
 
 void Bank::addPatch(const Patch& p) {
-    _patches.push_back(p);
+	_patches.push_back(p);
 }
 const Patch& Bank::getPatch(unsigned index) const {
-    return _patches[index];
+	return _patches[index];
 }
 Patch& Bank::getPatch(unsigned index) {
-    return _patches[index];
+	return _patches[index];
 }
 
 //print method
 void Bank::print(int m) const {
-    ps(m);
-    printf("Bank = %s\n", _bankName.c_str());
-    for(const Patch& patch : _patches) patch.print(m+2);
+	ps(m);
+	printf("Bank = %s\n", _bankName.c_str());
+	for(const Patch& patch : _patches) patch.print(m+2);
 }

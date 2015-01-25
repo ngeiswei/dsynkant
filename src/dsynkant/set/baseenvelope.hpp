@@ -34,51 +34,51 @@
 /*****************/
 class BaseEnvelope {
 private:
-    unsigned char _time1; //between 0 and 100,
-    unsigned char _level1; //between 0 and 100,
-    unsigned char _time2; //between 0 and 100,
-    unsigned char _level2; //between 0 and 100,
-    unsigned char _time3; //between 0 and 100
-    unsigned char _level3; //between 0 and 100
-    unsigned char _time4; //between 0 and 100
-    unsigned char _sustainLevel; //between 0 and 100
-    unsigned char _time5; //between 0 and 100
-    unsigned char _endLevel; //between 0 and 100
+	unsigned char _time1; //between 0 and 100,
+	unsigned char _level1; //between 0 and 100,
+	unsigned char _time2; //between 0 and 100,
+	unsigned char _level2; //between 0 and 100,
+	unsigned char _time3; //between 0 and 100
+	unsigned char _level3; //between 0 and 100
+	unsigned char _time4; //between 0 and 100
+	unsigned char _sustainLevel; //between 0 and 100
+	unsigned char _time5; //between 0 and 100
+	unsigned char _endLevel; //between 0 and 100
 
 public:
-    // Constructor destructor
-    BaseEnvelope();
-    ~BaseEnvelope();
+	// Constructor destructor
+	BaseEnvelope();
+	~BaseEnvelope();
 
-    // Affect methods
-    void setTime1(unsigned char t1);
-    void setLevel1(unsigned char l1);
-    void setTime2(unsigned char t2);
-    void setLevel2(unsigned char l2);
-    void setTime3(unsigned char t3);
-    void setLevel3(unsigned char l3);
-    void setTime4(unsigned char t4);
-    void setSustainLevel(unsigned char sl);
-    void setTime5(unsigned char t5);
-    void setEndLevel(unsigned char el);
+	// Affect methods
+	void setTime1(unsigned char t1);
+	void setLevel1(unsigned char l1);
+	void setTime2(unsigned char t2);
+	void setLevel2(unsigned char l2);
+	void setTime3(unsigned char t3);
+	void setLevel3(unsigned char l3);
+	void setTime4(unsigned char t4);
+	void setSustainLevel(unsigned char sl);
+	void setTime5(unsigned char t5);
+	void setEndLevel(unsigned char el);
 
-    // Access methods
-    unsigned char getTime1() const;
-    unsigned char getLevel1() const;
-    unsigned char getTime2() const;
-    unsigned char getLevel2() const;
-    unsigned char getTime3() const;
-    unsigned char getLevel3() const;
-    unsigned char getTime4() const;
-    unsigned char getSustainLevel() const;
-    unsigned char getTime5() const;
-    unsigned char getEndLevel() const;
+	// Access methods
+	unsigned char getTime1() const;
+	unsigned char getLevel1() const;
+	unsigned char getTime2() const;
+	unsigned char getLevel2() const;
+	unsigned char getTime3() const;
+	unsigned char getLevel3() const;
+	unsigned char getTime4() const;
+	unsigned char getSustainLevel() const;
+	unsigned char getTime5() const;
+	unsigned char getEndLevel() const;
 
-    // Bump method. Note that 'a' will be incremented accordingly.
-    void dump(Address& a, unsigned length, const unsigned char* data);
+	// Bump method. Note that 'a' will be incremented accordingly.
+	void dump(Address& a, unsigned length, const unsigned char* data);
 
-    // Print the envelope on the std output tabulated of m
-    void print(int m) const ;
+	// Print the envelope on the std output tabulated of m
+	void print(int m) const ;
 };
 
 #endif

@@ -32,8 +32,8 @@
 #define INT_STR_LENGTH 256
 
 typedef enum {
-    KBTVF,
-    KBTVA
+	KBTVF,
+	KBTVA
 } KeyBiasType;
 
 /*****************/
@@ -41,33 +41,33 @@ typedef enum {
 /*****************/
 class BaseKeyBias {
 private:
-    bool _biasRangeUp; //if true then bias range is greater than the range
-    unsigned char _biasRangeKey; //key number of the bias range
-    char _biasLevel; //between -12 and 0 (if TVA) or -7 and +7 (TVF)
+	bool _biasRangeUp; //if true then bias range is greater than the range
+	unsigned char _biasRangeKey; //key number of the bias range
+	char _biasLevel; //between -12 and 0 (if TVA) or -7 and +7 (TVF)
 
-    KeyBiasType _type; //this is just to know if it used by TVF or TVA
+	KeyBiasType _type; //this is just to know if it used by TVF or TVA
 
 public:
-    // Constructor destructor
-    BaseKeyBias(KeyBiasType t);
-    ~BaseKeyBias();
+	// Constructor destructor
+	BaseKeyBias(KeyBiasType t);
+	~BaseKeyBias();
 
-    // Affect methods
-    void setBiasRangeUp(bool bru);
-    void setBiasRangeKey(unsigned char brk);
-    void setBiasLevel(char bl);
+	// Affect methods
+	void setBiasRangeUp(bool bru);
+	void setBiasRangeKey(unsigned char brk);
+	void setBiasLevel(char bl);
 
-    // Access methods
-    bool getBiasRangeUp() const;
-    unsigned char getBiasRangeKey() const;
-    char getBiasLevel() const;
+	// Access methods
+	bool getBiasRangeUp() const;
+	unsigned char getBiasRangeKey() const;
+	char getBiasLevel() const;
 
-    // Dump method. Note that 'a' will be incremented accordingly.
-    void dump(Address& a, unsigned length, const unsigned char* data);
+	// Dump method. Note that 'a' will be incremented accordingly.
+	void dump(Address& a, unsigned length, const unsigned char* data);
 
-    // Print method
-    char* pitchStr(int p) const;
-    void print(int m) const; // Print the key bias on the std output tabulated of m
+	// Print method
+	char* pitchStr(int p) const;
+	void print(int m) const; // Print the key bias on the std output tabulated of m
 };
 
 #endif

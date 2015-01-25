@@ -32,23 +32,23 @@ Set::Set(const std::string& bn) : _setName(bn) {}
 Set::~Set() {}
 
 void Set::addBank(const Bank& b) {
-    _banks.push_back(b);
+	_banks.push_back(b);
 }
 const Bank& Set::getBank(unsigned index) const {
-    return _banks[index];
+	return _banks[index];
 }
 Bank& Set::getBank(unsigned index) {
-    return _banks[index];
+	return _banks[index];
 }
 
 //dump method
 void Set::dump(unsigned length, const unsigned char* data) {
-    //TODO
+	//TODO
 }
 
 //print method
 void Set::print(int m) const {
-    ps(m);
-    printf("Set = %s\n", _setName.c_str());
-    for(const Bank& bank : _banks) bank.print(m+2);
+	ps(m);
+	printf("Set = %s\n", _setName.c_str());
+	for(const Bank& bank : _banks) bank.print(m+2);
 }
