@@ -27,16 +27,24 @@
 
 class DSynkant;
 
+/**
+ * The engine holds the information of each voice, state of the
+ * frequency, volume, sample offset, etc. And provide the render of
+ * each voice and the whole mix.
+ */
+
 class Engine {
 private:
-    DSynkant& _dsynkant;
+	DSynkant& _dsynkant;
 
 public:
-    Engine(DSynkant& ref);
-    ~Engine();
+	const unsigned max_voices = 16;
 
-    //print method
-    void print(int m) const;
+	Engine(DSynkant& ref);
+	~Engine();
+
+	//print method
+	void print(int m) const;
 };
 
 #endif
