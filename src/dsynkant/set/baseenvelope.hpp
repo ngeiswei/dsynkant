@@ -22,10 +22,12 @@
 
 ****************************************************************************/
 
-#ifndef __BASEENVELOPE_HPP
-#define __BASEENVELOPE_HPP
+#ifndef __DSYNKANT_BASEENVELOPE_HPP
+#define __DSYNKANT_BASEENVELOPE_HPP
 
 #include "address.hpp"
+
+namespace dsynkant {
 
 #define DUMP_ENVELOPE_LENGTH 10
 
@@ -80,5 +82,7 @@ public:
 	// Print the envelope on the std output tabulated of m
 	void print(int m) const ;
 };
+
+} // ~namespace dsynkant
 
 #endif

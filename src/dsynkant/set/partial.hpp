@@ -22,12 +22,14 @@
 
 ****************************************************************************/
 
-#ifndef __PARTIAL_HPP
-#define __PARTIAL_HPP
+#ifndef __DSYNKANT_PARTIAL_HPP
+#define __DSYNKANT_PARTIAL_HPP
 
 #include "wg.hpp"
 #include "tvf.hpp"
 #include "tva.hpp"
+
+namespace dsynkant {
 
 #define DUMP_PARTIAL_LENGTH 0x40
 
@@ -45,5 +47,7 @@ public:
 
 	void print(int m) const;
 };
+
+} // ~namespace dsynkant
 
 #endif

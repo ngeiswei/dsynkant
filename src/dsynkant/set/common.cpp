@@ -29,6 +29,8 @@
 #include "common.hpp"
 #include "../commondef/commondef.hpp"
 
+using namespace dsynkant;
+
 //constructor destrtuctor
 Common::Common(bool partial1On, bool partial2On)
 	: _toneName("Init"), _structure(Structure::SS), _partial1On(partial1On),

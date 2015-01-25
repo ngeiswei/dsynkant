@@ -26,6 +26,8 @@
 
 #include "wg.hpp"
 
+using namespace dsynkant;
+
 //Constructor destructor
 WG::WG() {
 	_pitchCoarse = 24;

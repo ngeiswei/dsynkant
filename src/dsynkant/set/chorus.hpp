@@ -22,12 +22,14 @@
 
 ****************************************************************************/
 
-#ifndef __CHORUS_HPP
-#define __CHORUS_HPP
+#ifndef __DSYNKANT_CHORUS_HPP
+#define __DSYNKANT_CHORUS_HPP
 
 #include <string>
 
 #include "address.hpp"
+
+namespace dsynkant {
 
 #define DUMP_CHORUS_LENGTH 4
 
@@ -82,5 +84,7 @@ public:
 	std::string ChorusTypeStr() const;
 	void print(int m) const;
 };
+
+} // ~namespace dsynkant
 
 #endif

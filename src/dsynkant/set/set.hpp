@@ -22,11 +22,13 @@
 
 ****************************************************************************/
 
-#ifndef __SET_HPP
-#define __SET_HPP
+#ifndef __DSYNKANT_SET_HPP
+#define __DSYNKANT_SET_HPP
 
 #include "bank.hpp"
 #include <vector>
+
+namespace dsynkant {
 
 class Bank;
 
@@ -48,5 +50,7 @@ public:
 
 	void print(int m = 0) const;
 };
+
+} // ~namespace dsynkant
 
 #endif

@@ -25,6 +25,8 @@
 #include "baseenvelope.hpp"
 #include "../commondef/commondef.hpp"
 
+using namespace dsynkant;
+
 /**************************/
 /* Constructor destructor */
 /**************************/

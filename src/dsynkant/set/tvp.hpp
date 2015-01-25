@@ -22,10 +22,12 @@
 
 ****************************************************************************/
 
-#ifndef __TVP_HPP
-#define __TVP_HPP
+#ifndef __DSYNKANT_TVP_HPP
+#define __DSYNKANT_TVP_HPP
 
 #include "address.hpp"
+
+namespace dsynkant {
 
 #define DUMP_TVP_LENGTH 14
 
@@ -98,5 +100,7 @@ public:
 	// Print the TVP on the std output tabulated of m
 	void print(int m) const;
 };
+
+} // ~namespace dsynkant
 
 #endif

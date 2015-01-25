@@ -26,6 +26,8 @@
 #include "../commondef/commondef.hpp"
 #include <stdio.h>
 
+using namespace dsynkant;
+
 //constructor destructor
 Bank::Bank() {}
 Bank::Bank(const std::string& bn) : _bankName(bn) {}

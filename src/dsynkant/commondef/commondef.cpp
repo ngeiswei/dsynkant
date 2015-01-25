@@ -25,6 +25,8 @@
 #include "commondef.hpp"
 #include <string.h>
 
+using namespace dsynkant;
+
 void ps(int s) {
 	for(int i = 0; i < s; i++) printf(" ");
 }

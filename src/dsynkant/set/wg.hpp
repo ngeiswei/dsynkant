@@ -22,12 +22,14 @@
 
 ****************************************************************************/
 
-#ifndef __WG_HPP
-#define __WG_HPP
+#ifndef __DSYNKANT_WG_HPP
+#define __DSYNKANT_WG_HPP
 
 #include "basemodulation.hpp"
 #include "../commondef/commondef.hpp"
 #include "address.hpp"
+
+namespace dsynkant {
 
 class BaseModulation;
 
@@ -440,5 +442,6 @@ public:
 	void print(int m) const; // Print the WG with a margine m
 };
 
+} // ~namespace dsynkant
 
 #endif

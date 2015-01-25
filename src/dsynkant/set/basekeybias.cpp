@@ -26,6 +26,8 @@
 #include "../commondef/commondef.hpp"
 #include <string.h>
 
+using namespace dsynkant;
+
 /**************************/
 /* Constructor destructor */
 /**************************/

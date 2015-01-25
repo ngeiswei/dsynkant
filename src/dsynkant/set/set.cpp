@@ -26,6 +26,8 @@
 #include "../commondef/commondef.hpp"
 #include <stdio.h>
 
+using namespace dsynkant;
+
 //constructor destructor
 Set::Set() {}
 Set::Set(const std::string& bn) : _setName(bn) {}

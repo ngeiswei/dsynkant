@@ -26,6 +26,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+using namespace dsynkant;
+
 Address::Address() {
 	_aa = 0;
 	_bb = 0;

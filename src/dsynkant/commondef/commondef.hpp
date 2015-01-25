@@ -22,11 +22,13 @@
 
 ****************************************************************************/
 
-#ifndef __COMMONDEF_HPP
-#define __COMMONDEF_HPP
+#ifndef __DSYNKANT_COMMONDEF_HPP
+#define __DSYNKANT_COMMONDEF_HPP
 
 #include <stdio.h>
 #include <string>
+
+namespace dsynkant {
 
 const std::string minus1Str="-1";
 const std::string minus1div2Str="-1/2";
@@ -71,5 +73,7 @@ void ps(int n); //printf n space
 std::string FracKeyFollowStr(FracKeyFollow kf);
 
 char D50CharToASCII(unsigned char c);
+
+} // ~namespace dsynkant
 
 #endif

@@ -24,6 +24,8 @@
 
 #include "tvf.hpp"
 
+using namespace dsynkant;
+
 // constructor destructor
 TVF::TVF() : BaseKeyBias(KBTVF) {
 	_cutoffFrequency = 50;

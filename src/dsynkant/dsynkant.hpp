@@ -22,12 +22,14 @@
 
 ****************************************************************************/
 
-#ifndef __DSYNKANT_HPP
-#define __DSYNKANT_HPP
+#ifndef __DSYNKANT_DSYNKANT_HPP
+#define __DSYNKANT_DSYNKANT_HPP
 
 #include "set/set.hpp"
 #include "set/patch.hpp"
 #include "engine/engine.hpp"
+
+namespace dsynkant {
 
 #define COMMAND_DUMP_PATCH 0x12
 
@@ -51,5 +53,7 @@ public:
 	//print method
 	void print();
 };
+
+} // ~namespace dsynkant
 
 #endif

@@ -22,13 +22,15 @@
 
 ****************************************************************************/
 
-#ifndef __PATCH_HPP
-#define __PATCH_HPP
+#ifndef __DSYNKANT_PATCH_HPP
+#define __DSYNKANT_PATCH_HPP
 
 #include "partial.hpp"
 #include "common.hpp"
 #include "patchparameter.hpp"
 #include "address.hpp"
+
+namespace dsynkant {
 
 class Partial;
 class Common;
@@ -55,5 +57,7 @@ public:
 	// Print method
 	void print(int m = 0) const;
 };
+
+} // ~namespace dsynkant
 
 #endif

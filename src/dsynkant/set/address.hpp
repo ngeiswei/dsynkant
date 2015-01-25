@@ -22,8 +22,10 @@
 
 ****************************************************************************/
 
-#ifndef __ADDRESS_HPP
-#define __ADDRESS_HPP
+#ifndef __DSYNKANT_ADDRESS_HPP
+#define __DSYNKANT_ADDRESS_HPP
+
+namespace dsynkant {
 
 class Address {
 private:
@@ -57,5 +59,7 @@ public:
 	int toInt() const;
 	char* toStr() const;
 };
+
+} // ~namespace dsynkant
 
 #endif

@@ -26,6 +26,8 @@
 #include "engine.hpp"
 #include "../commondef/commondef.hpp"
 
+using namespace dsynkant;
+
 //constructor destructor
 Engine::Engine(DSynkant& ref) : _dsynkant(ref) {}
 

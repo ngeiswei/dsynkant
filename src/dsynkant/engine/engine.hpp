@@ -22,8 +22,14 @@
 
 ****************************************************************************/
 
-#ifndef __ENGINE_HPP
-#define __ENGINE_HPP
+#ifndef __DSYNKANT_ENGINE_HPP
+#define __DSYNKANT_ENGINE_HPP
+
+#include "voice.hpp"
+
+#include <set>
+
+namespace dsynkant {
 
 class DSynkant;
 
@@ -46,5 +52,7 @@ public:
 	//print method
 	void print(int m) const;
 };
+
+} // ~namespace dsynkant
 
 #endif

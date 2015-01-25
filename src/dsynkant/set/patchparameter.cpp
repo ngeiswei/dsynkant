@@ -30,6 +30,8 @@
 #include "patchparameter.hpp"
 #include "../commondef/commondef.hpp"
 
+using namespace dsynkant;
+
 PatchParameter::PatchParameter() {
 	setPatchName("DSynkant Init");
 	_keyMode = Dual;

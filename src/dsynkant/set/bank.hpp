@@ -22,13 +22,15 @@
 
 ****************************************************************************/
 
-#ifndef __BANK_HPP
-#define __BANK_HPP
+#ifndef __DSYNKANT_BANK_HPP
+#define __DSYNKANT_BANK_HPP
 
 #include <string>
 #include <vector>
 
 #include "patch.hpp"
+
+namespace dsynkant {
 
 class Patch;
 
@@ -48,5 +50,7 @@ public:
 
 	void print(int m) const;
 };
+
+} // ~namespace dsynkant
 
 #endif

@@ -22,10 +22,12 @@
 
 ****************************************************************************/
 
-#ifndef __BASEKEYBIAS_HPP
-#define __BASEKEYBIAS_HPP
+#ifndef __DSYNKANT_BASEKEYBIAS_HPP
+#define __DSYNKANT_BASEKEYBIAS_HPP
 
 #include "address.hpp"
+
+namespace dsynkant {
 
 #define DUMP_KEYBIAS_LENGTH 2
 
@@ -69,5 +71,7 @@ public:
 	char* pitchStr(int p) const;
 	void print(int m) const; // Print the key bias on the std output tabulated of m
 };
+
+} // ~namespace dsynkant
 
 #endif

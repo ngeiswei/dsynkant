@@ -22,8 +22,10 @@
 
 ****************************************************************************/
 
-#ifndef __VOICE_HPP
-#define __VOICE_HPP
+#ifndef __DSYNKANT_VOICE_HPP
+#define __DSYNKANT_VOICE_HPP
+
+namespace dsynkant {
 
 /**
  * Holds information about the state of a voice (note, sample freq,
@@ -32,6 +34,8 @@
 
 class Voice {
 	
-}
+};
+
+} // ~namespace dsynkant
 
 #endif

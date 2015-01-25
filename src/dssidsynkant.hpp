@@ -22,11 +22,13 @@
 
 ****************************************************************************/
 
-#ifndef __DSSIDSYNKANT_HPP
-#define __DSSIDSYNKANT_HPP
+#ifndef __DSYNKANT_DSSIDSYNKANT_HPP
+#define __DSYNKANT_DSSIDSYNKANT_HPP
 
 #include "dssi/dssiplugin.hpp"
 #include "dsynkant/dsynkant.hpp"
+
+namespace dsynkant {
 
 class DSSIDSynkant : public DSSIPlugin {
 public:
@@ -59,5 +61,6 @@ protected:
 	LADSPA_Data m_pitchbend;
 };
 
+} // ~namespace dsynkant
 
 #endif

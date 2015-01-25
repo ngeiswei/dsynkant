@@ -22,14 +22,16 @@
 
 ****************************************************************************/
 
-#ifndef __TVF_HPP
-#define __TVF_HPP
+#ifndef __DSYNKANT_TVF_HPP
+#define __DSYNKANT_TVF_HPP
 
 #include "../commondef/commondef.hpp"
 #include "basekeybias.hpp"
 #include "baseenvelope.hpp"
 #include "basemodulation.hpp"
 #include "address.hpp"
+
+namespace dsynkant {
 
 class BaseKeyBias;
 class BaseEnvelope;
@@ -81,5 +83,7 @@ public:
 	//print methods
 	void print(int m) const;
 };
+
+} // ~namespace dsynkant
 
 #endif

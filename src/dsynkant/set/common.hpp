@@ -22,8 +22,8 @@
 
 ****************************************************************************/
 
-#ifndef __COMMON_HPP
-#define __COMMON_HPP
+#ifndef __DSYNKANT_COMMON_HPP
+#define __DSYNKANT_COMMON_HPP
 
 #include <string>
 
@@ -32,6 +32,8 @@
 #include "eq.hpp"
 #include "chorus.hpp"
 #include "address.hpp"
+
+namespace dsynkant {
 
 class TVP;
 class LFO;
@@ -98,5 +100,7 @@ public:
 	std::string StructureStr() const;
 	void print(int m) const;
 };
+
+} // ~namespace dsynkant
 
 #endif

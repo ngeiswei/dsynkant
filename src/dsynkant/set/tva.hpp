@@ -22,13 +22,15 @@
 
 ****************************************************************************/
 
-#ifndef __TVA_HPP
-#define __TVA_HPP
+#ifndef __DSYNKANT_TVA_HPP
+#define __DSYNKANT_TVA_HPP
 
 #include "baseenvelope.hpp"
 #include "basemodulation.hpp"
 #include "basekeybias.hpp"
 #include "address.hpp"
+
+namespace dsynkant {
 
 #define DUMP_TVA_LENGTH DUMP_KEYBIAS_LENGTH + DUMP_ENVELOPE_LENGTH + DUMP_MODULATION_LENGTH + 5
 
@@ -73,5 +75,7 @@ public:
 	// Print method
 	void print(int m) const; // Print the TVA on the std output tabulated of m
 };
+
+} // ~namespace dsynkant
 
 #endif

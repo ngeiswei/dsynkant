@@ -25,6 +25,8 @@
 #include "patch.hpp"
 #include "../commondef/commondef.hpp"
 
+using namespace dsynkant;
+
 //constructor destructor
 Patch::Patch() 
 	: _lowerCommon(true) /* only partial 1 */ {}

@@ -24,6 +24,8 @@
 
 #include "partial.hpp"
 
+using namespace dsynkant;
+
 //constructor desturctor
 Partial::Partial() {}
 

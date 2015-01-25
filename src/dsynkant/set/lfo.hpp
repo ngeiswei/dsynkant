@@ -22,12 +22,14 @@
 
 ****************************************************************************/
 
-#ifndef __LFO_HPP
-#define __LFO_HPP
+#ifndef __DSYNKANT_LFO_HPP
+#define __DSYNKANT_LFO_HPP
 
 #include <string>
 
 #include "address.hpp"
+
+namespace dsynkant {
 
 #define DUMP_LFO_LENGTH 4
 
@@ -93,5 +95,7 @@ public:
 	std::string SyncStr() const;
 	void print(int m) const;
 };
+
+} // ~namespace dsynkant
 
 #endif

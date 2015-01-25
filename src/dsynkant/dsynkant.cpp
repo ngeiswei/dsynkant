@@ -25,6 +25,8 @@
 #include <stdio.h>
 #include "dsynkant.hpp"
 
+using namespace dsynkant;
+
 DSynkant::DSynkant() : _engine(*this) {}
 
 DSynkant::~DSynkant() {}

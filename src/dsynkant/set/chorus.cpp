@@ -27,6 +27,8 @@
 #include "chorus.hpp"
 #include "../commondef/commondef.hpp"
 
+using namespace dsynkant;
+
 //Constructor destructor
 Chorus::Chorus() {
 	_type = ChorusType::Chorus1;

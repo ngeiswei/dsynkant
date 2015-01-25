@@ -26,6 +26,7 @@
 
 #include "dssidsynkant.hpp"
 
+using namespace dsynkant;
 using namespace std;
 
 static enum {

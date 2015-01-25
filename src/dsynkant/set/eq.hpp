@@ -22,10 +22,12 @@
 
 ****************************************************************************/
 
-#ifndef __EQ_HPP
-#define __EQ_HPP
+#ifndef __DSYNKANT_EQ_HPP
+#define __DSYNKANT_EQ_HPP
 
 #include "address.hpp"
+
+namespace dsynkant {
 
 #define DUMP_EQ_LENGTH 5
 
@@ -173,5 +175,7 @@ public:
 	float HighQFloat() const;
 	void print(int m) const;
 };
+
+} // ~namespace dsynkant
 
 #endif

@@ -22,10 +22,12 @@
 
 ****************************************************************************/
 
-#ifndef __BASEMODULATION_HPP
-#define __BASEMODULATION_HPP
+#ifndef __DSYNKANT_BASEMODULATION_HPP
+#define __DSYNKANT_BASEMODULATION_HPP
 
 #include "address.hpp"
+
+namespace dsynkant {
 
 #define DUMP_MODULATION_LENGTH 2
 
@@ -61,5 +63,7 @@ public:
 	// Print the modulation on the std output tabulated of m
 	void print(int m) const;
 };
+
+} // ~namespace dsynkant
 
 #endif

@@ -28,6 +28,8 @@
 #include "../commondef/commondef.hpp"
 #include <stdio.h>
 
+using namespace dsynkant;
+
 //Constructor destructor
 LFO::LFO(unsigned char rate, Sync sync) {
 	_waveform = LFOWaveform::TRI;

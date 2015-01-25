@@ -22,12 +22,14 @@
 
 ****************************************************************************/
 
-#ifndef __PATCHPARAMETER_HPP
-#define __PATCHPARAMETER_HPP
+#ifndef __DSYNKANT_PATCHPARAMETER_HPP
+#define __DSYNKANT_PATCHPARAMETER_HPP
 
 #include <string>
 
 #include "address.hpp"
+
+namespace dsynkant {
 
 #define DUMP_PATCHPARAMETER_LENGTH 0x40
 
@@ -300,5 +302,6 @@ public:
 	void print(int m) const;
 };
 
+} // ~namespace dsynkant
+
 #endif
- 

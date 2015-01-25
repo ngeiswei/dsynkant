@@ -25,6 +25,8 @@
 #include "eq.hpp"
 #include "../commondef/commondef.hpp"
 
+using namespace dsynkant;
+
 //Constructor destructor
 EQ::EQ() {
 	_Lf = lf150;
