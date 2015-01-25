@@ -33,23 +33,23 @@
 
 class DSynkant {
 private:
-    Set _set; // A Set is a set of banks, themselves containing patches
-    Patch _workPatch; // Patch that the engine works on
-    Engine _engine; // Engine of the DSynkant
+	Set _set; // A Set is a set of banks, themselves containing patches
+	Patch _workPatch; // Patch that the engine works on
+	Engine _engine; // Engine of the DSynkant
   
 public:
-    DSynkant();
-    ~DSynkant();
+	DSynkant();
+	~DSynkant();
 
-    // Assumption : the parameters are not changing during the audio process
-    void audio_process(float* left_out, float* right_out,
-                       unsigned long sample_count);
-    void noteOn_process(int channel, int pitch, int velocity);
-    void noteOff_process(int channel, int pitch);
-    void sysex_process(unsigned length, unsigned char* data);
+	// Assumption : the parameters are not changing during the audio process
+	void audio_process(float* left_out, float* right_out,
+	                   unsigned long sample_count);
+	void noteOn_process(int channel, int pitch, int velocity);
+	void noteOff_process(int channel, int pitch);
+	void sysex_process(unsigned length, unsigned char* data);
 
-    //print method
-    void print();
+	//print method
+	void print();
 };
 
 #endif
