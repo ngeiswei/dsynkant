@@ -1,0 +1,5 @@
+* Overall
+- [ ] Wrap all the code in a dsynkant namespace
+
+* Engine
+- [ ] Implement Voice (multiset ordered per note)
