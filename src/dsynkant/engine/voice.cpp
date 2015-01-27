@@ -2,7 +2,7 @@
     
     DSynkant an emulator of the Roland D50 synthsizer
 
-    voice.hpp
+    voice.cpp
 
     Copyleft (c) 2015 Nil Geisweiller
  
@@ -22,28 +22,12 @@
 
 ****************************************************************************/
 
-#ifndef __DSYNKANT_VOICE_HPP
-#define __DSYNKANT_VOICE_HPP
+#include "voice.hpp"
 
-#include <boost/operators.hpp>
+using namespace dsynkant;
 
-namespace dsynkant {
-
-/**
- * Holds information about the state of a voice (note, sample freq,
- * volume, sample offset, etc)
- */
-
-class Voice : public boost::less_than_comparable<Voice>
-{
-public:
-	// Useful for ordered containers
-	bool operator<(const Voice& voice) const;
-
-private:
-	unsigned char _pitch;
-};
-
-} // ~namespace dsynkant
+bool Voice::operator<(const Voice& voice) const {
+	return _pitch < voice._pitch;
+}
 
 #endif
