@@ -1,5 +1,7 @@
 * Overall
-- [X] Wrap all the code in a dsynkant namespace
+- [ ] Use a real logging system like the one provided by boost
 
 * Engine
-- [ ] Implement Voice (multiset ordered per note)
+- [ ] Complete Voice with rendering method (takes an audio buffer and
+  adds the rendered signal to it)
+- [ ] Starts with dummy generator, just to see if it works so far
