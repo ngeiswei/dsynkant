@@ -11,7 +11,8 @@ that should easily support other softsynth API like VST.
 Requirement
 -----------
 
-- DSSI
+- Boost (version 1.46 minimum) http://www.boost.org/
+- DSSI http://dssi.sourceforge.net/
 
 Compilation
 -----------
