@@ -29,6 +29,15 @@
 #include "set/patch.hpp"
 #include "engine/engine.hpp"
 
+// Set 1 if you want to print debug messages, 0 otherwise
+#define ENABLE_PRINT_DEBUG 1
+
+#if ENABLE_PRINT_DEBUG
+#define dbg_printf(f, varargs...) printf(f, ##varargs)
+#else
+#define dbg_printf(f, varargs...)
+#endif
+
 namespace dsynkant {
 
 #define COMMAND_DUMP_PATCH 0x12
@@ -46,8 +55,10 @@ public:
 	// Assumption : the parameters are not changing during the audio process
 	void audio_process(float* left_out, float* right_out,
 	                   unsigned long sample_count);
-	void noteOn_process(int channel, int pitch, int velocity);
-	void noteOff_process(int channel, int pitch);
+	void noteOn_process(unsigned char channel,
+	                    unsigned char pitch,
+	                    unsigned char velocity);
+	void noteOff_process(unsigned char channel, unsigned char pitch);
 	void sysex_process(unsigned length, unsigned char* data);
 
 	//print method

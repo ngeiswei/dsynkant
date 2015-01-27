@@ -33,23 +33,31 @@ DSynkant::~DSynkant() {}
 
 void DSynkant::audio_process(float* left_out, float* right_out,
                              unsigned long sample_count) {
-	//printf("AUDIO_PROCESS\n");
+	// dbg_printf("AUDIO_PROCESS\n");
 	for(unsigned long i = 0; i < sample_count; i++) {
 		left_out[i] = 0.0;
 		right_out[i] = 0.0;
 	}
 }
 
-void DSynkant::noteOn_process(int channel, int pitch, int velocity) {
-	printf("NOTE_ON: channel = %d, pitch = %d, velocity = %d\n",
-	       channel, pitch, velocity);
-	printf("PRINT PATCH\n");
-	_workPatch.print();
+void DSynkant::noteOn_process(unsigned char channel,
+                              unsigned char pitch,
+                              unsigned char velocity) {
+	if (ENABLE_PRINT_DEBUG) {
+		dbg_printf("NOTE_ON: channel = %d, pitch = %d, velocity = %d\n",
+		           channel, pitch, velocity);
+		dbg_printf("PRINT PATCH\n");
+		_workPatch.print();
+	}
+
+	_engine.noteOn_process(channel, pitch, velocity);
 }
 
-void DSynkant::noteOff_process(int channel, int pitch) {
-	printf("NOTE OFF: channel = %d, pitch = %d\n",
-	       channel, pitch);
+void DSynkant::noteOff_process(unsigned char channel, unsigned char pitch) {
+	dbg_printf("NOTE OFF: channel = %d, pitch = %d\n",
+	           channel, pitch);
+
+	_engine.noteOff_process(channel, pitch);
 }
 
 void DSynkant::sysex_process(unsigned length, unsigned char* data) {
