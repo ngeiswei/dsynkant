@@ -22,16 +22,33 @@
 
 ****************************************************************************/
 
-#include <stdio.h>
+#include <iostream>
 #include "engine.hpp"
 #include "../commondef/commondef.hpp"
 
 using namespace dsynkant;
 
 //constructor destructor
-Engine::Engine(DSynkant& ref) : _dsynkant(ref) {}
+Engine::Engine(const DSynkant& ref) : _dsynkant(ref) {}
 
 Engine::~Engine() {}
+
+void Engine::noteOn_process(unsigned char channel,
+                            unsigned char pitch,
+                            unsigned char velocity) {
+	_voices.emplace(pitch, Voice(pitch, velocity));
+}
+
+void Engine::noteOff_process(unsigned char channel, unsigned char pitch) {
+	auto it = _voices.find(pitch);
+	if (it != _voices.end())
+		it->second.setNoteOff();
+	else
+		std::cerr << "NoteOff (channel=" << channel
+		          << ", pitch=" << pitch << ") has no corresponding NoteOn"
+		          << std::endl;
+}
+
 
 //print method
 void Engine::print(int m) const {

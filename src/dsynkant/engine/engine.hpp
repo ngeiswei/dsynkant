@@ -27,7 +27,7 @@
 
 #include "voice.hpp"
 
-#include <set>
+#include <map>
 
 namespace dsynkant {
 
@@ -37,17 +37,27 @@ class DSynkant;
  * The engine holds the information of each voice, state of the
  * frequency, volume, sample offset, etc. And provide the render of
  * each voice and the whole mix.
+ *
+ * For the moment channels are ignored. Basically information from all
+ * channels are all piped into the engine as if it were the same
+ * channel.
  */
 
 class Engine {
 private:
-	DSynkant& _dsynkant;
+	const DSynkant& _dsynkant;
 
-	std::multiset<Voice> _voices;
+	// Map pitch (possibly several times the same) to a voice
+	std::multimap<int, Voice> _voices;
 
 public:
-	Engine(DSynkant& ref);
+	Engine(const DSynkant& ref);
 	~Engine();
+
+	void noteOn_process(unsigned char channel,
+	                    unsigned char pitch,
+	                    unsigned char velocity);
+	void noteOff_process(unsigned char channel, unsigned char pitch);
 
 	//print method
 	void print(int m) const;
