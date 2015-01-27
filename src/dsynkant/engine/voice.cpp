@@ -26,8 +26,10 @@
 
 using namespace dsynkant;
 
-bool Voice::operator<(const Voice& voice) const {
-	return _pitch < voice._pitch;
+Voice::Voice(unsigned char pitch, unsigned char velocity) :
+	_pitch(pitch), _velocity(velocity), _noteOn(true) {
 }
 
-#endif
+void Voice::setNoteOff() {
+	_noteOn = false;
+}

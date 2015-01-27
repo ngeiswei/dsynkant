@@ -25,8 +25,6 @@
 #ifndef __DSYNKANT_VOICE_HPP
 #define __DSYNKANT_VOICE_HPP
 
-#include <boost/operators.hpp>
-
 namespace dsynkant {
 
 /**
@@ -34,14 +32,18 @@ namespace dsynkant {
  * volume, sample offset, etc)
  */
 
-class Voice : public boost::less_than_comparable<Voice>
-{
-public:
-	// Useful for ordered containers
-	bool operator<(const Voice& voice) const;
-
+class Voice {
 private:
 	unsigned char _pitch;
+	unsigned char _velocity;
+	bool _noteOn;
+
+public:
+	// Constructor
+	Voice(unsigned char pitch, unsigned char velocity);
+
+	// Modifiers
+	void setNoteOff();
 };
 
 } // ~namespace dsynkant
