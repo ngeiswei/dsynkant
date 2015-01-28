@@ -53,6 +53,7 @@ void DSSIDSynkant::run_synth(unsigned long sample_count,
 	// handle any MIDI events that occur in this frame
 	while(e < event_count) {
 		if(events[e].time.tick == t) {
+			printf("events[e].type = %d\n", events[e].type);
 			switch(events[e].type) {
 				//Note On, Off
 			case SND_SEQ_EVENT_NOTEON :

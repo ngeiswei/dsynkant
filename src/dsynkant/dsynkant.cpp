@@ -43,12 +43,8 @@ void DSynkant::audio_process(float* left_out, float* right_out,
 void DSynkant::noteOn_process(unsigned char channel,
                               unsigned char pitch,
                               unsigned char velocity) {
-	if (ENABLE_PRINT_DEBUG) {
-		dbg_printf("NOTE_ON: channel = %d, pitch = %d, velocity = %d\n",
-		           channel, pitch, velocity);
-		dbg_printf("PRINT PATCH\n");
-		_workPatch.print();
-	}
+	dbg_printf("NOTE_ON: channel = %d, pitch = %d, velocity = %d\n",
+	           channel, pitch, velocity);
 
 	_engine.noteOn_process(channel, pitch, velocity);
 }
@@ -62,28 +58,28 @@ void DSynkant::noteOff_process(unsigned char channel, unsigned char pitch) {
 
 void DSynkant::sysex_process(unsigned length, unsigned char* data) {
 	unsigned char command_ID;
-	printf("SYSEX\n");
-	for(unsigned i = 0; i < length; i++) printf("%X ", data[i]);
-	printf("\n");
+	dbg_printf("SYSEX\n");
+	for(unsigned i = 0; i < length; i++) dbg_printf("%X ", data[i]);
+	dbg_printf("\n");
 	//check if the sysex is for Roland D-50
 	if(length > 5 && data[1] == 0x41 && data[3] == 0x14) {
 		command_ID = data[4];
 		switch(command_ID) {
 		case COMMAND_DUMP_PATCH :
-			printf("Dump patch\n");
+			dbg_printf("Dump patch\n");
 			if(length > 8) {
 				//check if the dump is for the working patch
 				if(data[5] == 0x00) {
-					printf("DUMP WORKING PATCH\n");
+					dbg_printf("DUMP WORKING PATCH\n");
 					Address a(data[6], data[7]);
 					_workPatch.dump(a,
 					                length - 8 - 1/*to ignore the last 0xF7*/,
 					                &data[8]);
-					printf("PRINT PATCH\n");
+					dbg_printf("PRINT PATCH\n");
 					_workPatch.print();
 				}
 				else {
-					printf("DUMP BANK\n");
+					dbg_printf("DUMP BANK\n");
 					_set.dump(length - 5, &data[5]);
 				}
 			}
