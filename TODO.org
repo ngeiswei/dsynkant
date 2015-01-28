@@ -1,4 +1,5 @@
 * Overall
+- [ ] Add VST support
 - [ ] Use a real logging system like the one provided by boost
 
 * Engine
