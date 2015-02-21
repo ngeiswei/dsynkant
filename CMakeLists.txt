@@ -31,6 +31,10 @@ if(HAVE_DSYNKANT AND DSSI_FOUND)
   set(HAVE_DSSI 1)
 endif(HAVE_DSYNKANT AND DSSI_FOUND)
 
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/VST3 SDK/public.sdk/source/vst2.x/audioeffectx.h")
+  set(HAVE_VST 1)
+endif()
+
 add_subdirectory(src)
 
 summary_add("DSynkant" "Library of DSynkant" HAVE_DSYNKANT)
