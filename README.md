@@ -8,11 +8,12 @@ DSynkant is a virtual synthesizer that emulates the Roland
 D50/D550. So far it only supports DSSI but is being developed in a way
 that should easily support other softsynth API like VST.
 
-Requirement
------------
+Requirements
+------------
 
 - Boost (version 1.46 minimum) http://www.boost.org/
-- DSSI http://dssi.sourceforge.net/
+- DSSI SDK http://dssi.sourceforge.net/ (optional)
+- VST SDK http://www.steinberg.net/en/company/developers.html (optional)
 
 Compilation
 -----------
@@ -23,7 +24,10 @@ cd build
 cmake ..
 make -j4
 ```
-should work. If not maybe you have to install DSSI first.
+should work.
+
+For VST support, download the VST SDK and unzip it directly under the
+project root directory.
 
 Contribution
 ------------
