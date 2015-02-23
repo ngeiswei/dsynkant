@@ -5,6 +5,9 @@ target_link_libraries(dsynkant-dssi
   dsynkant
   dssiplugin)
 
+add_library(dsynkant-vst SHARED
+  vstdsynkant)
+
 add_subdirectory(dsynkant)
 add_subdirectory(dssi)
 
