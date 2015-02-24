@@ -38,7 +38,7 @@ pluginterfaces/vst2.x/aeffect.h
 
 like all definitions of VSTCALLBACK except
 ```
-\#define VSTCALLBACK
+#define VSTCALLBACK
 ```
 
 Contribution
