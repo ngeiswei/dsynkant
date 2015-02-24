@@ -26,6 +26,7 @@
 #define __DSYNKANT_VSTDSYNKANT_HPP
 
 #include "public.sdk/source/vst2.x/audioeffectx.h"
+#include "dsynkant/dsynkant.hpp"
 
 namespace dsynkant {
 
@@ -39,13 +40,13 @@ public:
 	VSTDSynkant(audioMasterCallback audioMaster,
 	            long numPrograms, long numParams);
 	~VSTDSynkant();
-	void process (float **inputs, float **outputs, long sampleFrames);
-	void processReplacing (float **inputs, float **outputs, long sampleFrames);
+	void process(float **inputs, float **outputs, VstInt32 sampleFrames);
+	void processReplacing(float **inputs, float **outputs, VstInt32 sampleFrames);
 	long dispatcher(long opCode, long index, long value, void *ptr, float opt);
-	void setParameter (long index, float value);
-	float getParameter (long index);
-	void getParameterName (long index, char *text);
-	void getParameterDisplay (long index, char *text);
+	void setParameter(long index, float value);
+	float getParameter(long index);
+	void getParameterName(long index, char *text);
+	void getParameterDisplay(long index, char *text);
 };
 
 } // ~namespace dsynkant

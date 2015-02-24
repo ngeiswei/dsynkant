@@ -49,7 +49,7 @@ VSTDSynkant::VSTDSynkant(audioMasterCallback audioMaster,
 {
 
 	// Plugin id
-	setUniqueID(CCONST('D', 'S', 'y', 'n');
+	setUniqueID(CCONST('D', 'S', 'y', 'n'));
 
 	// stereo output
 	setNumInputs(0);	
@@ -57,7 +57,7 @@ VSTDSynkant::VSTDSynkant(audioMasterCallback audioMaster,
 
 	// init
 	events = 0;
-	hasVu();
+	// hasVu();   // deprecated
 	canProcessReplacing();
 }
 
@@ -65,7 +65,7 @@ VSTDSynkant::~VSTDSynkant()
 {
 }
 
-void VSTDSynkant::process(float **inputs, float **outputs, long sampleFrames)
+void VSTDSynkant::process(float **inputs, float **outputs, VstInt32 sampleFrames)
 {
 	
 	int i, cue, block;
@@ -109,8 +109,8 @@ void VSTDSynkant::process(float **inputs, float **outputs, long sampleFrames)
 	
 }
 
-void VSTDSynkant::processReplacing (float **inputs, float **outputs,
-                                    long sampleFrames)
+void VSTDSynkant::processReplacing(float **inputs, float **outputs,
+                                   VstInt32 sampleFrames)
 {
 	process(inputs, outputs, sampleFrames);
 }
@@ -141,24 +141,25 @@ long VSTDSynkant::dispatcher(long opCode, long index, long value,
 
 // Set param
 
-void DSynkant::setParameter(long index, float value)
+void VSTDSynkant::setParameter(long index, float value)
 {
 }
 
 // Get param
 
-float DSynkant::getParameter(long index)
+float VSTDSynkant::getParameter(long index)
 {
+	return 0.0f;
 }
 
 // Get param name
 
-void DSynkant::getParameterName (long index, char *text)
+void VSTDSynkant::getParameterName (long index, char *text)
 {
 }
 
 // Get param value
 
-void DSynkant::getParameterDisplay (long index, char *text)
+void VSTDSynkant::getParameterDisplay (long index, char *text)
 {
 }
