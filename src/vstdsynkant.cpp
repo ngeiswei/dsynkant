@@ -24,6 +24,8 @@
 
 #include "vstdsynkant.hpp"
 
+#include <iostream>
+
 using namespace dsynkant;
 
 // Main function
@@ -65,17 +67,18 @@ VSTDSynkant::~VSTDSynkant()
 {
 }
 
-void VSTDSynkant::process(float **inputs, float **outputs, VstInt32 sampleFrames)
+void VSTDSynkant::process(float **inputs, float **outputs,
+                          VstInt32 sampleFrames)
 {
 	
 	int i, cue, block;
 	VstMidiEvent* e;
 	
-	// outputs buffers
+	// Outputs buffers
 	float* p1 = outputs[0];
 	float* p2 = outputs[1];
 
-	// process audio on midi events
+	// Process audio on midi events
 	if (events)
 	{
 
@@ -88,7 +91,7 @@ void VSTDSynkant::process(float **inputs, float **outputs, VstInt32 sampleFrames
 				block = e->deltaFrames - cue;
 				if (block > 0) 
 				{
-					synth->process(p1, p2, block);
+					dsynkant.audio_process(p1, p2, block);
 					p1 += block;
 					p2 += block;
 				}
@@ -101,10 +104,10 @@ void VSTDSynkant::process(float **inputs, float **outputs, VstInt32 sampleFrames
 
 	}
 
-	// TODO use dsynkant here
-	synth->process(p1, p2, sampleFrames - cue);
+	// Process audio
+	dsynkant.audio_process(p1, p2, sampleFrames - cue);
 
-	// release events pointer
+	// Release events pointer
 	events = 0;
 	
 }
@@ -124,8 +127,7 @@ long VSTDSynkant::dispatcher(long opCode, long index, long value,
 	{
 
 	case effSetSampleRate:  // Set sample rate
-		// TODO use dsynkant
-		synth->setRate((int)opt);
+		std::cerr << "effSetSampleRate not implemented" << std::endl;
 		break;
 	case effProcessEvents:	// Process events
 		events = (VstEvents*)ptr;
