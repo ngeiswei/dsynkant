@@ -49,7 +49,7 @@ VSTDSynkant::VSTDSynkant(audioMasterCallback audioMaster,
 {
 
 	// Plugin id
-	setUniqueID((int)'DSynkant');
+	setUniqueID(CCONST('D', 'S', 'y', 'n');
 
 	// stereo output
 	setNumInputs(0);	

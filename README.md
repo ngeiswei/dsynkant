@@ -26,8 +26,20 @@ make -j4
 ```
 should work.
 
-For VST support, download the VST SDK and unzip it directly under the
-project root directory.
+For VST support, download the VST SDK (tested with 3.6) and unzip it
+directly under the project root directory.
+
+Under GNU/Linux 64-bit, you may also need to comment out a bit of code
+in
+
+```
+pluginterfaces/vst2.x/aeffect.h
+```
+
+like all definitions of VSTCALLBACK except
+```
+\#define VSTCALLBACK
+```
 
 Contribution
 ------------

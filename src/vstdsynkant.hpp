@@ -25,7 +25,7 @@
 #ifndef __DSYNKANT_VSTDSYNKANT_HPP
 #define __DSYNKANT_VSTDSYNKANT_HPP
 
-#include "../VST3 SDK/public.sdk/source/vst2.x/audioeffectx.h"
+#include "public.sdk/source/vst2.x/audioeffectx.h"
 
 namespace dsynkant {
 

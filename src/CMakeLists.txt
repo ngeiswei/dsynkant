@@ -1,19 +1,29 @@
-add_library(dsynkant-dssi SHARED
-  dssidsynkant)
-
-target_link_libraries(dsynkant-dssi
-  dsynkant
-  dssiplugin)
-
-add_library(dsynkant-vst SHARED
-  vstdsynkant)
-
+# DSynkant
 add_subdirectory(dsynkant)
-add_subdirectory(dssi)
 
-add_custom_command(TARGET dsynkant-dssi POST_BUILD
-  COMMAND ${CMAKE_COMMAND} -E copy
-  $<TARGET_FILE:dsynkant-dssi>
-  ../dsynkant-dssi.so)
+# DSSI plugin
+if (HAVE_DSSI)
+  add_library(dsynkant-dssi SHARED
+    dssidsynkant)
 
-install(FILES ${CMAKE_BINARY_DIR}/dsynkant-dssi.so DESTINATION lib/dssi)
+  target_link_libraries(dsynkant-dssi
+    dsynkant
+    dssiplugin)
+
+  add_subdirectory(dssi)
+
+  add_custom_command(TARGET dsynkant-dssi POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy
+    $<TARGET_FILE:dsynkant-dssi>
+    ../dsynkant-dssi.so)
+
+  install(FILES ${CMAKE_BINARY_DIR}/dsynkant-dssi.so DESTINATION lib/dssi)
+endif (HAVE_DSSI)
+
+# VST plugin
+if (HAVE_VST)
+  include_directories("${PROJECT_SOURCE_DIR}/VST3 SDK")
+
+  add_library(dsynkant-vst SHARED
+    vstdsynkant)
+endif (HAVE_VST)
