@@ -80,7 +80,6 @@ void VSTDSynkant::process(float **inputs, float **outputs,
 	// Process audio on midi events
 	if (events)
 	{
-
 		cue = 0;
 		for (i = 0; i < events->numEvents; i++)
 		{
@@ -98,6 +97,8 @@ void VSTDSynkant::process(float **inputs, float **outputs,
 				synth->midiInput(
 					e->midiData[0] + (e->midiData[1] << 8) + (e->midiData[2] << 16) );
 				cue = e->deltaFrames;
+			} else if (e->type == kVstSysExType) {
+				std::cerr << "SysEx not implemented yet" << std::endl;
 			}
 		}
 
