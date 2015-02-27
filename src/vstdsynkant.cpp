@@ -47,7 +47,8 @@ AEffect *main (audioMasterCallback audioMaster)
 
 VSTDSynkant::VSTDSynkant(audioMasterCallback audioMaster,
                          long numPrograms, long numParams)
-	: AudioEffectX(audioMaster, numPrograms, numParams)
+	: AudioEffectX(audioMaster, numPrograms, numParams),
+	  events(nullptr)
 {
 
 	// Plugin id
@@ -57,8 +58,6 @@ VSTDSynkant::VSTDSynkant(audioMasterCallback audioMaster,
 	setNumInputs(0);	
 	setNumOutputs(2);	
 
-	// init
-	events = 0;
 	// hasVu();   // deprecated
 	canProcessReplacing();
 }
@@ -108,7 +107,7 @@ void VSTDSynkant::process(float **inputs, float **outputs,
 	dsynkant.audio_process(p1, p2, sampleFrames - cue);
 
 	// Release events pointer
-	events = 0;
+	events = nullptr;
 	
 }
 
