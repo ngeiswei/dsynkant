@@ -89,7 +89,6 @@ void VSTDSynkant::process(float **inputs, float **outputs,
 {
 	
 	int i, cue, block;
-	VstMidiEvent* e;
 	
 	// Outputs buffers
 	float* p1 = outputs[0];
@@ -101,8 +100,8 @@ void VSTDSynkant::process(float **inputs, float **outputs,
 		cue = 0;
 		for (i = 0; i < events->numEvents; i++)
 		{
-			e = (VstMidiEvent*) events->events[i];
-			if (e->type == kVstMidiType)
+			VstEvent* e = events->events[i];
+			if (e->type == kVstMidiType or e->type == kVstSysExType)
 			{
 				block = e->deltaFrames - cue;
 				if (block > 0) 
@@ -111,13 +110,22 @@ void VSTDSynkant::process(float **inputs, float **outputs,
 					p1 += block;
 					p2 += block;
 				}
-				midi(e->midiData[0], e->midiData[1], e->midiData[2]);
+				if (e->type == kVstMidiType) {
+					VstMidiEvent* midi_e = (VstMidiEvent*) e;
+					midi(midi_e->midiData[0],
+					     midi_e->midiData[1],
+					     midi_e->midiData[2]);
+				}
+				else if (e->type == kVstSysExType) {
+					VstMidiSysexEvent* sysex_e = (VstMidiSysexEvent*) e;
+					dsynkant.sysex_process(sysex_e->dumpBytes,
+					                       (unsigned char*)sysex_e->sysexDump);
+				}
 				cue = e->deltaFrames;
-			} else if (e->type == kVstSysExType) {
-				std::cerr << "SysEx not implemented yet" << std::endl;
 			}
+			else std::cerr << "Midi event of type " << e->type
+			               << " is not implemented" << std::endl;
 		}
-
 	}
 
 	// Process audio
