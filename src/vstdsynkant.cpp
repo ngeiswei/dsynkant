@@ -66,6 +66,24 @@ VSTDSynkant::~VSTDSynkant()
 {
 }
 
+void VSTDSynkant::midi(unsigned char status,
+                       unsigned char byte1, unsigned char byte2)
+{
+	if (status == NOTE_ON or status == NOTE_OFF)
+	{
+		unsigned char pitch = byte1, velocity = byte2;
+		if (status == NOTE_ON and velocity > 0)
+			dsynkant.noteOn_process(0, pitch, velocity);
+		else if (status == NOTE_OFF or (status == NOTE_ON and velocity == 0))
+			dsynkant.noteOff_process(0, pitch);
+	} else {
+		std::cerr << "Midi event (status=" << status
+		          << ", byte1=" << byte1
+		          << ", byte2=" << byte2
+		          << ") not implemented" << std::endl;
+	}
+}
+
 void VSTDSynkant::process(float **inputs, float **outputs,
                           VstInt32 sampleFrames)
 {
@@ -93,9 +111,7 @@ void VSTDSynkant::process(float **inputs, float **outputs,
 					p1 += block;
 					p2 += block;
 				}
-				// TODO use dsynkant here
-				synth->midiInput(
-					e->midiData[0] + (e->midiData[1] << 8) + (e->midiData[2] << 16) );
+				midi(e->midiData[0], e->midiData[1], e->midiData[2]);
 				cue = e->deltaFrames;
 			} else if (e->type == kVstSysExType) {
 				std::cerr << "SysEx not implemented yet" << std::endl;

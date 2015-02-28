@@ -40,6 +40,7 @@ public:
 	VSTDSynkant(audioMasterCallback audioMaster,
 	            long numPrograms, long numParams);
 	~VSTDSynkant();
+	void midi(unsigned char status, unsigned char byte1, unsigned char byte2);
 	void process(float **inputs, float **outputs, VstInt32 sampleFrames);
 	void processReplacing(float **inputs, float **outputs, VstInt32 sampleFrames);
 	long dispatcher(long opCode, long index, long value, void *ptr, float opt);
@@ -47,6 +48,11 @@ public:
 	float getParameter(long index);
 	void getParameterName(long index, char *text);
 	void getParameterDisplay(long index, char *text);
+
+private:
+	// Midi status codes
+	static const unsigned char NOTE_ON = 0x90;
+	static const unsigned char NOTE_OFF = 0x80;
 };
 
 } // ~namespace dsynkant
