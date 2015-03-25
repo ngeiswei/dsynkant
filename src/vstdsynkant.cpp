@@ -23,24 +23,31 @@
 ****************************************************************************/
 
 #include "vstdsynkant.hpp"
+#include "pluginterfaces/vst2.x/aeffectx.h"
 
 #include <iostream>
 
 using namespace dsynkant;
 
 // Main function
+extern "C"
+{
+#define VST_EXPORT __attribute__ ((visibility ("default")))
 
-#ifdef __GNUC__ 
-AEffect* main_plugin (audioMasterCallback audioMaster) asm ("main");
+	extern VST_EXPORT AEffect * VSTPluginMain(audioMasterCallback audioMaster);
+
+	AEffect* main_plugin(audioMasterCallback audioMaster) asm ("main");
 #define main main_plugin
-#else
-AEffect *main (audioMasterCallback audioMaster);
-#endif
 
-AEffect *main (audioMasterCallback audioMaster)
-{ 
-	VSTDSynkant vst_dsynkant(audioMaster, 1, 0);
-	return vst_dsynkant.getAeffect();
+	VST_EXPORT AEffect *main(audioMasterCallback audioMaster)
+	{
+		return VSTPluginMain(audioMaster);
+	}
+}
+
+AudioEffect *createEffectInstance(audioMasterCallback audioMaster)
+{
+	return new VSTDSynkant(audioMaster, 1, 0);
 }
 
 // Plugin implementation

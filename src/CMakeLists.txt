@@ -24,6 +24,10 @@ endif (HAVE_DSSI)
 if (HAVE_VST)
   include_directories("${PROJECT_SOURCE_DIR}/VST3 SDK")
 
+  target_link_libraries(dsynkant-dssi
+    dsynkant
+    TODO: add VST library link to have AudioEffectX and the like defined)
+
   add_library(dsynkant-vst SHARED
     vstdsynkant)
 endif (HAVE_VST)
