@@ -1,6 +1,11 @@
 * Overall
 - [ ] Add VST support
+  - [ ] Weird, I'm getting undefined symbol: _ZN8dsynkant14D50CharToASCIIEh
 - [ ] Use a real logging system like the one provided by boost
+
+* Set
+- [ ] Address is buggy (memory leaks in operator-)
+- [ ] Address can be simplified using boost operators
 
 * Engine
 - [ ] Complete Voice with rendering method (takes an audio buffer and
