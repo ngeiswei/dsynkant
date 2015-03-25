@@ -35,7 +35,7 @@ using namespace dsynkant;
 PatchParameter::PatchParameter() {
 	setPatchName("DSynkant Init");
 	_keyMode = Dual;
-	_splitPoint = 24; //corresponds to C4
+	_splitPoint = 24; // Corresponds to C4
 	_portamentoMode = SUL;
 	_holdMode = SUL;
 	_UToneKeyShift = 0;
@@ -301,7 +301,7 @@ bool PatchParameter::getUpperPartial2On() const {
 	return _UpperPartial2On;
 }
 
-//dump method
+// Dump method
 void PatchParameter::dump(Address& a, unsigned length, const unsigned char* data) {
 	Address cura;
 	unsigned index = 0;
@@ -487,19 +487,19 @@ void PatchParameter::dump(Address& a, unsigned length, const unsigned char* data
 	}
 	++cura;
 	if(length > index && a == cura) {
-		//Ignore for unkown reason
-		//_LowerOn = (bool)(data[index] & 1);
-		//_UpperOn = (bool)(data[index] & 2);
+		// Ignore for unkown reason
+		// _LowerOn = (bool)(data[index] & 1);
+		// _UpperOn = (bool)(data[index] & 2);
 		index++;
 		++a;
 	}
 	++cura;
 	if(length > index && a == cura) {
-		//Ignore for unkown reason
-		//_LowerPartial1On = (bool)(data[index] & 1);
-		//_LowerPartial2On = (bool)(data[index] & 2);
-		//_UpperPartial1On = (bool)(data[index] & 4);
-		//_UpperPartial2On = (bool)(data[index] & 8);
+		// Ignore for unkown reason
+		// _LowerPartial1On = (bool)(data[index] & 1);
+		// _LowerPartial2On = (bool)(data[index] & 2);
+		// _UpperPartial1On = (bool)(data[index] & 4);
+		// _UpperPartial2On = (bool)(data[index] & 8);
 		Address last(DUMP_PATCHPARAMETER_LENGTH);
 		a = last;
 	}
