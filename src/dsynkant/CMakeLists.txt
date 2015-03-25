@@ -1,4 +1,4 @@
-add_library(dsynkant SHARED
+add_library(dsynkant STATIC
   dsynkant
   commondef/commondef
   engine/engine
