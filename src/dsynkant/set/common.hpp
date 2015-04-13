@@ -54,13 +54,13 @@ class Chorus;
 
 enum class Structure {
 	SS, // Mix of synthe partial 1 and synthe partial 2
-		SSR, // Mix of synthe partial 1 and ring mod of synthe partial 1 & 2
-		PS, // Mix of PCM partial 1 and synthe partial 2
-		PSR, // Mix of PCM partial 1 and ring mod of synthe partial 1 & 2
-		SPR, // Mix of synthe partial 1 and ring mod of PCM partial 1 & 2
-		PP, // Mix of PCM partial 1 and PCM partial 2
-		PPR // Mix of PCM partial 1 and rinf mod of PCM partial 1 & 2
-		};
+	SSR, // Mix of synthe partial 1 and ring mod of synthe partial 1 & 2
+	PS, // Mix of PCM partial 1 and synthe partial 2
+	PSR, // Mix of PCM partial 1 and ring mod of synthe partial 1 & 2
+	SPR, // Mix of synthe partial 1 and ring mod of PCM partial 1 & 2
+	PP, // Mix of PCM partial 1 and PCM partial 2
+	PPR // Mix of PCM partial 1 and rinf mod of PCM partial 1 & 2
+};
 
 class Common {
 private:
