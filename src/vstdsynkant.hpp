@@ -49,6 +49,32 @@ public:
 	void getParameterName(long index, char *text);
 	void getParameterDisplay(long index, char *text);
 
+	/** TODO possibly implement the following methods
+
+	    VstInt32 processEvents(VstEvents* events);
+		void setProgram(VstInt32 program);
+		void setProgramName(char *name);
+		void getProgramName(char *name);
+		void setParameter(VstInt32 index, float value);
+		float getParameter(VstInt32 index);
+		void getParameterLabel(VstInt32 index, char *label);
+		void getParameterDisplay(VstInt32 index, char *text);
+		void getParameterName(VstInt32 index, char *text);
+		void setSampleRate(float sampleRate);
+		void setBlockSize(VstInt32 blockSize);
+		void suspend();
+		void resume();
+
+		bool getOutputProperties (VstInt32 index, VstPinProperties* properties);
+		bool getProgramNameIndexed (VstInt32 category, VstInt32 index, char* text);
+		bool copyProgram (VstInt32 destination);
+		bool getEffectName (char* name);
+		bool getVendorString (char* text);
+		bool getProductString (char* text);
+		VstInt32 getVendorVersion () {return 1;}
+		VstInt32 canDo (char* text);
+	*/
+
 private:
 	// Midi status codes
 	static const unsigned char NOTE_ON = 0x90;
