@@ -30,23 +30,23 @@
 
 namespace dsynkant {
 
-const std::string minus1Str="-1";
-const std::string minus1div2Str="-1/2";
-const std::string minus1div4Str="-1/4";
-const std::string zeroStr="0";
-const std::string plus1div8Str="1/8";
-const std::string plus1div4Str="1/4";
-const std::string plus3div8Str="3/8";
-const std::string plus1div2Str="1/2";
-const std::string plus5div8Str="5/8";
-const std::string plus3div4Str="3/4";
-const std::string plus7div8Str="7/8";
-const std::string plus1Str="1";
-const std::string plus5div4Str="5/4";
-const std::string plus3div2Str="3/2";
-const std::string plus2Str="2";
-const std::string s1Str="s1";
-const std::string s2Str="s2";
+static const std::string minus1Str="-1";
+static const std::string minus1div2Str="-1/2";
+static const std::string minus1div4Str="-1/4";
+static const std::string zeroStr="0";
+static const std::string plus1div8Str="1/8";
+static const std::string plus1div4Str="1/4";
+static const std::string plus3div8Str="3/8";
+static const std::string plus1div2Str="1/2";
+static const std::string plus5div8Str="5/8";
+static const std::string plus3div4Str="3/4";
+static const std::string plus7div8Str="7/8";
+static const std::string plus1Str="1";
+static const std::string plus5div4Str="5/4";
+static const std::string plus3div2Str="3/2";
+static const std::string plus2Str="2";
+static const std::string s1Str="s1";
+static const std::string s2Str="s2";
 
 enum class FracKeyFollow {
 	minus1,
@@ -68,11 +68,44 @@ enum class FracKeyFollow {
 	s2
 };
 
-void ps(int n); // printf n space
+static void ps(int s) {
+	for(int i = 0; i < s; i++) printf(" ");
+}
 
-std::string FracKeyFollowStr(FracKeyFollow kf);
+static std::string FracKeyFollowStr(FracKeyFollow kf) {
+	switch(kf) {
+	case FracKeyFollow::minus1 : return minus1Str; break;
+	case FracKeyFollow::minus1div2 : return minus1div2Str; break;
+	case FracKeyFollow::minus1div4 : return minus1div4Str; break;
+	case FracKeyFollow::zero : return zeroStr; break;
+	case FracKeyFollow::plus1div8 : return plus1div8Str; break;
+	case FracKeyFollow::plus1div4 : return plus1div4Str; break;
+	case FracKeyFollow::plus3div8 : return plus3div8Str; break;
+	case FracKeyFollow::plus1div2 : return plus1div2Str; break;
+	case FracKeyFollow::plus5div8 : return plus5div8Str; break;
+	case FracKeyFollow::plus3div4 : return plus3div4Str; break;
+	case FracKeyFollow::plus7div8 : return plus7div8Str; break;
+	case FracKeyFollow::plus1 : return plus1Str; break;
+	case FracKeyFollow::plus5div4 : return plus5div4Str; break;
+	case FracKeyFollow::plus3div2 : return plus3div2Str; break;
+	case FracKeyFollow::plus2 : return plus2Str; break;
+	case FracKeyFollow::s1 : return s1Str; break;
+	case FracKeyFollow::s2 : return s2Str; break;
+	default :
+		printf("WG::keyFollowStr : %d impossible case\n", (int)kf);
+		return NULL;
+		break;
+	}
+}
 
-char D50CharToASCII(unsigned char c);
+static char D50CharToASCII(unsigned char c) {
+	if(c == 0) return 0x20;
+	else if(c<27) return (char)(c-1+0x41);
+	else if(c<53) return (char)(c-27+0x61);
+	else if(c<63) return (char)(c-53+0x30);
+	else if(c == 63) return '-';
+	else return 0;
+}
 
 } // ~namespace dsynkant
 
