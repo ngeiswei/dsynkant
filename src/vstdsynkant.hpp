@@ -40,26 +40,28 @@ public:
 	VSTDSynkant(audioMasterCallback audioMaster,
 	            long numPrograms, long numParams);
 	~VSTDSynkant();
+
+	// Process audio and events
+	VstInt32 processEvents(VstEvents* events);
+	void processEvent(VstEvent* event);
 	void midi(unsigned char status, unsigned char byte1, unsigned char byte2);
 	void process(float **inputs, float **outputs, VstInt32 sampleFrames);
 	void processReplacing(float **inputs, float **outputs, VstInt32 sampleFrames);
-	long dispatcher(long opCode, long index, long value, void *ptr, float opt);
-	void setParameter(long index, float value);
-	float getParameter(long index);
-	void getParameterName(long index, char *text);
-	void getParameterDisplay(long index, char *text);
+	VstIntPtr dispatcher(VstInt32 opCode, VstInt32 index, VstIntPtr value,
+	                     void *ptr, float opt);
+
+	// // Access/modify parameter
+	// void setParameter(VstInt32 index, float value);
+	// float getParameter(VstInt32 index);
+	// void getParameterLabel(VstInt32 index, char *label);
+	// void getParameterName(VstInt32 index, char *text);
+	// void getParameterDisplay(VstInt32 index, char *text);
 
 	/** TODO possibly implement the following methods
 
-	    VstInt32 processEvents(VstEvents* events);
 		void setProgram(VstInt32 program);
 		void setProgramName(char *name);
 		void getProgramName(char *name);
-		void setParameter(VstInt32 index, float value);
-		float getParameter(VstInt32 index);
-		void getParameterLabel(VstInt32 index, char *label);
-		void getParameterDisplay(VstInt32 index, char *text);
-		void getParameterName(VstInt32 index, char *text);
 		void setSampleRate(float sampleRate);
 		void setBlockSize(VstInt32 blockSize);
 		void suspend();

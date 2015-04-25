@@ -73,6 +73,28 @@ VSTDSynkant::~VSTDSynkant()
 {
 }
 
+void VSTDSynkant::processEvent(VstEvent* e) {
+	if (e->type == kVstMidiType) {
+		VstMidiEvent* midi_e = (VstMidiEvent*) e;
+		char* midiData = midi_e->midiData;
+		midi(midiData[0], midiData[1], midiData[2]);
+	}
+	else if (e->type == kVstSysExType) {
+		VstMidiSysexEvent* sysex_e = (VstMidiSysexEvent*) e;
+		dsynkant.sysex_process(sysex_e->dumpBytes,
+		                       (unsigned char*)sysex_e->sysexDump);
+	}
+	else std::cerr << "Vst event of type " << e->type
+	               << " is not implemented" << std::endl;
+}
+
+VstInt32 VSTDSynkant::processEvents(VstEvents* ev) {
+	for (VstInt32 i = 0; i < ev->numEvents; i++) {
+		processEvent(ev->events[i]);
+	}
+	return 1;
+}
+
 void VSTDSynkant::midi(unsigned char status,
                        unsigned char byte1, unsigned char byte2)
 {
@@ -108,30 +130,14 @@ void VSTDSynkant::process(float **inputs, float **outputs,
 		for (i = 0; i < events->numEvents; i++)
 		{
 			VstEvent* e = events->events[i];
-			if (e->type == kVstMidiType or e->type == kVstSysExType)
-			{
-				block = e->deltaFrames - cue;
-				if (block > 0) 
-				{
-					dsynkant.audio_process(p1, p2, block);
-					p1 += block;
-					p2 += block;
-				}
-				if (e->type == kVstMidiType) {
-					VstMidiEvent* midi_e = (VstMidiEvent*) e;
-					midi(midi_e->midiData[0],
-					     midi_e->midiData[1],
-					     midi_e->midiData[2]);
-				}
-				else if (e->type == kVstSysExType) {
-					VstMidiSysexEvent* sysex_e = (VstMidiSysexEvent*) e;
-					dsynkant.sysex_process(sysex_e->dumpBytes,
-					                       (unsigned char*)sysex_e->sysexDump);
-				}
-				cue = e->deltaFrames;
+			block = e->deltaFrames - cue;
+			if (block > 0) {
+				dsynkant.audio_process(p1, p2, block);
+				p1 += block;
+				p2 += block;
 			}
-			else std::cerr << "Midi event of type " << e->type
-			               << " is not implemented" << std::endl;
+			processEvent(e);
+			cue = e->deltaFrames;
 		}
 	}
 
@@ -140,7 +146,6 @@ void VSTDSynkant::process(float **inputs, float **outputs,
 
 	// Release events pointer
 	events = nullptr;
-	
 }
 
 void VSTDSynkant::processReplacing(float **inputs, float **outputs,
@@ -149,8 +154,8 @@ void VSTDSynkant::processReplacing(float **inputs, float **outputs,
 	process(inputs, outputs, sampleFrames);
 }
 
-long VSTDSynkant::dispatcher(long opCode, long index, long value,
-                             void *ptr, float opt)
+VstIntPtr VSTDSynkant::dispatcher(VstInt32 opCode, VstInt32 index, VstIntPtr value,
+                                  void *ptr, float opt)
 {
 	int result = 0;
 
@@ -165,34 +170,33 @@ long VSTDSynkant::dispatcher(long opCode, long index, long value,
 		result = 1;
 		break;
 	default:                // Default 
-		result = AudioEffect::dispatcher(opCode, index, value, ptr, opt);
+		result = AudioEffectX::dispatcher(opCode, index, value, ptr, opt);
 	}
 
 	return result;
-
 }
 
-// Set param
+// // Set param
 
-void VSTDSynkant::setParameter(long index, float value)
-{
-}
+// void VSTDSynkant::setParameter(VstInt32 index, float value)
+// {
+// }
 
-// Get param
+// // Get param
 
-float VSTDSynkant::getParameter(long index)
-{
-	return 0.0f;
-}
+// float VSTDSynkant::getParameter(VstInt32 index)
+// {
+// 	return 0.0f;
+// }
 
-// Get param name
+// // Get param name
 
-void VSTDSynkant::getParameterName (long index, char *text)
-{
-}
+// void VSTDSynkant::getParameterName (VstInt32 index, char *text)
+// {
+// }
 
-// Get param value
+// // Get param value
 
-void VSTDSynkant::getParameterDisplay (long index, char *text)
-{
-}
+// void VSTDSynkant::getParameterDisplay (VstInt32 index, char *text)
+// {
+// }
