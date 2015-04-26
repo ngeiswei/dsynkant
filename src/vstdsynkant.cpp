@@ -200,3 +200,32 @@ VstIntPtr VSTDSynkant::dispatcher(VstInt32 opCode, VstInt32 index, VstIntPtr val
 // void VSTDSynkant::getParameterDisplay (VstInt32 index, char *text)
 // {
 // }
+
+bool VSTDSynkant::getEffectName(char* name)
+{
+	strcpy(name, "DSynkant");
+	return true;
+}
+
+bool VSTDSynkant::getVendorString(char* text) {
+	strcpy(text, "Nil Geisweiller");
+	return true;
+}
+
+bool VSTDSynkant::getProductString(char* text)
+{
+	strcpy(text, "Nil Geisweiller DSynkant");
+	return true;
+}
+
+VstInt32 VSTDSynkant::getVendorVersion()
+{
+	return 1;
+}
+
+VstInt32 VSTDSynkant::canDo(char* text)
+{
+	if(!strcmp (text, "receiveVstEvents")) return 1;
+	if(!strcmp (text, "receiveVstMidiEvent"))	return 1;
+	return -1;
+}

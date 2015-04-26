@@ -43,10 +43,10 @@ public:
 
 	// Process audio and events
 	VstInt32 processEvents(VstEvents* events);
-	void processEvent(VstEvent* event);
 	void midi(unsigned char status, unsigned char byte1, unsigned char byte2);
 	void process(float **inputs, float **outputs, VstInt32 sampleFrames);
-	void processReplacing(float **inputs, float **outputs, VstInt32 sampleFrames);
+	void processReplacing(float **inputs, float **outputs,
+	                      VstInt32 sampleFrames);
 	VstIntPtr dispatcher(VstInt32 opCode, VstInt32 index, VstIntPtr value,
 	                     void *ptr, float opt);
 
@@ -56,6 +56,14 @@ public:
 	// void getParameterLabel(VstInt32 index, char *label);
 	// void getParameterName(VstInt32 index, char *text);
 	// void getParameterDisplay(VstInt32 index, char *text);
+
+	// Plugin name, vendor and version
+	bool getEffectName(char* name);
+	bool getVendorString(char* text);
+	bool getProductString(char* text);
+	VstInt32 getVendorVersion();
+
+	VstInt32 canDo(char* text);
 
 	/** TODO possibly implement the following methods
 
@@ -70,17 +78,14 @@ public:
 		bool getOutputProperties (VstInt32 index, VstPinProperties* properties);
 		bool getProgramNameIndexed (VstInt32 category, VstInt32 index, char* text);
 		bool copyProgram (VstInt32 destination);
-		bool getEffectName (char* name);
-		bool getVendorString (char* text);
-		bool getProductString (char* text);
-		VstInt32 getVendorVersion () {return 1;}
-		VstInt32 canDo (char* text);
 	*/
 
 private:
 	// Midi status codes
 	static const unsigned char NOTE_ON = 0x90;
 	static const unsigned char NOTE_OFF = 0x80;
+
+	void processEvent(VstEvent* event);
 };
 
 } // ~namespace dsynkant
