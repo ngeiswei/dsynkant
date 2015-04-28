@@ -37,8 +37,7 @@ public:
 
 	VstEvents* events;			// midi events
 
-	VSTDSynkant(audioMasterCallback audioMaster,
-	            long numPrograms, long numParams);
+	VSTDSynkant(audioMasterCallback audioMaster);
 	~VSTDSynkant();
 
 	// Process audio and events
@@ -51,11 +50,11 @@ public:
 	                     void *ptr, float opt);
 
 	// // Access/modify parameter
-	// void setParameter(VstInt32 index, float value);
-	// float getParameter(VstInt32 index);
-	// void getParameterLabel(VstInt32 index, char *label);
-	// void getParameterName(VstInt32 index, char *text);
-	// void getParameterDisplay(VstInt32 index, char *text);
+	void setParameter(VstInt32 index, float value);
+	float getParameter(VstInt32 index);
+	void getParameterLabel(VstInt32 index, char *label);
+	void getParameterName(VstInt32 index, char *text);
+	void getParameterDisplay(VstInt32 index, char *text);
 
 	// Plugin name, vendor and version
 	bool getEffectName(char* name);
@@ -64,6 +63,8 @@ public:
 	VstInt32 getVendorVersion();
 
 	VstInt32 canDo(char* text);
+
+	bool getOutputProperties(VstInt32 index, VstPinProperties* properties);
 
 	/** TODO possibly implement the following methods
 
@@ -75,7 +76,6 @@ public:
 		void suspend();
 		void resume();
 
-		bool getOutputProperties (VstInt32 index, VstPinProperties* properties);
 		bool getProgramNameIndexed (VstInt32 category, VstInt32 index, char* text);
 		bool copyProgram (VstInt32 destination);
 	*/

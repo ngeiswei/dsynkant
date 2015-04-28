@@ -47,25 +47,21 @@ extern "C"
 
 AudioEffect *createEffectInstance(audioMasterCallback audioMaster)
 {
-	return new VSTDSynkant(audioMaster, 1, 0);
+	return new VSTDSynkant(audioMaster);
 }
 
 // Plugin implementation
 
-VSTDSynkant::VSTDSynkant(audioMasterCallback audioMaster,
-                         long numPrograms, long numParams)
-	: AudioEffectX(audioMaster, numPrograms, numParams),
-	  events(nullptr)
+VSTDSynkant::VSTDSynkant(audioMasterCallback audioMaster)
+	: AudioEffectX(audioMaster, 1, 1), events(nullptr)
 {
-
 	// Plugin id
 	setUniqueID(CCONST('D', 'S', 'y', 'n'));
 
 	// stereo output
 	setNumInputs(0);	
 	setNumOutputs(2);	
-
-	// hasVu();   // deprecated
+	isSynth();
 	canProcessReplacing();
 }
 
@@ -176,30 +172,31 @@ VstIntPtr VSTDSynkant::dispatcher(VstInt32 opCode, VstInt32 index, VstIntPtr val
 	return result;
 }
 
-// // Set param
+void VSTDSynkant::setParameter(VstInt32 index, float value)
+{
+	std::cout << "setParameter(" << index << ", " << value << ")"
+	          << std::endl;
+}
 
-// void VSTDSynkant::setParameter(VstInt32 index, float value)
-// {
-// }
+float VSTDSynkant::getParameter(VstInt32 index)
+{
+	return 0.0f;
+}
 
-// // Get param
+void VSTDSynkant::getParameterLabel(VstInt32 index, char *text)
+{
+	strcpy(text, "Dummy parameter label");
+}
 
-// float VSTDSynkant::getParameter(VstInt32 index)
-// {
-// 	return 0.0f;
-// }
+void VSTDSynkant::getParameterName(VstInt32 index, char *text)
+{
+	strcpy(text, "Dummy parameter name");
+}
 
-// // Get param name
-
-// void VSTDSynkant::getParameterName (VstInt32 index, char *text)
-// {
-// }
-
-// // Get param value
-
-// void VSTDSynkant::getParameterDisplay (VstInt32 index, char *text)
-// {
-// }
+void VSTDSynkant::getParameterDisplay(VstInt32 index, char *text)
+{
+	strcpy(text, "Dummy parameter display");
+}
 
 bool VSTDSynkant::getEffectName(char* name)
 {
@@ -221,6 +218,19 @@ bool VSTDSynkant::getProductString(char* text)
 VstInt32 VSTDSynkant::getVendorVersion()
 {
 	return 1;
+}
+
+bool VSTDSynkant::getOutputProperties(VstInt32 index,
+                                      VstPinProperties* properties)
+{
+	if(index < 2)
+	{
+		sprintf(properties->label, "DSynkant %u", index + 1);
+		properties->flags = kVstPinIsActive;
+		properties->flags |= kVstPinIsStereo; // Make channel 1+2 stereo
+		return true;
+	}
+	return false;
 }
 
 VstInt32 VSTDSynkant::canDo(char* text)
