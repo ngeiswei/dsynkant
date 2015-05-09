@@ -44,6 +44,14 @@ public:
 
 	// Modifiers
 	void setNoteOff();
+
+	// Assumptions:
+	//
+	// 1. The parameters do not change during audio processing
+	//
+	// 2. All processing is added to the buffers
+	void audio_process(float* left_out, float* right_out,
+	                   unsigned long sample_count);
 };
 
 } // ~namespace dsynkant

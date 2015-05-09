@@ -33,6 +33,11 @@ Engine::Engine(const DSynkant& ref) : _dsynkant(ref) {}
 
 Engine::~Engine() {}
 
+void Engine::audio_process(float* left_out, float* right_out,
+                           unsigned long sample_count) {
+	// TODO
+}
+
 void Engine::noteOn_process(unsigned char channel,
                             unsigned char pitch,
                             unsigned char velocity) {

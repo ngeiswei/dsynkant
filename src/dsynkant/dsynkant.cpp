@@ -33,11 +33,7 @@ DSynkant::~DSynkant() {}
 
 void DSynkant::audio_process(float* left_out, float* right_out,
                              unsigned long sample_count) {
-	// dbg_printf("AUDIO_PROCESS\n");
-	for(unsigned long i = 0; i < sample_count; i++) {
-		left_out[i] = 0.0;
-		right_out[i] = 0.0;
-	}
+	_engine.audio_process(left_out, right_out, sample_count);
 }
 
 void DSynkant::noteOn_process(unsigned char channel,

@@ -33,3 +33,8 @@ Voice::Voice(unsigned char pitch, unsigned char velocity) :
 void Voice::setNoteOff() {
 	_noteOn = false;
 }
+
+void Voice::audio_process(float* left_out, float* right_out,
+                          unsigned long sample_count) {
+	// TODO
+}
