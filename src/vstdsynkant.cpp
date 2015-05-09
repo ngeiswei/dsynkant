@@ -147,6 +147,10 @@ void VSTDSynkant::process(float **inputs, float **outputs,
 void VSTDSynkant::processReplacing(float **inputs, float **outputs,
                                    VstInt32 sampleFrames)
 {
+	for(VstInt32 i = 0; i < sampleFrames; i++) {
+		outputs[0][i] = 0.0f;
+		outputs[1][i] = 0.0f;
+	}
 	process(inputs, outputs, sampleFrames);
 }
 
