@@ -32,10 +32,6 @@
 
 namespace dsynkant {
 
-class Partial;
-class Common;
-class PatchParameter;
-
 class Patch {
 private:
 	Partial _upperPartial1;
