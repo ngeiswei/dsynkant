@@ -3,6 +3,7 @@ add_library(dsynkant SHARED
   commondef/commondef
   engine/engine
   engine/voice
+  engine/tone
   set/address
   set/bank
   set/baseenvelope
