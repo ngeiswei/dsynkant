@@ -33,19 +33,17 @@
 namespace dsynkant {
 
 class Patch {
-private:
-	Partial _upperPartial1;
-	Partial _upperPartial2;
-	Common _upperCommon;
-	Partial _lowerPartial1;
-	Partial _lowerPartial2;
-	Common _lowerCommon;
-	PatchParameter _patchParameter;
-
 public:
-	// Constructor destructor
+	Partial upperPartial1;
+	Partial upperPartial2;
+	Common upperCommon;
+	Partial lowerPartial1;
+	Partial lowerPartial2;
+	Common lowerCommon;
+	PatchParameter patchParameter;
+
+	// Constructor
 	Patch();
-	~Patch();
 
 	// Dump method
 	void dump(Address& a, unsigned length, const unsigned char* data);

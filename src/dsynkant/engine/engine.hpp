@@ -44,15 +44,25 @@ class DSynkant;
  */
 
 class Engine {
-private:
-	const DSynkant& _dsynkant;
+public:
+	///////////////////
+	// Attributes    //
+	///////////////////
+
+	const DSynkant& dsynkant;
 
 	// Map pitch (possibly several times the same) to a voice
-	std::multimap<int, Voice> _voices;
+	std::multimap<int, Voice> voices;
 
-public:
+	/////////////////////////////////
+	// Constructors/descructors    //
+	/////////////////////////////////
+
 	Engine(const DSynkant& ref);
-	~Engine();
+
+	////////////////
+	// Methods    //
+	////////////////
 
 	// Assumptions:
 	//
@@ -61,12 +71,13 @@ public:
 	// 2. All processing is added to the buffers
 	void audio_process(float* left_out, float* right_out,
 	                   unsigned long sample_count);
+
 	void noteOn_process(unsigned char channel,
 	                    unsigned char pitch,
 	                    unsigned char velocity);
+
 	void noteOff_process(unsigned char channel, unsigned char pitch);
 
-	//print method
 	void print(int m) const;
 };
 

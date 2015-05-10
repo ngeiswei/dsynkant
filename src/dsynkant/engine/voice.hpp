@@ -25,6 +25,9 @@
 #ifndef __DSYNKANT_VOICE_HPP
 #define __DSYNKANT_VOICE_HPP
 
+#include "tone.hpp"
+#include "../set/patch.hpp"
+
 namespace dsynkant {
 
 /**
@@ -33,14 +36,30 @@ namespace dsynkant {
  */
 
 class Voice {
+
+	///////////////////
+	// Attributes    //
+	///////////////////
+
 private:
-	unsigned char _pitch;
-	unsigned char _velocity;
-	bool _noteOn;
+	Tone _upperTone;
+	Tone _lowerTone;
 
 public:
-	// Constructor
-	Voice(unsigned char pitch, unsigned char velocity);
+	unsigned char pitch;
+	unsigned char velocity;
+	bool noteOn;
+	static const unsigned char C4_pitch = 64;
+
+	/////////////////////////////////
+	// Constructors/descructors    //
+	/////////////////////////////////
+
+	Voice(const Patch& patch, unsigned char pitch, unsigned char velocity);
+
+	////////////////
+	// Methods    //
+	////////////////
 
 	// Modifiers
 	void setNoteOff();

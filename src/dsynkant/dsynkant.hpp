@@ -43,14 +43,31 @@ namespace dsynkant {
 #define COMMAND_DUMP_PATCH 0x12
 
 class DSynkant {
-private:
-	Set _set; // A Set is a set of banks, themselves containing patches
-	Patch _workPatch; // Patch that the engine works on
-	Engine _engine; // Engine of the DSynkant
-  
+
+	///////////////////
+	// Attributes    //
+	///////////////////
+
 public:
+	// A Set is a set of banks, themselves containing patches
+	Set set;
+
+	// Patch that the engine works on
+	Patch workPatch;
+
+	// Engine of the DSynkant
+	Engine engine;
+
+	/////////////////////////////////
+	// Constructors/descructors    //
+	/////////////////////////////////
+
 	DSynkant();
 	~DSynkant();
+
+	////////////////
+	// Methods    //
+	////////////////
 
 	// Assumptions:
 	//

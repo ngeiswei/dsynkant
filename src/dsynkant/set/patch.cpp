@@ -27,88 +27,86 @@
 
 using namespace dsynkant;
 
-//constructor destructor
+// Constructor destructor
 Patch::Patch() 
-	: _lowerCommon(true) /* only partial 1 */ {}
+	: lowerCommon(true) /* only partial 1 */ {}
 
-Patch::~Patch() {}
-
-//dump method
+// Dump method
 void Patch::dump(Address& a, unsigned length, const unsigned char* data) {
 	Address lowBound(0, 0);
 	Address upBound(0, DUMP_PARTIAL_LENGTH);
 	unsigned index = 0;
-	//Upper partial 1
+	// Upper partial 1
 	if(length > index && a >= lowBound && a < upBound) {
 		Address la = a - lowBound; //local address
 		Address prela = la; //to keep before the dump
-		_upperPartial1.dump(la, length, data);
+		upperPartial1.dump(la, length, data);
 		Address diffa = la - prela; //distance made by dump
 		index += diffa.toInt();
 		a += diffa;
 	}
 	lowBound += DUMP_PARTIAL_LENGTH;
 	upBound += DUMP_PARTIAL_LENGTH;
-	//Upper partial 2
+	// Upper partial 2
 	if(length > index && a >= lowBound && a < upBound) {
 		Address la = a - lowBound;
 		Address prela = la;
-		_upperPartial2.dump(la, length - index, &data[index]);
+		upperPartial2.dump(la, length - index, &data[index]);
 		Address diffa = la - prela;
 		index += diffa.toInt();
 		a += diffa;
 	}
 	lowBound += DUMP_PARTIAL_LENGTH;
 	upBound += DUMP_COMMON_LENGTH;
-	//Upper common 
+	// Upper common
 	if(length > index && a >= lowBound && a < upBound) {
 		Address la = a - lowBound;
 		Address prela = la;
-		_upperCommon.dump(la, length - index, &data[index]);
+		upperCommon.dump(la, length - index, &data[index]);
 		Address diffa = la - prela;
 		index += diffa.toInt();
 		a += diffa;
 	}
 	lowBound += DUMP_COMMON_LENGTH;
 	upBound += DUMP_PARTIAL_LENGTH;
-	//Lower partial 1
+	// Lower partial 1
 	if(length > index && a >= lowBound && a < upBound) {
 		Address la = a - lowBound;
 		Address prela = la;
-		_lowerPartial1.dump(la, length - index, &data[index]);
+		lowerPartial1.dump(la, length - index, &data[index]);
 		Address diffa = la - prela;
 		index += diffa.toInt();  
 		a += diffa;
 	}
 	lowBound += DUMP_PARTIAL_LENGTH;
 	upBound += DUMP_PARTIAL_LENGTH;
-	//Lower partial 2
+	// Lower partial 2
 	if(length > index && a >= lowBound && a < upBound) {
 		Address la = a - lowBound;
 		Address prela = la;
-		_lowerPartial2.dump(la, length - index, &data[index]);
+		lowerPartial2.dump(la, length - index, &data[index]);
 		Address diffa = la - prela;
 		index += diffa.toInt();
 		a += diffa;
 	}
 	lowBound += DUMP_PARTIAL_LENGTH;
 	upBound += DUMP_COMMON_LENGTH;
-	//Lower common
+	// Lower common
 	if(length > index && a >= lowBound && a < upBound) {
 		Address la = a - lowBound;
 		Address prela = la;
-		_lowerCommon.dump(la, length - index, &data[index]);
+		lowerCommon.dump(la, length - index, &data[index]);
 		Address diffa = la - prela;
 		index += diffa.toInt();
 		a += diffa;
 	}
 	lowBound += DUMP_COMMON_LENGTH;
 	upBound += DUMP_PATCHPARAMETER_LENGTH;
-	//Patch parameter
+	// Patch parameter
 	if(length > index && a >= lowBound && a < upBound) {
 		Address la = a - lowBound;
 		Address prela = la;
-		_patchParameter.dump(la, length - index, &data[index]);
+		patchParameter.dump(la, length - index, &data[index]);
 		Address diffa = la - prela;
 		a += diffa;
 	}
@@ -118,23 +116,23 @@ void Patch::dump(Address& a, unsigned length, const unsigned char* data) {
 void Patch::print(int m) const {
 	ps(m);
 	printf("Upper Partial 1\n");
-	_upperPartial1.print(m+2);
+	upperPartial1.print(m+2);
 	ps(m);
 	printf("Upper Partial 2\n");
-	_upperPartial2.print(m+2);
+	upperPartial2.print(m+2);
 	ps(m);
 	printf("Upper Common\n");
-	_upperCommon.print(m+2);
+	upperCommon.print(m+2);
 	ps(m);
 	printf("Lower Partial 1\n");
-	_lowerPartial1.print(m+2);
+	lowerPartial1.print(m+2);
 	ps(m);
 	printf("Lower Partial 2\n");
-	_lowerPartial2.print(m+2);
+	lowerPartial2.print(m+2);
 	ps(m);
 	printf("Lower Common\n");
-	_lowerCommon.print(m+2);
+	lowerCommon.print(m+2);
 	ps(m);
 	printf("Patch Parameter\n");
-	_patchParameter.print(m+2);
+	patchParameter.print(m+2);
 }

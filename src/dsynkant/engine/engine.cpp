@@ -24,29 +24,32 @@
 
 #include <iostream>
 #include "engine.hpp"
+#include "../dsynkant.hpp"
 #include "../commondef/commondef.hpp"
 
 using namespace dsynkant;
 
 //constructor destructor
-Engine::Engine(const DSynkant& ref) : _dsynkant(ref) {}
-
-Engine::~Engine() {}
+Engine::Engine(const DSynkant& ref) : dsynkant(ref) {}
 
 void Engine::audio_process(float* left_out, float* right_out,
                            unsigned long sample_count) {
-	// TODO
+	// For now it just adds up all voices
+	for (auto& pitch2voice : voices) {
+		Voice& voice = pitch2voice.second;
+		voice.audio_process(left_out, right_out, sample_count);
+	}
 }
 
 void Engine::noteOn_process(unsigned char channel,
                             unsigned char pitch,
                             unsigned char velocity) {
-	_voices.emplace(pitch, Voice(pitch, velocity));
+	voices.emplace(pitch, Voice(dsynkant.workPatch, pitch, velocity));
 }
 
 void Engine::noteOff_process(unsigned char channel, unsigned char pitch) {
-	auto it = _voices.find(pitch);
-	if (it != _voices.end())
+	auto it = voices.find(pitch);
+	if (it != voices.end())
 		it->second.setNoteOff();
 	else
 		std::cerr << "NoteOff (channel=" << channel

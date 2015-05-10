@@ -26,15 +26,21 @@
 
 using namespace dsynkant;
 
-Voice::Voice(unsigned char pitch, unsigned char velocity) :
-	_pitch(pitch), _velocity(velocity), _noteOn(true) {
-}
+Voice::Voice(const Patch& patch,
+             unsigned char pitch_, unsigned char velocity_) :
+	pitch(pitch_), velocity(velocity_), noteOn(true),
+	_upperTone(*this,
+	           patch.upperPartial1, patch.upperPartial2, patch.upperCommon),
+	_lowerTone(*this,
+	           patch.lowerPartial1, patch.lowerPartial2, patch.lowerCommon) {}
 
 void Voice::setNoteOff() {
-	_noteOn = false;
+	noteOn = false;
 }
 
 void Voice::audio_process(float* left_out, float* right_out,
                           unsigned long sample_count) {
-	// TODO
+	// For now it just adds up the upper and the lower tones
+	_upperTone.audio_process(left_out, right_out, sample_count);
+	_lowerTone.audio_process(left_out, right_out, sample_count);
 }

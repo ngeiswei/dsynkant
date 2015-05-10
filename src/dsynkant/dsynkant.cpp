@@ -27,13 +27,13 @@
 
 using namespace dsynkant;
 
-DSynkant::DSynkant() : _engine(*this) {}
+DSynkant::DSynkant() : engine(*this) {}
 
 DSynkant::~DSynkant() {}
 
 void DSynkant::audio_process(float* left_out, float* right_out,
                              unsigned long sample_count) {
-	_engine.audio_process(left_out, right_out, sample_count);
+	engine.audio_process(left_out, right_out, sample_count);
 }
 
 void DSynkant::noteOn_process(unsigned char channel,
@@ -42,14 +42,14 @@ void DSynkant::noteOn_process(unsigned char channel,
 	dbg_printf("NOTE_ON: channel = %d, pitch = %d, velocity = %d\n",
 	           channel, pitch, velocity);
 
-	_engine.noteOn_process(channel, pitch, velocity);
+	engine.noteOn_process(channel, pitch, velocity);
 }
 
 void DSynkant::noteOff_process(unsigned char channel, unsigned char pitch) {
 	dbg_printf("NOTE OFF: channel = %d, pitch = %d\n",
 	           channel, pitch);
 
-	_engine.noteOff_process(channel, pitch);
+	engine.noteOff_process(channel, pitch);
 }
 
 void DSynkant::sysex_process(unsigned length, unsigned char* data) {
@@ -68,15 +68,15 @@ void DSynkant::sysex_process(unsigned length, unsigned char* data) {
 				if(data[5] == 0x00) {
 					dbg_printf("DUMP WORKING PATCH\n");
 					Address a(data[6], data[7]);
-					_workPatch.dump(a,
-					                length - 8 - 1/*to ignore the last 0xF7*/,
-					                &data[8]);
+					workPatch.dump(a,
+					               length - 8 - 1/*to ignore the last 0xF7*/,
+					               &data[8]);
 					dbg_printf("PRINT PATCH\n");
-					_workPatch.print();
+					workPatch.print();
 				}
 				else {
 					dbg_printf("DUMP BANK\n");
-					_set.dump(length - 5, &data[5]);
+					set.dump(length - 5, &data[5]);
 				}
 			}
 			break;
@@ -89,9 +89,9 @@ void DSynkant::sysex_process(unsigned length, unsigned char* data) {
 //print method
 void DSynkant::print() {
 	printf("Set :\n");
-	_set.print(2);
+	set.print(2);
 	printf("Working patch :\n");
-	_workPatch.print(2);
+	workPatch.print(2);
 	printf("State of the engine :\n");
-	_engine.print(2);
+	engine.print(2);
 }
