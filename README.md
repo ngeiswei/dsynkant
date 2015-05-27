@@ -12,7 +12,7 @@ Features
 
 It's rather barebone right now. There is no GUI, no presets, and no
 sound! It only compiles on Linux but the code should be pretty
-portable. The plugin APIs supported so far are DSSI and VST.
+portable. It supports DSSI and VST.
 
 Requirements
 ------------
