@@ -5,8 +5,14 @@ Description
 -----------
 
 DSynkant is a virtual synthesizer that emulates the Roland
-D50/D550. So far it only supports DSSI but is being developed in a way
-that should easily support other softsynth API like VST.
+D50/D550.
+
+Features
+--------
+
+It's rather barebone right now. There is no GUI, no presets, and no
+sound! It only compiles on Linux but the code should be pretty
+portable. The plugin APIs supported so far are DSSI and VST.
 
 Requirements
 ------------
