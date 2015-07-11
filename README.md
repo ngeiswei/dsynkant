@@ -4,8 +4,7 @@ DSynkant
 Description
 -----------
 
-DSynkant is a virtual synthesizer that emulates the Roland
-D50/D550.
+DSynkant is a virtual synthesizer that emulates the Roland D-50/D-550.
 
 Features
 --------
