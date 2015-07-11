@@ -11,8 +11,8 @@ Features
 --------
 
 It's rather barebone right now. There is no GUI, no presets, and no
-sound! It only compiles on Linux but the code should be pretty
-portable. It supports DSSI and VST.
+sound! It only compiles on Linux but the code should easily be
+portable to other platforms. It supports DSSI and VST.
 
 Requirements
 ------------
@@ -72,3 +72,10 @@ Author
 ------
 
 Nil Geisweiller
+
+Acknowledgment
+--------------
+
+Thanks to:
+
+* David Godevais for giving me his Roland D-550!
