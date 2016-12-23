@@ -1,8 +1,8 @@
 /****************************************************************************
     
-    DSSI wrapper for DSynkant
+    VST wrapper for DSynkant
 
-    dssidsynkant.cpp
+    vstdsynkant.cpp
 
     Copyleft (c) 2015 Nil Geisweiller
  
